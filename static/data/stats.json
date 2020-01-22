@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Strength",
+        "abbrev": "STR",
+        "id": 0
+    },
+    {
+        "name": "Dexterity",
+        "abbrev": "DEX",
+        "id": 1
+    },
+    {
+        "name": "Constitution",
+        "abbrev": "CON",
+        "id": 2
+    },
+    {
+        "name": "Intelligence",
+        "abbrev": "INT",
+        "id": 3
+    },
+    {
+        "name": "Wisdom",
+        "abbrev": "WIS",
+        "id": 4
+    },
+    {
+        "name": "Charisma",
+        "abbrev": "CHA",
+        "id": 5
+    }
+]

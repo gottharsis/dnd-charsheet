@@ -1,0 +1,231 @@
+[
+  {
+    "name": "Dwarf (Hill)",
+    "ability": [0, 0, 2, 0, 1, 0],
+    "senses": [
+      "Darkvision 60ft"
+    ],
+    "size": "medium",
+    "speed": 25,
+    "proficiency": {
+      "weapons": ["battleaxe", "handaxe", "throwing hammer", "warhammer"]
+    },
+    "languages": ["common", "dwarvish"] ,
+    "features": [
+      "Tool Proficiency: proficient with smith, brewer, mason",
+      "Dwarven Resilience: You have advantage on saving\nth row s against p oison , and you have resistan ce against\np oison dam age",
+      "Dwarven Toughness: Y our hit point maxim m increases by 1, and it increases by 1 every time you gain a level"
+    ]
+  },
+  {
+    "name": "Dwarf (Mountain)",
+    "ability": [2, 0, 2, 0, 0, 0],
+    "senses": [
+      "Darkvision 60ft"
+    ],
+    "size": "medium",
+    "speed": 25,
+    "proficiency": {
+      "weapons": ["battleaxe", "handaxe", "throwing hammer", "warhammer"]
+    },
+    "languages": ["common", "dwarvish"] ,
+    "features": [
+      "Tool Proficiency: proficient with smith, brewer, mason",
+      "Dwarven Resilience: You have advantage on saving\nth row s against p oison , and you have resistan ce against\np oison dam age",
+      "Proficiency with light and med armor"
+    ]
+  },
+  {
+    "name": "Elf",
+    "ability": [0, 2, 0, 0, 0, 0],
+    "size": "medium",
+    "speed": 30,
+    "senses": ["Darkvision 60 ft"],
+    "features": [
+      "Proficient in perception",
+      "adv. on saving throws vs charmed, magic cannot put you to sleep",
+      "long rest is only 4 hours"
+    ],
+    "languages": [
+      "common", "elvish"
+    ]
+  },
+  {
+    "name": "Elf (High)",
+    "ability": [0, 2, 0, 1, 0, 0],
+    "size": "medium",
+    "speed": 30,
+    "senses": ["Darkvision 60 ft"],
+    "proficiency": {
+      "weapons": ["longsword", "shortsword", "longbow", "shortbow"]
+    },
+    "features": [
+      "Proficient in perception",
+      "adv. on saving throws vs charmed, magic cannot put you to sleep",
+      "long rest is only 4 hours",
+      "choose one wizard cantrip"
+    ],
+    "languages": [
+      "common", "elvish", "choose"
+    ]
+  },
+
+  {
+    "name": "Elf (Wood)",
+    "ability": [0, 2, 0, 0, 1, 0],
+    "size": "medium",
+    "speed": 30,
+    "senses": ["Darkvision 60 ft"],
+    "proficiency": {
+      "weapons": ["longsword", "shortsword", "longbow", "shortbow"]
+    },
+    "features": [
+      "Proficient in perception",
+      "adv. on saving throws vs charmed, magic cannot put you to sleep",
+      "long rest is only 4 hours"
+    ],
+    "languages": [
+      "common", "elvish"
+    ]
+  },
+
+  {
+    "name": "Elf (Drow)",
+    "ability": [0, 2, 0, 0, 0, 1],
+    "size": "medium",
+    "speed": 30,
+    "senses": ["Darkvision 120 ft"],
+    "features": [
+      "Proficient in perception",
+      "adv. on saving throws vs charmed, magic cannot put you to sleep",
+      "long rest is only 4 hours",
+      "sunlight sensitivity: disadvantage to attack rolls and perception checks when in direct sunlight",
+      "Drow magic: know dancing lights cantrip, 3rd level - faerie fire, 5th level - darkness once per day"
+    ],
+    "languages": [
+      "common", "elvish"
+    ],
+    "proficiency": {
+      "weapons": ["rapier", "shortsword", "hand crossbow"]
+    }
+  },
+
+  {
+    "name": "Halfling",
+    "ability": [0, 2, 0, 0, 0, 0],
+    "size": "small",
+    "speed": 25,
+    "senses": [],
+    "proficiency": {},
+    "languages": ["common", "halfling"],
+    "features": [
+      "lucky: when you roll 1 on an attack roll, ability check, or saving throw, you can reroll and must use new roll",
+      "brave: You have advantage on saving throw s against bein g frightened"
+    ],
+  },
+
+  {
+    "name": "Halfling (Lightfoot)",
+    "ability": [0, 2, 0, 0, 0, 1],
+    "size": "small",
+    "speed": 25,
+    "senses": [],
+    "proficiency": {},
+    "languages": ["common", "halfling"],
+    "features": [
+      "lucky: when you roll 1 on an attack roll, ability check, or saving throw, you can reroll and must use new roll",
+      "brave: You have advantage on saving throw s against bein g frightened",
+      "Naturally Stealthy. You can attempt to hide even w hen you are ob scu red only by a creature that is at least o n e size larger than you."
+    ],
+  },
+
+  {
+    "name": "Halfling (Stout)",
+    "ability": [0, 2, 1, 0, 0, 0],
+    "size": "small",
+    "speed": 25,
+    "senses": [],
+    "proficiency": {},
+    "languages": ["common", "halfling"],
+    "features": [
+      "lucky: when you roll 1 on an attack roll, ability check, or saving throw, you can reroll and must use new roll",
+      "brave: You have advantage on saving throw s against bein g frightened",
+      "Stout Resilience. You have advantage on saving th row s against p oison , and you have resistan ce against p oison dam age."
+    ],
+  },
+
+
+  {
+    "name": "Human",
+    "ability": [1, 1, 1, 1, 1, 1],
+    "size": "medium",
+    "speed": 30,
+    "senses": [],
+    "proficiency": {},
+    "languages": ["common", "choose"],
+    "features": [],
+  },
+
+
+  {
+    "name": "Dragonborn",
+    "ability": [2, 0, 0, 0, 0, 1],
+    "size": "med",
+    "speed": 30,
+    "senses": [],
+    "proficiency": {},
+    "languages": ["common", "draconic"],
+    "features": [
+      "Draconic Ancestry: Choose from table",
+      "Breath Weapon. Y ou can u se your action to exhale destructive energy. Your d racon ic an cestry determ ines the size, shape, and dam age type o f the exhalation. W h en you u se your breath w eapon , each creature in the area o f the exhalation m ust m ake a saving throw, the type o f w hich is determ ined by your dracon ic ancestry. T h e D C for this saving th row equals 8 + your Constitution m odifier + your proficiency bonus. A creature takes 2d6 dam age on a failed save, and half as m uch dam age on a su ccessfu l one. T h e dam age in creases to 3d6 at 6th level, 4 d 6 at 11th level, and 5d6 at 16th level. A fter you u se your breath w eapon , you c a n ’t u se it again until you com plete a short or lon g rest. ",
+      "Damage Resistance. You have resistan ce to the d am age type a ssocia ted w ith your dracon ic ancestry."
+    ],
+  },
+
+
+
+  {
+    "name": "Gnome",
+    "ability": [0, 0, 0, 2, 0, 0],
+    "size": "small",
+    "speed": 25,
+    "senses": ["Darkvision 60 ft"],
+    "proficiency": {},
+    "languages": ["common", "gnomish"],
+    "features": [
+      "Gnome Cunning. You have advantage on all Intelligence, W isdom , and C harism a saving throw s against m agic.",
+    ],
+  },
+
+  {
+    "name": "Gnome (Forest)",
+    "ability": [0, 1, 0, 2, 0, 0],
+    "size": "small",
+    "speed": 25,
+    "senses": ["Darkvision 60 ft"],
+    "proficiency": {},
+    "languages": ["common", "gnomish"],
+    "features": [
+      "Gnome Cunning. You have advantage on all Intelligence, W isdom , and C harism a saving throw s against m agic.",
+      "Natural Illusionist. You k n ow the minor illusion cantrip. Intelligence is your spellcastin g ability for it.",
+      "Speak with Small Beasts. T h rou gh sou n d s and gestures, you can com m u n icate sim ple ideas w ith Sm all or sm aller beasts. Forest g n om es love anim als and often keep squirrels, badgers, rabbits, m oles, w ood p eck ers, and other creatures as beloved pets."
+    ],
+  },
+
+  {
+    "name": "Gnome (Rock)",
+    "ability": [0, 0, 1, 2, 0, 0],
+    "size": "small",
+    "speed": 25,
+    "senses": ["Darkvision 60 ft"],
+    "proficiency": {},
+    "languages": ["common", "gnomish"],
+    "features": [
+      "Gnome Cunning. You have advantage on all Intelligence, W isdom , and C harism a saving throw s against m agic.",
+      "Artificer’s Lore. W h enever you m ake an Intelligence (H istory) ch eck related to m agic item s, alchem ical objects, or tech n ological devices, you can add tw ice your proficiency bonus, instead o f any p roficiency bon u s you n orm ally apply.",
+      "Tinker. You have proficiency with artisan’s tools (tinker’s tools). U sing th ose tools, you can spend 1 hour and 10 gp w orth o f m aterials to con stru ct a Tiny clock w ork device (AC 5, 1 hp)."
+    ],
+  },
+
+
+]

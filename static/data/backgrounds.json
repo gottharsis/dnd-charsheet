@@ -1,0 +1,159 @@
+[
+  {
+    "id": 1,
+    "name": "Acolyte",
+    "proficiencies": {
+      "skills": ["Insight", "Religion"]
+    },
+    "skillIds": [12, 10],
+    "equipment": [
+      "Holy Symbol",
+      "Prayer book/wheel",
+      "5 sticks of incense",
+      "vestements",
+      "common clothes",
+      "15 gp"
+    ],
+    "features": [
+      "Shelter of the Faithful: You and your adventuring com p a n ion s can expect to receive free healing and care at a temple, shrine, or other established presen ce o f your faith, though you must provide any material com pon en ts n eed ed for spells"
+    ],
+    "languages": ["choose", "choose"]
+  },
+
+  {
+    "id": 2,
+    "name": "Charlatan",
+    "proficiencies": {
+      "skills": ["Deception", "Sleight of Hand"],
+      "tools": ["Disguise Kit", "Forgery Kit"]
+    },
+    "skillIds": [16, 3],
+    "equipment": ["Fine Clothes", "tools of the con", "15 gp"],
+    "features": [
+      "False Identity: You have created a se co n d identity that includes docum entation, established acquaintances, and d isgu ises that allow you to assu m e that persona. Additionally, you ca n forge d ocu m en ts including official papers and person al letters, as lon g as you have seen an exam ple o f the kind o f docum ent or the handw riting you are trying to copy."
+    ],
+    "languages": []
+  },
+
+  {
+    "id": 3,
+    "name": "Entertainer",
+    "proficiencies": {
+      "skills": ["Acrobatics", "Performance"],
+      "tools": ["Disguise Kit", "Musical Instrument"]
+    },
+    "skillIds": [2, 5],
+    "equipment": ["Musical Instrument", "favor fo admirer", "costume", "15 gp"],
+    "features": [
+      "F e a t u r e : B y P o p u l a r D emand You can always find a place to perform , usually in an inn or tavern but p ossib ly with a circu s, at a theater, or even in a n oble’s court. At such a place, you receive free lod gin g and food o f a m od est or com fortab le standard (depen din g on the quality o f the establishm ent), as long as you perform each night. In addition, your perform an ce m a kes you som eth in g o f a loca l figure. W h en strangers r ecog n ize you in a tow n w here you have perform ed, they typically take a liking to you."
+    ],
+    "languages": []
+  },
+
+  {
+    "id": 4,
+    "name": "Folk Hero",
+    "proficiencies": {
+      "skills": ["Animal Handling", "Survival"],
+      "tools": ["artisan's tools", "vechicles (land)"]
+    },
+    "skillIds": [11, 4],
+    "equipment": [
+      "artisan's tools",
+      "shovel",
+      "iron pot",
+      "common clothes",
+      "15 gp"
+    ],
+    "features": [
+      "S in ce you c o m e from the ranks o f the co m m o n folk, you fit in am ong them with ease. You can find a place to hide, rest, or recuperate am ong other com m on ers, u n less you have sh ow n y ou rself to be a danger to them . T h ey w ill shield you from the law or anyone else sea rch in g for you, though they w ill not risk their lives for you."
+    ],
+    "languages": []
+  },
+
+  {
+    "id": 5,
+    "name": "Guild Artisan",
+    "proficiencies": {
+      "skills": ["Insight", "Persuasion"],
+      "tools": ["artisan's tools"]
+    },
+    "skillIds": [12, 19],
+    "equipment": [
+      "artisan's tools",
+      "letter of introduction",
+      "traveler's clothes",
+      "15 gp"
+    ],
+    "features": [],
+    "languages": ["choose"]
+  },
+
+  {
+    "id": 6,
+    "name": "Hermit",
+    "proficiencies": {
+      "skills": ["Medicine", "Religion"],
+      "tools": ["Herbalism Kit"]
+    },
+    "skillIds": [4, 3],
+    "equipment": [],
+    "features": ["Unique and powerful discovery"],
+    "languages": ["choose"]
+  },
+
+  {
+    "id": 7,
+    "name": "Noble",
+    "proficiencies": {
+      "skills": ["History", "Persuasion"],
+      "tools": ["gaming set"]
+    },
+    "skillIds": [6, 5],
+    "equipment": ["fine clothes", "signet ring", "scroll of pedigree", "25 gp"],
+    "features": ["Position of Privilege"],
+    "languages": ["choose"]
+  },
+
+  {
+    "id": 8,
+    "name": "Outlander",
+    "proficiencies": {
+      "skills": ["Athletics", "Survival"],
+      "tools": ["musical instrument"]
+    },
+    "skillIds": [1, 15],
+    "equipment": [
+      "staff",
+      "hunting trap",
+      "trophy from animal",
+      "traveler's clothes",
+      "10 gp"
+    ],
+    "features": [
+      "You have an excellent m em ory for m aps and geography, and you can always recall the general layout o f terrain, settlem ents, and other features arou nd you. In addition, you can find fo o d and fresh w ater for y ou rself and up to five other p eop le each day, provided that the land offers berries, sm all gam e, water, and s o forth."
+    ],
+    "languages": ["choose"]
+  },
+
+  {
+    "id": 9,
+    "name": "Sage",
+    "proficiencies": {
+      "skills": ["Arcana", "History"]
+    },
+    "skillIds": [5, 6],
+    "equipment": [
+      "bottle of ink",
+      "quill",
+      "small knife",
+      "letter from dead colleague",
+      "common clothes",
+      "10 gp"
+    ],
+    "features": [
+      "W h en you attempt to learn or recall a piece o f lore, if you do not k n ow that inform ation, you often k n ow w here and from w h om you can obtain it. Usually, this inform ation c o m e s from a library, scriptorium , university, or a sage or other learned p erson or creature. Your DM might rule that the kn ow led ge you seek is secreted away in an alm ost in accessible place, or that it sim ply can n ot be found. U nearthing the d eepest secrets o f the m ultiverse can require an adventure or even a w hole cam paign."
+    ],
+    "languages": ["choose", "choose"]
+  }
+]

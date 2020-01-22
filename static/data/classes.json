@@ -1,0 +1,31 @@
+[
+
+{
+        "id": 11,
+        "name": "Warlock",
+        "hitDice": 8,
+        "savingThrows": [
+                "WIS", "CHA"
+        ],
+        "skills": [
+                "Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"
+        ],
+        "data": ":/class_data/warlock.html"
+},
+
+
+{
+        "id": 10,
+        "name": "Wizard",
+        "hitDice": 6,
+        "savingThrows": [
+                "INT", "WIS"
+        ],
+        "skills": [
+                "Arcana", "Insight", "History", "Medecine", "Investigation", "Religion"
+        ],
+        "data": ":/class_data/wizard.html"
+}
+
+
+]

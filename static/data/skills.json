@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Athletics",
+    "abilityId": 0
+  },
+
+  {
+    "id": 2,
+    "name": "Acrobatics",
+    "abilityId": 1
+  },
+
+  {
+    "id": 3,
+    "name": "Sleight of Hand",
+    "abilityId": 1
+  },
+
+  {
+    "id": 4,
+    "name": "Stealth",
+    "abilityId": 1
+  },
+
+  {
+    "id": 5,
+    "name": "Arcana",
+
+    "abilityId": 3
+  },
+  {
+    "id": 6,
+    "name": "History",
+
+    "abilityId": 3
+  },
+  {
+    "id": 8,
+    "name": "Investigation",
+
+    "abilityId": 3
+  },
+  {
+    "id": 9,
+    "name": "Nature",
+
+    "abilityId": 3
+  },
+  {
+    "id": 10,
+    "name": "Religion",
+    "abilityId": 3
+  },
+
+  {
+    "id": 11,
+    "name": "Animal Handling",
+
+    "abilityId": 4
+  },
+  {
+    "id": 12,
+    "name": "Insight",
+
+    "abilityId": 4
+  },
+  {
+    "id": 13,
+    "name": "Medicine",
+
+    "abilityId": 4
+  },
+  {
+    "id": 14,
+    "name": "Perception",
+
+    "abilityId": 4
+  },
+  {
+    "id": 15,
+    "name": "Survival",
+    "abilityId": 4
+  },
+
+  {
+    "id": 16,
+    "name": "Deception",
+
+    "abilityId": 5
+  },
+  {
+    "id": 17,
+    "name": "Intimidation",
+
+    "abilityId": 5
+  },
+  {
+    "id": 18,
+    "name": "Performance",
+
+    "abilityId": 5
+  },
+  {
+    "id": 19,
+    "name": "Persuasion",
+
+    "abilityId": 5
+  }
+]
