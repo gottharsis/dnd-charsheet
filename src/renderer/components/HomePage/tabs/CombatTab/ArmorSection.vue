@@ -16,12 +16,19 @@
         </div>
       </div>
     </div>
-    <router-link to="/edit-armor" class="button">Edit</router-link>
+
+    <b-modal :active.sync="isEditArmorActive">
+      <edit-armor-modal />
+    </b-modal>
+
+    <!-- <router-link to="/edit-armor" class="button">Edit</router-link> -->
+    <b-button @click="isEditArmorActive = true">Edit</b-button>
   </section>
 </template>
 
 <script>
 import { createNamespacedHelpers } from "vuex";
+import EditArmorModal from "./EditArmor";
 const { mapActions, mapState } = createNamespacedHelpers("Character");
 const { mapGetters: guideGetters } = createNamespacedHelpers("Guide");
 export default {
@@ -41,11 +48,19 @@ export default {
     //   return this.getArmorById()(this.armorId);
     // }
   },
+  data() {
+    return {
+      isEditArmorActive: false
+    };
+  },
   methods: {
     // ...guideGetters(["getArmorById"])
     calculateModifier(stat) {
       return Math.floor((stat - 10) / 2);
     }
+  },
+  components: {
+    EditArmorModal
   }
 };
 </script>

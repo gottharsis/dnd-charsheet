@@ -24,7 +24,7 @@
             </li>
           </ul>
         </div>
-        <router-view name="page" />
+        <router-view />
       </div>
     </div>
   </div>
@@ -34,7 +34,6 @@
 import { createNamespacedHelpers } from "vuex";
 import AbilityScoresBar from "./HomePage/AbilityScoresBar";
 import ErrorIndicator from "./HomePage/ErrorIndicator";
-import { ipcRenderer } from "electron";
 
 const { mapState, mapActions } = createNamespacedHelpers("Character");
 const { mapGetters: guideGetters, mapState: Guide } = createNamespacedHelpers(
@@ -54,9 +53,6 @@ export default {
     ...guideGetters(["getClassById"]),
     setActiveIndex(i) {
       this.activeIndex = i;
-    },
-    showEditSlotsModal() {
-      ipcRenderer.send("edit-slots");
     }
   },
   components: {

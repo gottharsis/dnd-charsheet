@@ -25,9 +25,12 @@
       <spell-slot-indicator v-for="i in spellLevels" :key="i" :level="i" />
     </div>
     <div class="has-padding-25">
-      <router-link :to="{ name: 'edit-slots' }" class="button">
+      <!-- <router-link :to="{ name: 'edit-slots' }" class="button">
         Edit Spell Slots
-      </router-link>
+      </router-link> -->
+      <b-button @click="isEditModalOpen = true">
+        Edit Spell Slots
+      </b-button>
     </div>
     <table class="table is-bordered is-striped is-fullwidth has-text-centered">
       <thead>
@@ -63,6 +66,10 @@
         </tr>
       </tbody>
     </table>
+
+    <b-modal :active.sync="isEditModalOpen">
+      <edit-slots />
+    </b-modal>
     {{ knownIds }}
   </div>
 </template>
@@ -71,6 +78,7 @@
 import { createNamespacedHelpers } from "vuex";
 const { mapState: GuideState } = createNamespacedHelpers("Guide");
 import SpellSlotIndicator from "./SpellTab/SpellSlotIndicator";
+import EditSlots from "./SpellTab/EditSlots";
 
 const {
   mapGetters: CharGetter,
@@ -95,8 +103,14 @@ export default {
     ...CharGetter(["isSpellKnown"]),
     ...charActions(["learnSpell"])
   },
+  data() {
+    return {
+      isEditModalOpen: false
+    };
+  },
   components: {
-    SpellSlotIndicator
+    SpellSlotIndicator,
+    EditSlots
   }
 };
 </script>

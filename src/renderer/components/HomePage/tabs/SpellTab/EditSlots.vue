@@ -100,7 +100,7 @@ export default {
       });
 
       this.setSpellSlots({ updatedSlots: changedSlots });
-      this.$emit("close");
+      this.$parent.close();
     },
     setSlots() {
       this.slots = deepclone(this.currentSlots).filter(i => i.level > 0);

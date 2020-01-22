@@ -8,35 +8,29 @@ export default new Router({
     {
       path: "/",
       name: "landing-page",
-      components: { page: require("@/components/LandingPage").default }
+      component: require("@/components/LandingPage").default
     },
     {
       path: "/character-select",
       name: "character-select",
-      components: { page: require("@/components/CharacterSelect").default }
+      component: require("@/components/CharacterSelect").default
     },
     {
       path: "/home",
       name: "home-page",
-      components: { page: require("@/components/HomePage").default },
+      component: require("@/components/HomePage").default,
       children: [
         {
           path: "/spells",
-          components: {
-            page: require("@/components/HomePage/tabs/SpellTab").default
-          }
+          component: require("@/components/HomePage/tabs/SpellTab").default
         },
         {
           path: "/combat",
-          components: {
-            page: require("@/components/HomePage/tabs/CombatTab").default
-          }
+          component: require("@/components/HomePage/tabs/CombatTab").default
         },
         {
           path: "/inventory",
-          components: {
-            page: require("@/components/HomePage/tabs/InventoryTab").default
-          }
+          component: require("@/components/HomePage/tabs/InventoryTab").default
         },
         {
           path: "*",
@@ -47,28 +41,6 @@ export default new Router({
           redirect: "/spells"
         }
       ]
-    },
-    {
-      path: "/edit-slots",
-      name: "edit-slots",
-      components: {
-        modal: require("@/components/EditSlots").default,
-        page: require("@/components/HomePage").default
-      },
-      meta: {
-        showModal: true
-      }
-    },
-    {
-      path: "/edit-armor",
-      name: "edit-armor",
-      components: {
-        modal: require("@/components/modals/EditArmor").default,
-        page: require("@/components/HomePage").default
-      },
-      meta: {
-        showModal: true
-      }
     },
     {
       path: "*",
