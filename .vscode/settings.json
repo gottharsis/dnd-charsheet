@@ -1,3 +1,9 @@
 {
-    "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "path-autocomplete.pathMappings": {
+    "@": "${folder}/src/renderer"
+  },
+  "path-intellisense.mappings": {
+    "@": "src/renderer"
+  }
 }
