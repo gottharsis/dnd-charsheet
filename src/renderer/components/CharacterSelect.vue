@@ -48,7 +48,7 @@
 
 <script>
 import { createNamespacedHelpers } from "vuex";
-import { characterList } from "../data/readCharacter";
+import { characterList } from "../data/persistCharacter";
 
 const { mapActions } = createNamespacedHelpers("Character");
 

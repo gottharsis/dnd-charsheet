@@ -48,23 +48,6 @@ app.on("activate", () => {
   }
 });
 
-/* Load the modal windows as necessary */
-// Show the slot editor
-ipcMain.on("edit-slots", (e, data) => {
-  console.log("Edit slots message received");
-  const modalPath =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:9080/#/edit-slots"
-      : `file://${__dirname}/index.html#edit-slots`;
-
-  createModalWindow(modalPath);
-});
-
-ipcMain.on("close-modal", (e, data) => {
-  console.log("closing modal");
-  modalWindow = null;
-});
-
 /**
  * Auto Updater
  *

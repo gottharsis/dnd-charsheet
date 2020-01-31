@@ -1,6 +1,10 @@
 import merge from "deepmerge";
 import isNil from "lodash/isNil";
-import { readCharacter, characterList } from "../../data/persistCharacter";
+import {
+  readCharacter,
+  characterList,
+  saveCharacter
+} from "../../data/persistCharacter";
 import { Character } from "../../data/character";
 
 const state = {
@@ -95,6 +99,9 @@ const actions = {
     const character = await readCharacter(characterFile);
     commit("SET_CHARACTER", { character, characterFile });
     return character;
+  },
+  async saveCharacter({ state }) {
+    saveCharacter(state.character, state.characterFile);
   },
   learnSpell({ commit }, { spellId }) {
     console.log("Learning spell with id " + spellId);

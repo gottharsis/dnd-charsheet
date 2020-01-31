@@ -9,9 +9,21 @@
 import Vue from "vue";
 import Buefy from "buefy";
 
+import { createNamespacedHelpers } from "vuex";
+const { mapActions } = createNamespacedHelpers("Character");
+
 Vue.use(Buefy);
 export default {
-  name: "dnd-charsheet"
+  name: "dnd-charsheet",
+  methods: {
+    ...mapActions(["saveCharacter"])
+  },
+  mounted() {
+    window.addEventListener("beforeunload", this.saveCharacter);
+  }
+  // async beforeDestroy() {
+  //   await this.saveCharacter();
+  // }
 };
 </script>
 

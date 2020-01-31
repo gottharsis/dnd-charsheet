@@ -39,5 +39,7 @@ export const saveCharacter = async (characterData, characterFile) => {
   if (typeof data !== "string") {
     data = JSON.stringify(characterData, null, 4);
   }
-  fs.writeFileSync(characterFile, data);
+  console.log("Writing data to file");
+  console.log(data);
+  fs.writeFileSync(filePath, data);
 };
