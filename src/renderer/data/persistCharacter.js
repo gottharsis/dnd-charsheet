@@ -27,3 +27,17 @@ export const characterList = async () => {
     return [];
   }
 };
+
+/**
+ * Saves the current character to the file
+ * @param {Object} characterData the data to write to the file
+ * @param {string} characterFile the path of the file to save the character
+ */
+export const saveCharacter = async (characterData, characterFile) => {
+  const filePath = path.join(baseDir, characterFile);
+  let data = characterData;
+  if (typeof data !== "string") {
+    data = JSON.stringify(characterData, null, 4);
+  }
+  fs.writeFileSync(characterFile, data);
+};

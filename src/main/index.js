@@ -34,22 +34,6 @@ function createWindow() {
   });
 }
 
-function createModalWindow(url) {
-  modalWindow = new BrowserWindow({
-    height: 400,
-    useContentSize: true,
-    width: 600,
-    webPreferences: {
-      webSecurity: false
-    }
-  });
-
-  modalWindow.on("close", () => {
-    modalWindow = null;
-  });
-  modalWindow.loadURL(url);
-}
-
 app.on("ready", createWindow);
 
 app.on("window-all-closed", () => {

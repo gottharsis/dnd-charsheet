@@ -1,6 +1,6 @@
 import merge from "deepmerge";
 import isNil from "lodash/isNil";
-import { readCharacter, characterList } from "../../data/readCharacter";
+import { readCharacter, characterList } from "../../data/persistCharacter";
 import { Character } from "../../data/character";
 
 const state = {
