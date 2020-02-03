@@ -32,37 +32,23 @@
         Edit Spell Slots
       </b-button>
     </div>
-    <table class="table is-bordered is-striped is-fullwidth has-text-centered">
+    <table class="table is-bordered  is-fullwidth has-text-centered">
       <thead>
-        <tr>
-          <th class="has-text-centered">Id</th>
+        <tr class="has-background-link">
           <th class="has-text-centered">Name</th>
           <th class="has-text-centered">Level</th>
           <th class="has-text-centered">School</th>
-          <th class="has-text-centered">Known?</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="spell in spells" :key="spell.id">
-          <td>{{ spell.id }}</td>
+        <tr
+          v-for="spell in knownSpells"
+          :key="spell.id"
+          @click="showSpellDetail(spell)"
+        >
           <td>{{ spell.name }}</td>
           <td>{{ spell.level }}</td>
           <td>{{ spell.school }}</td>
-          <td>
-            <button
-              class="button is-info is-outlined is-static"
-              v-if="isSpellKnown()(spell.id)"
-            >
-              Spell Already Known
-            </button>
-            <button
-              class="button is-info "
-              v-else
-              @click="learnSpell({ spellId: spell.id })"
-            >
-              Learn
-            </button>
-          </td>
         </tr>
       </tbody>
     </table>
@@ -70,7 +56,10 @@
     <b-modal :active.sync="isEditModalOpen">
       <edit-slots />
     </b-modal>
-    {{ knownIds }}
+
+    <b-modal :active="shouldShowSpellDetail" @close="closeSpellDetail">
+      <spell-detail :spell="detailSpell" />
+    </b-modal>
   </div>
 </template>
 
@@ -79,6 +68,7 @@ import { createNamespacedHelpers } from "vuex";
 const { mapState: GuideState } = createNamespacedHelpers("Guide");
 import SpellSlotIndicator from "./SpellTab/SpellSlotIndicator";
 import EditSlots from "./SpellTab/EditSlots";
+import SpellDetail from "./SpellTab/SpellDetail";
 
 const {
   mapGetters: CharGetter,
@@ -97,20 +87,34 @@ export default {
       dc: state => state.character.magic.dc,
       bonus: state => state.character.magic.bonus,
       castingAbility: state => state.character.magic.castingAbility
-    })
+    }),
+    knownSpells() {
+      return this.spells.filter(({ id }) => this.knownIds.includes(id));
+    },
+    shouldShowSpellDetail() {
+      return this.detailSpell !== null;
+    }
   },
   methods: {
     ...CharGetter(["isSpellKnown"]),
-    ...charActions(["learnSpell"])
+    ...charActions(["learnSpell"]),
+    showSpellDetail(spell) {
+      this.detailSpell = spell;
+    },
+    closeSpellDetail() {
+      this.detailSpell = null;
+    }
   },
   data() {
     return {
-      isEditModalOpen: false
+      isEditModalOpen: false,
+      detailSpell: null
     };
   },
   components: {
     SpellSlotIndicator,
-    EditSlots
+    EditSlots,
+    SpellDetail
   }
 };
 </script>

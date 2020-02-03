@@ -63,6 +63,7 @@
     "bulma-helpers": "^0.3.8",
     "bulmaswatch": "^0.7.5",
     "deepmerge": "^4.2.2",
+    "fuse": "^0.4.0",
     "tailwindcss": "^1.1.4",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",

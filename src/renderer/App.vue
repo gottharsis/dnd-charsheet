@@ -29,10 +29,10 @@ export default {
 
 <style lang="scss">
 /* CSS */
-@import "~bulmaswatch/darkly/variables";
+@import "~bulmaswatch/superhero/variables";
 @import "~bulma/bulma";
 @import "~buefy/src/scss/buefy";
-@import "~bulmaswatch/darkly/overrides";
+@import "~bulmaswatch/superhero/overrides";
 
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
