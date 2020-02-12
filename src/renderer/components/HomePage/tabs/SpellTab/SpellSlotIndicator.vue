@@ -1,15 +1,26 @@
 <template>
   <div class="spell-slot-indicator">
-    <circle-progress :value="percentage" :radius="100">
+    <circle-progress :value="percentage" :radius="120">
       <div class="has-text-centered has-text-weight-bold">
         Level {{ level }}
       </div>
       <div>
         <span class="is-size-2">{{ available }}</span> / {{ max }}
       </div>
-      <button :class="['button', buttonClass]" @click="cast">
+      <!-- <button :class="['button', buttonClass]" @click="cast">
         Cast
-      </button>
+      </button> -->
+      <div>
+        <b-button @click="restore(1)">
+          <i class="fas fa-scroll"></i>
+        </b-button>
+        <b-button @click="restore">
+          <i class="fas fa-sync-alt"></i>
+        </b-button>
+        <b-button @click="cast">
+          <i class="fas fa-dragon"></i>
+        </b-button>
+      </div>
     </circle-progress>
     <br />
   </div>
@@ -67,8 +78,8 @@ export default {
     cast() {
       this.castSpell({ level: this.level });
     },
-    restore() {
-      this.restoreSlot({ level: this.level });
+    restore(amount = -1) {
+      this.restoreSlot({ level: this.level, amount });
     }
   }
 };

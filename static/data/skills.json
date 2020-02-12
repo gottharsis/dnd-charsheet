@@ -2,109 +2,124 @@
   {
     "id": 1,
     "name": "Athletics",
-    "abilityId": 0
+    "abilityId": 0,
+    "stat": "STR"
   },
 
   {
     "id": 2,
     "name": "Acrobatics",
-    "abilityId": 1
+    "abilityId": 1,
+    "stat": "DEX"
   },
 
   {
     "id": 3,
     "name": "Sleight of Hand",
-    "abilityId": 1
+    "abilityId": 1,
+    "stat": "DEX"
   },
 
   {
     "id": 4,
     "name": "Stealth",
-    "abilityId": 1
+    "abilityId": 1,
+    "stat": "DEX"
   },
 
   {
     "id": 5,
     "name": "Arcana",
-
-    "abilityId": 3
+    "abilityId": 3,
+    "stat": "INT"
   },
   {
     "id": 6,
     "name": "History",
 
-    "abilityId": 3
+    "abilityId": 3,
+    "stat": "INT"
   },
   {
     "id": 8,
     "name": "Investigation",
 
-    "abilityId": 3
+    "abilityId": 3,
+    "stat": "INT"
   },
   {
     "id": 9,
     "name": "Nature",
 
-    "abilityId": 3
+    "abilityId": 3,
+    "stat": "INT"
   },
   {
     "id": 10,
     "name": "Religion",
-    "abilityId": 3
+    "abilityId": 3,
+    "stat": "INT"
   },
 
   {
     "id": 11,
     "name": "Animal Handling",
 
-    "abilityId": 4
+    "abilityId": 4,
+    "stat": "WIS"
   },
   {
     "id": 12,
     "name": "Insight",
 
-    "abilityId": 4
+    "abilityId": 4,
+    "stat": "WIS"
   },
   {
     "id": 13,
     "name": "Medicine",
 
-    "abilityId": 4
+    "abilityId": 4,
+    "stat": "WIS"
   },
   {
     "id": 14,
     "name": "Perception",
 
-    "abilityId": 4
+    "abilityId": 4,
+    "stat": "WIS"
   },
   {
     "id": 15,
     "name": "Survival",
-    "abilityId": 4
+    "abilityId": 4,
+    "stat": "WIS"
   },
 
   {
     "id": 16,
     "name": "Deception",
 
-    "abilityId": 5
+    "abilityId": 5,
+    "stat": "CHA"
   },
   {
     "id": 17,
     "name": "Intimidation",
 
-    "abilityId": 5
+    "abilityId": 5,
+    "stat": "CHA"
   },
   {
     "id": 18,
     "name": "Performance",
-
+    "stat": "CHA",
     "abilityId": 5
   },
   {
     "id": 19,
     "name": "Persuasion",
-
+    "stat": "CHA",
     "abilityId": 5
   }
 ]

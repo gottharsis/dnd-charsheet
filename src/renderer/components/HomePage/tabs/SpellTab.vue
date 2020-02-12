@@ -31,6 +31,9 @@
       <b-button @click="isEditModalOpen = true">
         Edit Spell Slots
       </b-button>
+      <b-button @click="restoreAllSpellSlots">
+        Restore Slots
+      </b-button>
     </div>
     <table class="table is-bordered  is-fullwidth has-text-centered">
       <thead>
@@ -97,7 +100,7 @@ export default {
   },
   methods: {
     ...CharGetter(["isSpellKnown"]),
-    ...charActions(["learnSpell"]),
+    ...charActions(["learnSpell", "restoreAllSpellSlots"]),
     showSpellDetail(spell) {
       this.detailSpell = spell;
     },

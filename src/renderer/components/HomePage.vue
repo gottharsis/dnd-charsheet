@@ -63,6 +63,10 @@ export default {
     return {
       tabs: [
         {
+          name: "Overview",
+          link: "/overview"
+        },
+        {
           name: "Spells",
           link: "/spells"
         },

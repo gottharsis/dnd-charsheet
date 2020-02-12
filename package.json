@@ -60,6 +60,7 @@
     "axios": "^0.18.0",
     "buefy": "^0.8.10",
     "bulma": "^0.8.0",
+    "bulma-divider": "^0.2.0",
     "bulma-helpers": "^0.3.8",
     "bulmaswatch": "^0.7.5",
     "deepmerge": "^4.2.2",

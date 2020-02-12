@@ -29,6 +29,7 @@ export default {
 
 <style lang="scss">
 /* CSS */
+@import "~bulma-divider";
 @import "~bulmaswatch/superhero/variables";
 @import "~bulma/bulma";
 @import "~buefy/src/scss/buefy";

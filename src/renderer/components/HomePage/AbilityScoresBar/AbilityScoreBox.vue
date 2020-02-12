@@ -1,5 +1,6 @@
 <template>
   <div class="ability-score-box box tile">
+    <!-- <div class="tile is-ancestor"> -->
     <div class="tile is-vertical">
       <div class="tile is-child has-text-centered is-size-4">
         <div class="has-text-weight-bold">{{ score.stat }}</div>
@@ -13,6 +14,7 @@
         {{ modifier }}
       </div>
     </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -36,9 +38,10 @@ export default {
 
 <style lang="scss">
 .ability-score-box {
-  flex-grow: 1;
+  // flex-grow: 1;
   justify-content: center;
   align-items: center;
   // background: $scheme-main-bis;
+  height: calc(1 / 6 * 100vh - 24px);
 }
 </style>

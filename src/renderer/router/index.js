@@ -21,6 +21,10 @@ export default new Router({
       component: require("@/components/HomePage").default,
       children: [
         {
+          path: "/overview",
+          component: require("@/components/HomePage/tabs/OverviewTab").default
+        },
+        {
           path: "/spells",
           component: require("@/components/HomePage/tabs/SpellTab").default
         },
@@ -34,11 +38,11 @@ export default new Router({
         },
         {
           path: "*",
-          redirect: "/spells"
+          redirect: "/overview"
         },
         {
           path: "",
-          redirect: "/spells"
+          redirect: "/overview"
         }
       ]
     },

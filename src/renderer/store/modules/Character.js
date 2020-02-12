@@ -1,5 +1,6 @@
 import merge from "deepmerge";
 import isNil from "lodash/isNil";
+import zip from "lodash/zip";
 import {
   readCharacter,
   characterList,
@@ -58,7 +59,12 @@ const mutations = {
     if (amount < 0) {
       slot.used = 0;
     } else {
-      slot.used -= amount;
+      slot.used = Math.max(0, slot.used - amount);
+    }
+  },
+  RESTORE_ALL_SPELL_SLOTS(state) {
+    for (let slot of state.character.magic.spellSlots) {
+      slot.used = 0;
     }
   },
   SET_SPELL_SLOTS(state, { updatedSlots = [] }) {
@@ -90,6 +96,10 @@ const mutations = {
   },
   SET_AC(state, { ac }) {
     state.character.ac = ac;
+  },
+
+  SET_SKILLS(state, { skills }) {
+    state.character.skills = skills;
   }
 };
 
@@ -103,6 +113,7 @@ const actions = {
   async saveCharacter({ state }) {
     saveCharacter(state.character, state.characterFile);
   },
+
   learnSpell({ commit }, { spellId }) {
     console.log("Learning spell with id " + spellId);
     commit("LEARN_SPELL", { spellId });
@@ -142,6 +153,9 @@ const actions = {
   },
   setSpellSlots({ commit }, { updatedSlots }) {
     commit("SET_SPELL_SLOTS", { updatedSlots });
+  },
+  restoreAllSpellSlots({ commit }) {
+    commit("RESTORE_ALL_SPELL_SLOTS");
   },
 
   setCurrentHp({ commit }, { currentHp }) {
@@ -219,6 +233,7 @@ const actions = {
       currentHp: maxHp
     });
   },
+
   setArmor({ commit }, { armor }) {
     // verify the armor is correct
     if (isNil(armor)) {
@@ -252,21 +267,56 @@ const actions = {
     }
 
     commit("SET_AC", { ac: newAc });
+  },
+
+  setSkills({ commit }, { skills }) {
+    commit("SET_SKILLS", { skills });
   }
 };
 
 const getters = {
   isSpellKnown: state => id => {
     const result = state.character.magic.knownSpellIds.includes(id);
-    if (result) {
-      console.log(
-        `Spells: ${state.character.magic.knownSpellIds} includes ${id}`
-      );
-    }
     return result;
   },
   isSpellPrepared: state => id =>
-    state.character.magic.preparedSpellIds.includes(id)
+    state.character.magic.preparedSpellIds.includes(id),
+  skillModifier: state => skill => {
+    let mod = 0;
+    // first find base stat
+    const stat = state.character.abilityScores.find(
+      score => score.stat === skill.stat
+    );
+    mod += stat.mod;
+
+    // check for proficiency and/or other modifiers
+    if (skill.name in state.character.skills) {
+      const sk = state.character.skills[skill.name];
+      // check for proficiency
+      if ("proficiency" in sk) {
+        mod += Math.floor(sk["proficiency"] * state.character.proficiency);
+      }
+
+      if ("modifier" in sk) {
+        mod += sk["modifier"];
+      }
+    }
+    return mod;
+  },
+  savingThrowBonuses: state => {
+    const ch = state.character;
+    const { savingThrows, proficiency, abilityScores } = ch;
+
+    let res = [];
+    for (let i = 0; i < 6; i++) {
+      let sc = abilityScores[i].mod;
+      if (savingThrows[i]) {
+        sc += proficiency;
+      }
+      res.push(sc);
+    }
+    return res;
+  }
 };
 
 export default {
