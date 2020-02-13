@@ -100,6 +100,17 @@ const mutations = {
 
   SET_SKILLS(state, { skills }) {
     state.character.skills = skills;
+  },
+
+  SET_ABILITY(state, { id, ability }) {
+    const ab = state.character.abilities.find(a => a.id === id);
+    Object.assign(ab, ability);
+  },
+  ADD_ABILITY(state, { ability }) {
+    state.character.abilities.push(ability);
+  },
+  SET_ABILITY_LIST(state, { abilityList }) {
+    state.character.abilites = abilityList;
   }
 };
 
@@ -271,6 +282,22 @@ const actions = {
 
   setSkills({ commit }, { skills }) {
     commit("SET_SKILLS", { skills });
+  },
+
+  setAbility({ commit }, { id, ability }) {
+    if (ability.used < 0 || ability.used > ability.max) {
+      return;
+    }
+    console.log("Setting ability at id " + id);
+    console.log("new used: " + ability.used);
+    commit("SET_ABILITY", { id, ability });
+  },
+
+  addAbility({ commit }, { ability }) {
+    commit("ADD_ABILITY", { ability });
+  },
+  setAbilityList({ commit }, { abilityList }) {
+    commit("SET_ABILITY", { abilityList });
   }
 };
 
@@ -294,7 +321,7 @@ const getters = {
       const sk = state.character.skills[skill.name];
       // check for proficiency
       if ("proficiency" in sk) {
-        mod += Math.floor(sk["proficiency"] * state.character.proficiency);
+        mod += Math.floor(sk["proficiency"] * state.character.proficiencyBonus);
       }
 
       if ("modifier" in sk) {
@@ -305,7 +332,7 @@ const getters = {
   },
   savingThrowBonuses: state => {
     const ch = state.character;
-    const { savingThrows, proficiency, abilityScores } = ch;
+    const { savingThrows, proficiencyBonus, abilityScores } = ch;
 
     let res = [];
     for (let i = 0; i < 6; i++) {

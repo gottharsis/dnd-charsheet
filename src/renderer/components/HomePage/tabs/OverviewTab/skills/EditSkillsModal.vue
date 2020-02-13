@@ -121,7 +121,7 @@ export default {
     }),
     ...mapState({
       currentCharSkills: state => state.character.skills,
-      proficiencyBonus: state => state.character.proficiency,
+      proficiencyBonus: state => state.character.proficiencyBonus,
       abilityScores: state => state.character.abilityScores
     }),
 
