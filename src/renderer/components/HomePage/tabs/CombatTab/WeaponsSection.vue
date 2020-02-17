@@ -3,7 +3,7 @@
     id="weapons-section"
     class="has-padding-top-10 has-padding-bottom-10"
   >
-    <h2 class="has-text-weight-bold is-4 has-text-weight-bold">Weapons</h2>
+    <h2 class="has-text-weight-bold is-size-3 has-text-weight-bold">Weapons</h2>
     <table class="table is-bordered is-striped is-fullwidth">
       <thead>
         <tr>

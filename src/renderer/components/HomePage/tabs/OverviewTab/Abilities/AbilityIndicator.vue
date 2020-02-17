@@ -1,11 +1,10 @@
 <template>
   <div class="ability-indicator">
     <circle-progress v-if="ability !== null" :radius="120" :value="ratio">
-      <div
-        class="has-text-centered has-text-weight-bold"
-        @click="showModal = true"
-      >
-        {{ ability.name }}
+      <div class="has-text-centered has-text-weight-bold cursor-pointer">
+        <b-button @click="showModal = true" type="is-text">
+          {{ ability.name }}
+        </b-button>
       </div>
       <div>{{ available }} / {{ max }}</div>
       <div>
@@ -44,7 +43,7 @@ export default {
     AbilityModal
   },
   props: {
-    abilityId: String
+    abilityId: Number
   },
   computed: {
     ...mapState({

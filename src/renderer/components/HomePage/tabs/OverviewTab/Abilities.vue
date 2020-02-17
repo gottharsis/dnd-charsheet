@@ -1,8 +1,13 @@
 <template>
   <div class="abilities">
-    <h3 class="is-size-3 has-text-weight-bold">
-      Abilities
-    </h3>
+    <div class="is-flex justify-space-between">
+      <h3 class="is-size-3 has-text-weight-bold">
+        Abilities
+      </h3>
+      <b-button class="corner-button" @click="showEditModal = true">
+        <i class="fas fa-edit"></i>
+      </b-button>
+    </div>
     <div class="ability-row">
       <ability-indicator
         v-for="(ab, i) in abilities"
@@ -11,6 +16,10 @@
       >
       </ability-indicator>
     </div>
+
+    <b-modal :active.sync="showEditModal">
+      <abilities-edit-modal />
+    </b-modal>
   </div>
 </template>
 
@@ -18,7 +27,7 @@
 import { createNamespacedHelpers } from "vuex";
 const { mapState } = createNamespacedHelpers("Character");
 import AbilityIndicator from "./Abilities/AbilityIndicator";
-
+import AbilitiesEditModal from "./Abilities/AbilitiesEditModal";
 export default {
   computed: {
     ...mapState({
@@ -26,7 +35,13 @@ export default {
     })
   },
   components: {
-    AbilityIndicator
+    AbilityIndicator,
+    AbilitiesEditModal
+  },
+  data() {
+    return {
+      showEditModal: false
+    };
   }
 };
 </script>
@@ -36,5 +51,9 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.abilities {
+  position: relative;
 }
 </style>

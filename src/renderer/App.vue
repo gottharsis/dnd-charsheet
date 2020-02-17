@@ -44,4 +44,12 @@ export default {
 body {
   height: 100vh;
 }
+
+input.input {
+  background-color: $dark !important;
+}
+
+textarea.textarea {
+  background-color: $dark !important;
+}
 </style>

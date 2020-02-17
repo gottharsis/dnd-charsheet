@@ -1,6 +1,6 @@
 <template>
   <section id="health-section" class="has-padding-top-10 has-padding-bottom-10">
-    <h2 class="has-text-weight-bold is-4 has-text-weight-bold">Health</h2>
+    <h2 class="has-text-weight-bold is-size-3 has-text-weight-bold">Health</h2>
     <div class="level">
       <div class="level-item"><health-indicator /></div>
       <div class="level-item"><heal-form /></div>

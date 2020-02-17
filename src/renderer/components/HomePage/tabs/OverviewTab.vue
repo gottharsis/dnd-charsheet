@@ -24,6 +24,14 @@
                   <p class="has-text-weight-bold is-size-3">{{ speed }}</p>
                 </div>
               </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading is-size-4">Proficiency Bonus</p>
+                  <p class="has-text-weight-bold is-size-3">
+                    {{ proficiencyBonus }}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -80,15 +88,6 @@
 
             <!-- Second Row next to skills -->
             <div class="tile">
-              <!-- Features -->
-              <div class="tile is-parent is-4">
-                <div class="tile is-child">
-                  <div class="box">
-                    <features />
-                  </div>
-                </div>
-              </div>
-
               <!-- Abilities -->
               <div class="tile is-parent is-8">
                 <div class="tile is-child">
@@ -97,7 +96,16 @@
                   </div>
                 </div>
               </div>
+              <!-- Features -->
+              <div class="tile is-parent">
+                <div class="tile is-child">
+                  <div class="box">
+                    <features />
+                  </div>
+                </div>
+              </div>
             </div>
+
             <!-- Third Row next to skills -->
             <!-- <div class="tile"></div> -->
           </div>
@@ -124,7 +132,9 @@ export default {
       dc: state => state.character.magic.dc,
       ac: state => state.character.ac,
       languages: state => state.character.languages,
-      speed: state => state.character.speed
+      speed: state => state.character.speed,
+      proficiencyBonus: state =>
+        modifierString(state.character.proficiencyBonus)
     })
   },
   components: {
