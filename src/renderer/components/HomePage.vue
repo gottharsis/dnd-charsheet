@@ -11,19 +11,7 @@
       </h2>
 
       <div class="container">
-        <div class="tabs is-toggle is-centered">
-          <ul>
-            <li
-              v-for="(tab, i) in tabs"
-              :key="tab.name"
-              :class="{ 'is-active': i == activeIndex }"
-            >
-              <router-link :to="tab.link" @click.native="setActiveIndex(i)">
-                {{ tab.name }}
-              </router-link>
-            </li>
-          </ul>
-        </div>
+        <tabs />
         <router-view />
       </div>
     </div>
@@ -34,6 +22,7 @@
 import { createNamespacedHelpers } from "vuex";
 import AbilityScoresBar from "./HomePage/AbilityScoresBar";
 import ErrorIndicator from "./HomePage/ErrorIndicator";
+import Tabs from "./HomePage/Tabs";
 
 const { mapState, mapActions } = createNamespacedHelpers("Character");
 const { mapGetters: guideGetters, mapState: Guide } = createNamespacedHelpers(
@@ -50,37 +39,12 @@ export default {
     }
   },
   methods: {
-    ...guideGetters(["getClassById"]),
-    setActiveIndex(i) {
-      this.activeIndex = i;
-    }
+    ...guideGetters(["getClassById"])
   },
   components: {
     AbilityScoresBar,
-    ErrorIndicator
-  },
-  data() {
-    return {
-      tabs: [
-        {
-          name: "Overview",
-          link: "/overview"
-        },
-        {
-          name: "Spells",
-          link: "/spells"
-        },
-        {
-          name: "Combat",
-          link: "/combat"
-        },
-        {
-          name: "Inventory",
-          link: "/inventory"
-        }
-      ],
-      activeIndex: 0
-    };
+    ErrorIndicator,
+    Tabs
   }
 };
 </script>
