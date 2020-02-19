@@ -36,7 +36,7 @@ export default {
 @import "~bulmaswatch/superhero/overrides";
 
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
-
+@import "~animate.css/animate.css";
 #app {
   overflow: hidden;
 }

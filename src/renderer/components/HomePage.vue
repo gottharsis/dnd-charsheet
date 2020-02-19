@@ -15,6 +15,7 @@
         <router-view />
       </div>
     </div>
+    <dice-roller />
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import { createNamespacedHelpers } from "vuex";
 import AbilityScoresBar from "./HomePage/AbilityScoresBar";
 import ErrorIndicator from "./HomePage/ErrorIndicator";
 import Tabs from "./HomePage/Tabs";
+import DiceRoller from "./HomePage/DiceRoller";
 
 const { mapState, mapActions } = createNamespacedHelpers("Character");
 const { mapGetters: guideGetters, mapState: Guide } = createNamespacedHelpers(
@@ -44,7 +46,8 @@ export default {
   components: {
     AbilityScoresBar,
     ErrorIndicator,
-    Tabs
+    Tabs,
+    DiceRoller
   }
 };
 </script>
