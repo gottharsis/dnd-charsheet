@@ -16,6 +16,7 @@ export default {};
 <style lang="scss" scoped>
 .dice-roller-button {
   height: 56px;
+  cursor: pointer;
 
   &__button {
     vertical-align: middle;

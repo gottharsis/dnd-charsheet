@@ -11,7 +11,7 @@
       </h2>
 
       <div class="container">
-        <tabs />
+        <tabs ref="tabs" />
         <router-view />
       </div>
     </div>
@@ -31,6 +31,8 @@ const { mapGetters: guideGetters, mapState: Guide } = createNamespacedHelpers(
   "Guide"
 );
 
+const { mapActions: hotkeys } = createNamespacedHelpers("Hotkeys");
+
 export default {
   computed: {
     ...mapState({
@@ -41,13 +43,46 @@ export default {
     }
   },
   methods: {
-    ...guideGetters(["getClassById"])
+    ...guideGetters(["getClassById"]),
+    ...hotkeys(["openDiceRoller"]),
+    keyListener(event) {
+      if (!event.shiftKey) return;
+      switch (event.key) {
+        case "R":
+          this.openDiceRoller();
+          break;
+        case "O":
+          this.$router.push("/overview");
+          this.$refs.tabs.setActiveIndex(0);
+          break;
+        case "S":
+          this.$router.push("/spells");
+          this.$refs.tabs.setActiveIndex(1);
+          break;
+        case "C":
+          this.$router.push("/combat");
+          this.$refs.tabs.setActiveIndex(2);
+          break;
+        case "I":
+          this.$router.push("/inventory");
+          this.$refs.tabs.setActiveIndex(3);
+      }
+    }
   },
   components: {
     AbilityScoresBar,
     ErrorIndicator,
     Tabs,
     DiceRoller
+  },
+  data() {
+    return {};
+  },
+  mounted() {
+    window.addEventListener("keyup", this.keyListener);
+  },
+  beforeDestroy() {
+    window.removeEventListener("keyup", this.keyListener);
   }
 };
 </script>

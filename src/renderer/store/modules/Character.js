@@ -297,7 +297,7 @@ const actions = {
     commit("ADD_ABILITY", { ability });
   },
   setAbilityList({ commit }, { abilityList }) {
-    commit("SET_ABILITY", { abilityList });
+    commit("SET_ABILITY_LIST", { abilityList });
   }
 };
 

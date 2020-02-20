@@ -22,6 +22,9 @@
 <script>
 import { mixin as clickaway } from "vue-clickaway";
 import { DiceRoll } from "rpg-dice-roller/lib/esm/bundle";
+import { createNamespacedHelpers } from "vuex";
+const { mapActions } = createNamespacedHelpers("Hotkeys");
+
 export default {
   methods: {
     roll() {
@@ -32,9 +35,10 @@ export default {
     },
     closeOnEsc(event) {
       if (event.key === "Escape") {
-        this.$emit("close");
+        this.closeDiceRoller();
       }
-    }
+    },
+    ...mapActions(["closeDiceRoller"])
   },
   data() {
     return {

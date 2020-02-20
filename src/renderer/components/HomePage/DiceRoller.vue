@@ -7,9 +7,8 @@
       leave-active-class="animated fadeOutDown faster"
     >
       <dice-roller-main
-        v-on-clickaway="hide"
+        v-on-clickaway="closeDiceRoller"
         v-if="showDiceRoller"
-        @close="hide"
       />
     </transition>
   </div>
@@ -19,31 +18,39 @@
 import DiceRollerMain from "./DiceRoller/DiceRollerMain";
 import DiceRollerButton from "./DiceRoller/DiceRollerButton";
 import { mixin as clickaway } from "vue-clickaway";
+
+import { createNamespacedHelpers } from "vuex";
+const { mapState, mapActions } = createNamespacedHelpers("Hotkeys");
 export default {
   components: {
     DiceRollerMain,
     DiceRollerButton
   },
+  computed: {
+    ...mapState({
+      showDiceRoller: state => state.isDiceRollerOpen
+    })
+  },
   methods: {
-    show() {
-      this.showDiceRoller = true;
-    },
-    hide() {
-      this.showDiceRoller = false;
-    },
+    // show() {
+    //   this.showDiceRoller = true;
+    // },
+    // hide() {
+    //   this.showDiceRoller = false;
+    // },
+    ...mapActions(["openDiceRoller", "closeDiceRoller"]),
     toggle() {
       if (this.showDiceRoller) {
-        this.hide();
+        this.closeDiceRoller();
       } else {
-        this.show();
+        this.openDiceRoller();
       }
     }
   },
   mixins: [clickaway],
+
   data() {
-    return {
-      showDiceRoller: false
-    };
+    return {};
   }
 };
 </script>

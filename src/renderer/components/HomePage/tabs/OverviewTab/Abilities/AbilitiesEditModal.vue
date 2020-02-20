@@ -20,6 +20,9 @@
                     placeholder="Name..."
                   ></b-input>
                 </div>
+                <div class="card-header-icon">
+                  <i class="fas fa-trash" @click="remove(ability.id)"></i>
+                </div>
               </header>
               <div class="card-content">
                 <b-field label="Description">
@@ -53,7 +56,13 @@
             </b-button>
           </div>
         </div>
+        <b-button native-type="submit" class="is-success">
+          Submit changes
+        </b-button>
       </form>
+      <b-button class="is-primary" @click="$parent.close()">
+        Close
+      </b-button>
     </div>
   </div>
 </template>
@@ -61,23 +70,37 @@
 <script>
 import max from "lodash/max";
 import deepclone from "lodash/cloneDeep";
+import remove from "lodash/remove";
+import uuidv4 from "uuid/v4";
 
 import { createNamespacedHelpers } from "vuex";
-const { mapState } = createNamespacedHelpers("Character");
+const { mapState, mapActions } = createNamespacedHelpers("Character");
 
 export default {
   methods: {
-    submit() {},
+    ...mapActions(["setAbilityList"]),
+    submit() {
+      const ab = this.abilities.filter(i => i.name !== "");
+      this.setAbilityList({
+        abilityList: ab
+      });
+      this.$parent.close();
+    },
     addAbility() {
+      const uid = uuidv4();
+      const id = "ability_" + uid;
       const newAbility = {
         name: "",
         description: "",
-        max: -1,
+        max: 0,
         used: 0,
-        id: this.newId
+        id
       };
       this.abilities.push(newAbility);
       this.newId++;
+    },
+    remove(id) {
+      this.abilities = this.abilities.filter(i => i.id !== id);
     }
   },
   computed: {
