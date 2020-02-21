@@ -24,7 +24,7 @@ const dataStores = [
   },
   {
     name: "spells",
-    file: "spell_short.json"
+    file: "spells.json"
   },
   {
     name: "weapons",
@@ -86,6 +86,7 @@ const getters = {
   getRaceById: state => id => state.races.find(r => r.id === id),
   getSkillById: state => id => state.skills.find(s => s.id === id),
   getSpellById: state => id => state.spells.find(s => s.id === id),
+  getSpellBySlug: state => slug => state.spells.find(s => s.slug === slug),
   getWeaponById: state => id => state.weapons.find(w => w.id === id),
   getStatById: state => id => state.stats.find(s => s.id === id)
 };

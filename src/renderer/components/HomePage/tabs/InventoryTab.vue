@@ -8,10 +8,20 @@
         </div>
       </div>
     </div>
-    <h2 class="is-size-3 has-text-centered has-text-weight-bold">Items</h2>
-    <table class="table is-bordered is-striped is-fullwidth" id="items-table">
+    <div class="flex-row justify-space-between">
+      <h2 class="is-size-3 has-text-centered has-text-weight-bold">Items</h2>
+      <div>
+        <b-button>
+          <i class="fas fa-plus"></i>
+        </b-button>
+        <b-button @click="isInventoryEditOpen = true">
+          <i class="fas fa-edit"></i>
+        </b-button>
+      </div>
+    </div>
+    <table class="table is-bordered is-fullwidth" id="items-table">
       <thead>
-        <tr>
+        <tr class="has-background-grey-darker">
           <th class="has-text-centered">Name</th>
           <th class="has-text-centered">Quantity</th>
           <th class="has-text-centered">Weight</th>
@@ -27,7 +37,9 @@
         </tr>
       </tbody>
     </table>
-
+    <b-modal :active.sync="isInventoryEditOpen">
+      <edit-inventory-modal />
+    </b-modal>
     <h2 class="is-size-3 has-text-centered has-text-weight-bold">
       Magic Items
     </h2>
@@ -48,6 +60,7 @@ import { createNamespacedHelpers } from "vuex";
 const { mapState } = createNamespacedHelpers("Character");
 
 import MagicItem from "./InventoryTab/MagicItem";
+import EditInventoryModal from "./InventoryTab/EditInventoryModal";
 
 export default {
   computed: {
@@ -57,13 +70,20 @@ export default {
     }),
     totalWeight() {
       return (
-        this.items.map(i => i.weight * i.quantity).reduce((a, b) => a + b) +
-        this.magicItems.map(i => i.weight).reduce((a, b) => a + b)
+        this.items.map(i => i.weight * i.quantity).reduce((a, b) => a + b, 0) +
+        this.magicItems.map(i => i.weight).reduce((a, b) => a + b, 0)
       );
     }
   },
   components: {
-    MagicItem
+    MagicItem,
+    EditInventoryModal
+  },
+  data() {
+    return {
+      isInventoryEditOpen: false,
+      isMagicEditOpen: false
+    };
   }
 };
 </script>

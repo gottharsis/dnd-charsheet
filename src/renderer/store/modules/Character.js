@@ -111,6 +111,23 @@ const mutations = {
   },
   SET_ABILITY_LIST(state, { abilityList }) {
     state.character.abilites = abilityList;
+  },
+
+  SET_INVENTORY_ITEMS(state, { items }) {
+    state.character.inventory.items = items;
+  },
+  SET_INVENTORY_MAGIC_ITEMS(state, { magicItems }) {
+    state.character.inventory.magicItems = magicItems;
+  },
+  UPDATE_ITEM(state, { id, newItem }) {
+    const item = state.character.inventory.items.find(i => i.id === id);
+    if (isNil(item)) return;
+    Object.assign(item, newItem);
+  },
+  UPDATE_MAGIC_ITEM(state, { id, newItem }) {
+    const item = state.character.inventory.magicItems.find(i => i.id === id);
+    if (isNil(item)) return;
+    Object.assign(item, newItem);
   }
 };
 
@@ -298,6 +315,19 @@ const actions = {
   },
   setAbilityList({ commit }, { abilityList }) {
     commit("SET_ABILITY_LIST", { abilityList });
+  },
+
+  setInventoryItems({ commit }, { items }) {
+    commit("SET_INVENTORY_ITEMS", { items });
+  },
+  setInventoryMagicItems({ commit }, { magicItems }) {
+    commit("SET_INVENTORY_MAGIC_ITEMS", { magicItems });
+  },
+  updateItem({ commit }, { id, newItem }) {
+    commit("UPDATE_ITEM", { id, newItem });
+  },
+  updateMagicItem({ commit }, { id, newItem }) {
+    commit("UPDATE_MAGIC_ITEM", { id, newItem });
   }
 };
 
