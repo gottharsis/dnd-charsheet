@@ -37,6 +37,10 @@ export default new Router({
           component: require("@/components/HomePage/tabs/InventoryTab").default
         },
         {
+          path: "/notes",
+          component: require("@/components/HomePage/tabs/NotesTab").default
+        },
+        {
           path: "*",
           redirect: "/overview"
         },

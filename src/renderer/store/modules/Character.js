@@ -128,6 +128,16 @@ const mutations = {
     const item = state.character.inventory.magicItems.find(i => i.id === id);
     if (isNil(item)) return;
     Object.assign(item, newItem);
+  },
+
+  SET_NOTES(state, { notes }) {
+    state.character.notes = notes;
+  },
+  UPDATE_NOTE(state, { note }) {
+    const currNote = state.character.notes.find(n => n.id === note.id);
+
+    if (isNil(note)) return;
+    Object.assign(currNote, note);
   }
 };
 
@@ -328,6 +338,17 @@ const actions = {
   },
   updateMagicItem({ commit }, { id, newItem }) {
     commit("UPDATE_MAGIC_ITEM", { id, newItem });
+  },
+
+  setNotes({ commit }, { notes }) {
+    commit("SET_NOTES", { notes });
+  },
+  updateNote({ commit }, { note }) {
+    commit("UPDATE_NOTE", { note });
+  },
+  deleteNote({ commit, state }, { note }) {
+    const notes = state.character.notes.filter(n => n.id !== note.id);
+    commit("SET_NOTES", { notes });
   }
 };
 

@@ -34,6 +34,10 @@ export default {
         {
           name: "Inventory",
           link: "/inventory"
+        },
+        {
+          name: "Notes",
+          link: "/notes"
         }
       ],
       activeIndex: 0

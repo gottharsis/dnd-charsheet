@@ -66,6 +66,7 @@
     "bulmaswatch": "^0.7.5",
     "deepmerge": "^4.2.2",
     "fuse": "^0.4.0",
+    "markdown-it": "^10.0.0",
     "rpg-dice-roller": "^4.0.2",
     "uuid": "^3.4.0",
     "vue": "^2.5.16",

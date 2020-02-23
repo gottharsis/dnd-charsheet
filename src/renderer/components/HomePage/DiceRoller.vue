@@ -1,5 +1,5 @@
 <template>
-  <div class="dice-roller">
+  <div class="dice-roller" :style="size">
     <dice-roller-button @click="toggle" />
     <transition
       name="dice-roller-transition"
@@ -29,7 +29,20 @@ export default {
   computed: {
     ...mapState({
       showDiceRoller: state => state.isDiceRollerOpen
-    })
+    }),
+    size() {
+      if (this.showDiceRoller) {
+        return {
+          width: 300 + "px",
+          height: "480px"
+        };
+      } else {
+        return {
+          width: "auto",
+          height: "auto"
+        };
+      }
+    }
   },
   methods: {
     // show() {
@@ -59,14 +72,15 @@ export default {
 .dice-roller {
   z-index: 10;
   position: fixed;
-  width: 300px;
-  height: 480px;
+  // width: 300px;
+  // height: 480px;
   left: auto;
   top: auto;
   right: 30px;
   bottom: 50px;
   display: flex;
   flex-direction: column-reverse;
+  transition: width 1s;
 }
 
 @keyframes fade-in-a {
