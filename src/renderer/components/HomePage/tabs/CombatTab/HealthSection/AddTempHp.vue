@@ -2,9 +2,6 @@
   <div id="add-temp-hp">
     <div class="box">
       <form @submit.prevent="submit">
-        <div class="has-text-weight-bold has-text-centered">
-          Set Temporary HP
-        </div>
         <div class="field">
           <label for="" class="label">Temporary HP</label>
           <div class="control">

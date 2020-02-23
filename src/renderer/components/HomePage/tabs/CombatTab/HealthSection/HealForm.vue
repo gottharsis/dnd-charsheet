@@ -1,5 +1,5 @@
 <template>
-  <div id="heal-form">
+  <div id="heal-form" class="has-margin-bottom-10">
     <div class="box">
       <form @submit.prevent="submit" class="has-margin-bottom-20">
         <div class="has-text-weight-bold has-text-centered">Heal Damage</div>
@@ -9,9 +9,11 @@
             <input class="input" type="number" name="" id="" v-model="amount" />
           </div>
         </div>
-        <button type="submit" class="button">Heal</button>
+        <div>
+          <button type="submit" class="button">Heal</button>
+          <button class="button is-primary" @click="healAll">Heal all</button>
+        </div>
       </form>
-      <button class="button is-primary" @click="healAll">Heal all</button>
     </div>
   </div>
 </template>

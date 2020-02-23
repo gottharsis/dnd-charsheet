@@ -91,6 +91,16 @@ const mutations = {
   SET_TEMP_HP(state, { tempHp }) {
     state.character.health.tempHp = tempHp;
   },
+  SET_REMAINING_HIT_DICE(state, { remainingHitDice }) {
+    state.character.health.remainingHitDice = remainingHitDice;
+  },
+  SET_MAX_HIT_DICE(state, { maxHitDice }) {
+    state.character.health.maxHitDice = maxHitDice;
+    state.character.health.remainingHitDice = maxHitDice;
+  },
+  SET_HIT_DICE(state, { hitDice }) {
+    state.character.health.hitDice = hitDice;
+  },
   SET_ARMOR(state, { armor }) {
     state.character.armor = armor;
   },
@@ -270,6 +280,18 @@ const actions = {
     commit("SET_CURRENT_HP", {
       currentHp: maxHp
     });
+  },
+  setRemainingHitDice({ state, commit }, { remainingHitDice }) {
+    const max = state.character.health.maxHitDice;
+    if (remainingHitDice <= 0 || remainingHitDice > max) return;
+    commit("SET_REMAINING_HIT_DICE", { remainingHitDice });
+  },
+  setMaxHitDice({ commit }, { maxHitDice }) {
+    if (maxHitDice <= 0) return;
+    commit("SET_MAX_HIT_DICE", { maxHitDice });
+  },
+  setHitDice({ commit }, { hitDice }) {
+    commit("SET_HIT_DICE", { hitDice });
   },
 
   setArmor({ commit }, { armor }) {
