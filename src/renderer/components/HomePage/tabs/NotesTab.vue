@@ -23,7 +23,7 @@
                 {{ note.title }}
               </a>
 
-              <b-button type="is-text" @click="deleteNote(note)">
+              <b-button type="is-text" @click="deleteNote({ note })">
                 <i class="fas fa-trash"></i>
               </b-button>
             </li>
@@ -55,18 +55,18 @@ export default {
   },
   computed: {
     ...mapState({
-      currentNotes: state => state.character.notes
+      notes: state => state.character.notes
     })
   },
   data() {
     return {
-      notes: [],
+      // notes: [],
       activeNoteId: -1,
       activeNote: null
     };
   },
   mounted() {
-    this.notes = deepclone(this.currentNotes);
+    // this.notes = deepclone(this.currentNotes);
     this.activeNote = this.notes[0];
     this.activeNoteId = this.activeNote.id;
   },
@@ -83,8 +83,9 @@ export default {
         title: "Untitled Note",
         content: ""
       };
-      this.notes.push(note);
-      this.setNotes({ notes: this.notes });
+      const newNotes = deepclone(this.notes);
+      newNotes.push(note);
+      this.setNotes({ notes: newNotes });
     }
   }
 };

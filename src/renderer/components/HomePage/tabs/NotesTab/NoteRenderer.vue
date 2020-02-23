@@ -10,11 +10,11 @@
     </div>
     <form v-else class="is-full-height flex-column">
       <div>
-        <b-input v-model="note.title"></b-input>
+        <b-input v-model="localNote.title"></b-input>
       </div>
       <textarea
         class="textarea is-full-height"
-        v-model="note.content"
+        v-model="localNote.content"
         ref="text"
       ></textarea>
       <div>
@@ -30,6 +30,7 @@
 import md from "./md-renderer";
 import { mixin as clickaway } from "vue-clickaway";
 import { createNamespacedHelpers as help } from "vuex";
+import deepclone from "lodash/cloneDeep";
 
 const { mapActions } = help("Character");
 
@@ -38,6 +39,9 @@ export default {
     note: Object
   },
   mixins: [clickaway],
+  mounted() {
+    this.localNote = deepclone(this.note);
+  },
   computed: {
     html() {
       if (this.note == null) {
@@ -50,17 +54,24 @@ export default {
     }
   },
   data() {
-    return { editMode: false };
+    return {
+      editMode: false,
+      localNote: {}
+    };
   },
   methods: {
     ...mapActions(["updateNote"]),
     edit() {
       this.editMode = true;
+      this.cloneNote();
       console.log(this.$refs["text"]);
     },
     save() {
-      this.updateNote({ note: this.note });
+      this.updateNote({ note: this.localNote });
       this.editMode = false;
+    },
+    cloneNote() {
+      this.localNote = deepclone(this.note);
     }
   }
 };
