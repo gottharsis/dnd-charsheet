@@ -36,6 +36,9 @@ const mutations = {
     }
     state.character.magic.knownSpellIds.push(spellId);
   },
+  PREPARE_SPELL(state, { spellId }) {
+    state.character.magic.preparedSpellIds.push(spellId);
+  },
   CAST_SPELL(state, { level }) {
     const slot = state.character.magic.spellSlots.find(s => s.level === level);
 
@@ -165,6 +168,11 @@ const actions = {
   learnSpell({ commit }, { spellId }) {
     console.log("Learning spell with id " + spellId);
     commit("LEARN_SPELL", { spellId });
+  },
+  prepareSpell({ commit, getters }, { spellId }) {
+    const isKnown = getters.isSpellKnown(spellId);
+    if (!isKnown) return;
+    commit("PREPARE_SPELL", { spellId });
   },
   castSpell({ commit, state, dispatch }, { level }) {
     console.log("Cast spell of level " + level);

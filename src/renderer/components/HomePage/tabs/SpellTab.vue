@@ -35,6 +35,14 @@
         Restore Slots
       </b-button>
     </div>
+    <div class="flex-row justify-space-between">
+      <h2 class="is-size-2 has-text-weight-bold">Known Spells</h2>
+      <div>
+        <b-button @click="showAllSpells = true">
+          All Spells
+        </b-button>
+      </div>
+    </div>
     <table class="table is-bordered  is-fullwidth has-text-centered">
       <thead>
         <tr class="has-background-link">
@@ -60,9 +68,15 @@
       <edit-slots />
     </b-modal>
 
-    <b-modal :active="shouldShowSpellDetail" @close="closeSpellDetail">
-      <spell-detail :spell="detailSpell" />
+    <b-modal :active.sync="shouldShowSpellDetail" @close="closeSpellDetail">
+      <div class="box">
+        <spell-detail :spell="detailSpell" />
+      </div>
     </b-modal>
+
+    <!-- <b-modal :active.sync="showAllSpells"> -->
+    <all-spells />
+    <!-- </b-modal> -->
   </div>
 </template>
 
@@ -72,6 +86,7 @@ const { mapState: GuideState } = createNamespacedHelpers("Guide");
 import SpellSlotIndicator from "./SpellTab/SpellSlotIndicator";
 import EditSlots from "./SpellTab/EditSlots";
 import SpellDetail from "./SpellTab/SpellDetail";
+import AllSpells from "./SpellTab/AllSpells";
 
 const {
   mapGetters: CharGetter,
@@ -111,13 +126,15 @@ export default {
   data() {
     return {
       isEditModalOpen: false,
-      detailSpell: null
+      detailSpell: null,
+      showAllSpells: false
     };
   },
   components: {
     SpellSlotIndicator,
     EditSlots,
-    SpellDetail
+    SpellDetail,
+    AllSpells
   }
 };
 </script>

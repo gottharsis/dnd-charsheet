@@ -1,14 +1,19 @@
 <template>
   <div class="content has-background-dark is-full-height">
-    <div v-if="!editMode">
+    <template v-if="!editMode">
       <div class="flex-row justify-flex-end">
         <b-button @click="edit">
           <i class="fa fa-edit"></i>
         </b-button>
       </div>
-      <div class="has-padding-50" v-html="html"></div>
-    </div>
-    <form v-else class="is-full-height flex-column">
+      <div
+        class="has-padding-50"
+        v-html="html"
+        style="overflow-y: scroll; height: calc(100% - 2.5em)"
+        @dblclick="edit"
+      ></div>
+    </template>
+    <form v-else class="is-full-height flex-column" v-on-clickaway="save">
       <div>
         <b-input v-model="localNote.title"></b-input>
       </div>

@@ -45,11 +45,24 @@ body {
   height: 100vh;
 }
 
-input.input {
+input {
   background-color: $dark !important;
+  color: $light;
 }
 
 textarea.textarea {
   background-color: $dark !important;
+}
+
+* {
+  &::-webkit-scrollbar {
+    background: $black;
+    width: 5px;
+
+    &-thumb {
+      background: $grey-light;
+      border-radius: 5px;
+    }
+  }
 }
 </style>
