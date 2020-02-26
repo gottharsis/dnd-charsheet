@@ -36,8 +36,20 @@ const mutations = {
     }
     state.character.magic.knownSpellIds.push(spellId);
   },
+  FORGET_SPELL(state, { spellId }) {
+    const newSp = state.character.magic.knownSpellIds.filter(
+      i => i !== spellId
+    );
+    state.character.magic.knownSpellIds = newSp;
+  },
   PREPARE_SPELL(state, { spellId }) {
     state.character.magic.preparedSpellIds.push(spellId);
+  },
+  UNPREPARE_SPELL(state, { spellId }) {
+    const newSp = state.character.magic.preparedSpellIds.filter(
+      i => i !== spellId
+    );
+    state.character.magic.preparedSpellIds = newSp;
   },
   CAST_SPELL(state, { level }) {
     const slot = state.character.magic.spellSlots.find(s => s.level === level);
@@ -169,10 +181,18 @@ const actions = {
     console.log("Learning spell with id " + spellId);
     commit("LEARN_SPELL", { spellId });
   },
+  forgetSpell({ commit }, { spellId }) {
+    commit("FORGET_SPELL", { spellId });
+  },
   prepareSpell({ commit, getters }, { spellId }) {
     const isKnown = getters.isSpellKnown(spellId);
     if (!isKnown) return;
     commit("PREPARE_SPELL", { spellId });
+  },
+  unprepareSpell({ commit, getters }, { spellId }) {
+    const isKnown = getters.isSpellKnown(spellId);
+    if (!isKnown) return;
+    commit("UNPREPARE_SPELL", { spellId });
   },
   castSpell({ commit, state, dispatch }, { level }) {
     console.log("Cast spell of level " + level);

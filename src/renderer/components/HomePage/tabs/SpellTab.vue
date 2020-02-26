@@ -43,23 +43,49 @@
         </b-button>
       </div>
     </div>
+    <section class="filter-spells-control">
+      <div></div>
+    </section>
     <table class="table is-bordered  is-fullwidth has-text-centered">
       <thead>
         <tr class="has-background-link">
-          <th class="has-text-centered">Name</th>
-          <th class="has-text-centered">Level</th>
+          <th class="has-text-centered" @click="cycleSort('name')">
+            Name <span v-html="sortIcons['name']" />
+          </th>
+          <th class="has-text-centered" @click="cycleSort('level')">
+            Level <span v-html="sortIcons['level']" />
+          </th>
           <th class="has-text-centered">School</th>
+          <th class="has-text-centered">Prepared</th>
         </tr>
       </thead>
       <tbody>
         <tr
-          v-for="spell in knownSpells"
+          v-for="spell in sortedSpells"
           :key="spell.id"
           @click="showSpellDetail(spell)"
         >
           <td>{{ spell.name }}</td>
           <td>{{ spell.level }}</td>
           <td>{{ spell.school }}</td>
+          <td>
+            <template v-if="spell.isPrepared">
+              <b-button
+                type="is-danger"
+                @click.prevent.stop="unprepareSpell({ spellId: spell.id })"
+              >
+                Unprepare
+              </b-button>
+            </template>
+            <template v-else>
+              <b-button
+                type="is-info"
+                @click.prevent.stop="prepareSpell({ spellId: spell.id })"
+              >
+                Prepare
+              </b-button>
+            </template>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -68,7 +94,7 @@
       <edit-slots />
     </b-modal>
 
-    <b-modal :active.sync="shouldShowSpellDetail" @close="closeSpellDetail">
+    <b-modal :active="shouldShowSpellDetail" @close="closeSpellDetail">
       <div class="box">
         <spell-detail :spell="detailSpell" />
       </div>
@@ -87,6 +113,7 @@ import SpellSlotIndicator from "./SpellTab/SpellSlotIndicator";
 import EditSlots from "./SpellTab/EditSlots";
 import SpellDetail from "./SpellTab/SpellDetail";
 import AllSpells from "./SpellTab/AllSpells";
+import orderBy from "lodash/orderBy";
 
 const {
   mapGetters: CharGetter,
@@ -98,6 +125,7 @@ export default {
     ...GuideState(["spells"]),
     ...charState({
       knownIds: state => state.character.magic.knownSpellIds,
+      preparedIds: state => state.character.magic.preparedSpellIds,
       spellLevels: state =>
         state.character.magic.spellSlots
           .filter(i => i.max > 0)
@@ -106,28 +134,87 @@ export default {
       bonus: state => state.character.magic.bonus,
       castingAbility: state => state.character.magic.castingAbility
     }),
+
     knownSpells() {
-      return this.spells.filter(({ id }) => this.knownIds.includes(id));
+      return this.spells
+        .filter(({ id }) => this.knownIds.includes(id))
+        .map(sp => ({
+          ...sp,
+          isPrepared: this.preparedIds.includes(sp.id)
+        }));
+    },
+    sortedSpells() {
+      const orders = this.sort.properties.map(prop => this.sort.order[prop]);
+      const order = orderBy(this.knownSpells, this.sort.properties, orders);
+      return order;
     },
     shouldShowSpellDetail() {
       return this.detailSpell !== null;
+    },
+    sortIcons() {
+      return {
+        name: this.getSortIcon("name"),
+        level: this.getSortIcon("level")
+      };
     }
   },
   methods: {
-    ...CharGetter(["isSpellKnown"]),
-    ...charActions(["learnSpell", "restoreAllSpellSlots"]),
+    ...CharGetter(["isSpellKnown", "isSpellPrepared"]),
+    ...charActions([
+      "learnSpell",
+      "restoreAllSpellSlots",
+      "prepareSpell",
+      "unprepareSpell"
+    ]),
     showSpellDetail(spell) {
       this.detailSpell = spell;
     },
     closeSpellDetail() {
       this.detailSpell = null;
+    },
+    prepare(spell) {
+      this.prepareSpell({ spellId: spell.id });
+    },
+
+    unprepare(spell) {
+      this.unprepareSpell({ spellId: spell.id });
+    },
+    cycleSort(prop) {
+      if (this.sort.order[prop] == null) {
+        this.sort.order[prop] = "asc";
+        this.sort.properties.push(prop);
+      } else if (this.sort.order[prop] === "asc") {
+        this.sort.order[prop] = "desc";
+      } else {
+        this.sort.order[prop] = null;
+        const idx = this.sort.properties.indexOf(prop);
+        this.sort.properties.splice(idx, 1);
+      }
+    },
+    getSortIcon(prop) {
+      if (this.sort.order[prop] == "asc")
+        return '<i class="fas fa-sort-up"></i>';
+      if (this.sort.order[prop] == "desc")
+        return '<i class="fas fa-sort-down"></i>';
+      return "";
     }
   },
   data() {
     return {
       isEditModalOpen: false,
       detailSpell: null,
-      showAllSpells: false
+      showAllSpells: false,
+      searchString: "",
+      selected: {
+        levels: []
+      },
+      sort: {
+        properties: [],
+        order: {
+          name: null,
+          level: null
+        }
+      }
     };
   },
   components: {

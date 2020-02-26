@@ -70,6 +70,14 @@
       <div style="flex: 3; overflow-y: scroll" class="has-padding-15">
         <div v-if="selectedSpell">
           <spell-detail :spell="selectedSpell" v-if="selectedSpell" />
+          <template v-if="currentSpellKnown">
+            <b-button type="is-danger" @click="forgetCurrentSpell">
+              <i class="fas fa-cancel"></i> Forget
+            </b-button>
+          </template>
+          <b-button v-else type="is-info" @click="learnCurrentSpell">
+            <i class="fas fa-scroll"></i> Learn
+          </b-button>
         </div>
         <div v-else class="has-padding-25 is-italic">
           Click on a spell on the left to see its description
@@ -118,6 +126,9 @@ export default {
     ...guide({
       spells: state => state.spells
     }),
+    currentSpellKnown() {
+      return this.isSpellKnown()(this.selectedSpell.id);
+    },
     searchResults() {
       const search = this.searchString
         ? this.fuse.search(this.searchString)
@@ -212,8 +223,8 @@ export default {
     search: debounce(function() {
       this.searchString = this.searchStringInput;
     }, 500),
-    ...mapGetters[("isSpellKnown", "isSpellPrepared")],
-    ...mapActions(["learnSpell"]),
+    ...mapGetters(["isSpellKnown", "isSpellPrepared"]),
+    ...mapActions(["learnSpell", "forgetSpell"]),
 
     nextPage() {
       this.offset += this.resultsPerPage;
@@ -221,6 +232,12 @@ export default {
     prevPage() {
       this.offset -= this.resultsPerPage;
       if (this.offset < 0) this.offset = 0;
+    },
+    learnCurrentSpell() {
+      this.learnSpell({ spellId: this.selectedSpell.id });
+    },
+    forgetCurrentSpell() {
+      this.forgetSpell({ spellId: this.selectedSpell.id });
     }
   },
   components: {
