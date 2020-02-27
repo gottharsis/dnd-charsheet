@@ -1,13 +1,6 @@
 <template>
   <div id="inventory-tab">
-    <div class="level">
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="heading is-size-4">Total Weight</p>
-          <p class="has-text-weight-bold is-size-3">{{ totalWeight }} lb</p>
-        </div>
-      </div>
-    </div>
+    <wealth />
     <div class="flex-row justify-space-between">
       <h2 class="is-size-3 has-text-centered has-text-weight-bold">Items</h2>
       <div>
@@ -37,6 +30,13 @@
         </tr>
       </tbody>
     </table>
+    <div class="flex-row justify-flex-end">
+      <div class="is-size-3">
+        <span class="has-text-weight-bold">Total Weight:</span>
+        {{ totalWeight }} lb.
+      </div>
+    </div>
+
     <b-modal :active.sync="isInventoryEditOpen">
       <edit-inventory-modal />
     </b-modal>
@@ -61,6 +61,7 @@ const { mapState } = createNamespacedHelpers("Character");
 
 import MagicItem from "./InventoryTab/MagicItem";
 import EditInventoryModal from "./InventoryTab/EditInventoryModal";
+import Wealth from "./InventoryTab/Wealth";
 
 export default {
   computed: {
@@ -77,7 +78,8 @@ export default {
   },
   components: {
     MagicItem,
-    EditInventoryModal
+    EditInventoryModal,
+    Wealth
   },
   data() {
     return {

@@ -154,6 +154,9 @@ const mutations = {
     if (isNil(item)) return;
     Object.assign(item, newItem);
   },
+  SET_WEALTH(state, { wealth }) {
+    state.character.inventory.wealth = wealth;
+  },
 
   SET_NOTES(state, { notes }) {
     state.character.notes = notes;
@@ -388,6 +391,9 @@ const actions = {
   },
   updateMagicItem({ commit }, { id, newItem }) {
     commit("UPDATE_MAGIC_ITEM", { id, newItem });
+  },
+  setWealth({ commit }, { wealth }) {
+    commit("SET_WEALTH", { wealth });
   },
 
   setNotes({ commit }, { notes }) {
