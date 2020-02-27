@@ -66,6 +66,11 @@ export default {
         case "I":
           this.$router.push("/inventory");
           this.$refs.tabs.setActiveIndex(3);
+          break;
+        case "N":
+          this.$router.push("/notes");
+          this.$refs.tabs.setActiveIndex(4);
+          break;
       }
     }
   },
