@@ -1,6 +1,6 @@
 import path from "path";
 import fs from "fs";
-const baseDir = "/home/ayush/.dndCharSheet";
+const baseDir = "~/code/projects/dnd-charsheet/test_files";
 
 /**
  * reads a character file in json format and returns the object with the data

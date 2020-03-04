@@ -1,0 +1,41 @@
+{
+  "name": "Test Multiclassing",
+    "abilityScores": [
+        {
+            "stat": "STR",
+            "score": 11,
+            "mod": 0
+        },
+        {
+            "stat": "DEX",
+            "score": 16,
+            "mod": 3
+        },
+        {
+            "stat": "CON",
+            "score": 16,
+            "mod": 3
+        },
+        {
+            "stat": "INT",
+            "score": 12,
+            "mod": 1
+        },
+        {
+            "stat": "WIS",
+            "score": 13,
+            "mod": 1
+        },
+        {
+            "stat": "CHA",
+            "score": 18,
+            "mod": 4
+        }
+    ],
+    "raceId": 4,
+    "classes": [
+      {
+        "id": id
+      }
+    ]
+}

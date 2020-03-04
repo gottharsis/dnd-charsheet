@@ -1,0 +1,157 @@
+{
+  "name": "Aurore",
+  "abilityScores": [
+    {
+      "stat": "STR",
+      "score": 11,
+      "mod": 0
+    },
+    {
+      "stat": "DEX",
+      "score": 16,
+      "mod": 3
+    },
+    {
+      "stat": "CON",
+      "score": 16,
+      "mod": 3
+    },
+    {
+      "stat": "INT",
+      "score": 12,
+      "mod": 1
+    },
+    {
+      "stat": "WIS",
+      "score": 13,
+      "mod": 1
+    },
+    {
+      "stat": "CHA",
+      "score": 18,
+      "mod": 4
+    }
+  ],
+  "raceId": 4,
+  "classId": 11,
+  "health": {
+    "maxHp": 46,
+    "currentHp": 46,
+    "tempHp": 0,
+    "remainingHitDice": 5
+  },
+  "inventory": {
+    "weaponIds": [1],
+    "wealth": {
+      "gold": 0,
+      "silver": 0,
+      "copper": 0,
+      "platinum": 0
+    },
+    "items": [
+      {
+        "name": "Test item 2",
+        "weight": 100,
+        "description": "This si sanothe test item",
+        "quantity": 3
+      },
+      {
+        "name": "Test Item 1",
+        "weight": 0,
+        "description": "Description for test item 1",
+        "quantity": 1
+      }
+    ],
+    "magicItems": [
+      {
+        "name": "Test magic item 1",
+        "weight": 7,
+        "description": "THis si a test magic item",
+        "maxCharges": 7,
+        "attuned": false,
+        "charges": 7
+      }
+    ]
+  },
+  "magic": {
+    "spellSlots": [
+      {
+        "level": 0,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 1,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 2,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 3,
+        "max": 2,
+        "used": 0
+      },
+      {
+        "level": 4,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 5,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 6,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 7,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 8,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 9,
+        "max": 0,
+        "used": 0
+      }
+    ],
+    "knownSpellIds": ["226", "145", "211", "377"],
+    "preparedSpellIds": [],
+    "dc": 15,
+    "bonus": 7,
+    "castingAbility": "CHA"
+  },
+  "armorId": 1,
+  "armor": {
+    "name": "Leather",
+    "ac": 11,
+    "addDexMod": true,
+    "category": "light",
+    "attributes": ""
+  },
+  "ac": 14,
+  "level": 5,
+  "skillIds": [16, 6, 14, 19, 10],
+  "notes": [
+    {
+      "id": 1,
+      "title": "Untitled Note",
+      "content": "# Hello\n## This is weird\n\nGoodbye\n\nWhat is this?"
+    }
+  ],
+  "languages": ["Common", "Dwarvish", "Elvish", "Sylvan"],
+  "abilities": [],
+  "savingThrows": [true, false, false, false, false, true],
+  "proficiency": 3
+}
