@@ -13,23 +13,72 @@
         </b-button>
       </b-field>
     </form>
-    <p>
-      {{ lastRoll }}
-    </p>
+    <div v-if="rollInputLast" class="results">
+      <p>
+        Result of rolling
+        <span class="has-text-weight-bold">{{ rollInputLast }}</span>
+      </p>
+      <div
+        class="flex-row has-padding-top-10 has-padding-bottom-10 justify-space-evenly wrap"
+        style="overflow-y: scroll; max-height: 250px; max-width: 250px"
+      >
+        <div
+          v-for="(roll, i) in rollsFinal"
+          :key="i"
+          class="has-margin-5"
+          style="flex: 1; min-width: 40px"
+        >
+          <p class="has-text-centered is-size-1 ">
+            {{ roll.total }}
+          </p>
+          <hr class="has-background-white-bis" />
+          <p class="has-text-centered">
+            {{ roll.individual }}
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { mixin as clickaway } from "vue-clickaway";
-import { DiceRoll } from "rpg-dice-roller/lib/esm/bundle";
+import { DiceRoll, DiceRoller } from "rpg-dice-roller/lib/esm/bundle";
 import { createNamespacedHelpers } from "vuex";
 const { mapActions } = createNamespacedHelpers("Hotkeys");
+import flatten from "lodash/flattenDeep";
 
 export default {
+  computed: {
+    rollsFinal() {
+      const total = roll => roll.total;
+      const individual = roll =>
+        roll.rolls
+          .map(
+            i =>
+              `[${i.rolls
+                .map(r => (r.useInTotal ? r.value : r.value + "d"))
+                .toString()}]`
+          )
+          .join(" ");
+
+      const process = roll => ({
+        total: total(roll),
+        individual: individual(roll)
+      });
+
+      return Array.isArray(this.lastRoll)
+        ? this.lastRoll.map(process)
+        : [process(this.lastRoll)];
+    }
+  },
   methods: {
     roll() {
-      const roll = new DiceRoll(this.rollInput);
-      this.lastRoll = roll.toString();
+      const input = this.rollInput || this.rollInputLast;
+      const inputParse = input.split(",").map(i => i.trim());
+      const roll = this.roller.roll.apply(this.roller, inputParse);
+      this.lastRoll = roll;
+      this.rollInputLast = input;
       this.rollInput = "";
       this.$refs.rollInput.focus();
     },
@@ -42,14 +91,17 @@ export default {
   },
   data() {
     return {
-      lastRoll: "",
-      rollInput: ""
+      lastRoll: [],
+      rollInput: "",
+      rollInputLast: "",
+      roller: null
     };
   },
   mixins: [clickaway],
   mounted() {
     window.addEventListener("keyup", this.closeOnEsc);
     this.$refs.rollInput.focus();
+    this.roller = new DiceRoller();
   },
   beforeDestroy() {
     window.removeEventListener("keyup", this.closeOnEsc);
@@ -60,5 +112,12 @@ export default {
 <style lang="scss" scoped>
 .dice-roller-main {
   flex-grow: 1;
+}
+form {
+  min-height: 100px;
+}
+
+.results {
+  height: 300px;
 }
 </style>
