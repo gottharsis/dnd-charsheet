@@ -20,19 +20,19 @@
       </p>
       <div
         class="flex-row has-padding-top-10 has-padding-bottom-10 justify-space-evenly wrap"
-        style="overflow-y: scroll; max-height: 250px; max-width: 250px"
+        style="overflow-y: scroll; max-height: 250px; max-width: 400px"
       >
         <div
           v-for="(roll, i) in rollsFinal"
           :key="i"
           class="has-margin-5"
-          style="flex: 1; min-width: 40px"
+          style="flex: 1; min-width: 60px"
         >
           <p class="has-text-centered is-size-1 ">
             {{ roll.total }}
           </p>
           <hr class="has-background-white-bis" />
-          <p class="has-text-centered">
+          <p class="has-text-centered is-size-3">
             {{ roll.individual }}
           </p>
         </div>

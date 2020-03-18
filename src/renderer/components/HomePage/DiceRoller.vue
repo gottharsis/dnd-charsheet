@@ -33,7 +33,7 @@ export default {
     size() {
       if (this.showDiceRoller) {
         return {
-          width: 300 + "px",
+          width: 450 + "px",
           height: "556px"
         };
       } else {
