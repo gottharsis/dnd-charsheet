@@ -177,10 +177,38 @@
             "317"
         ],
         "preparedSpellIds": [],
-        "dc": 15,
-        "bonus": 7,
-        "castingAbility": "CHA",
-        "reset": "short"
+        "dc": {
+            "cleric": 15,
+            "wizard": 16
+        },
+        "bonus": {
+            "cleric": 5,
+            "wizard": 7
+        },
+        "castingAbility": {
+            "cleric": "WIS",
+            "wizard": "CHA"
+        },
+        "reset": "short",
+        "modifiers": {
+            "cleric": {
+                "dc": 15,
+                "bonus": 7,
+                "castingAbility": "WIS"
+            },
+            "wizard": {
+                "dc": 15,
+                "bonus": 7,
+                "castingAbility": "INT"
+            },
+            "dc": 15,
+            "bonus": 7,
+            "castingAbility": "CHA"
+        },
+        "toPrepare": {
+            "cleric": 5,
+            "wizard": 9
+        }
     },
     "armorId": 1,
     "level": 6,

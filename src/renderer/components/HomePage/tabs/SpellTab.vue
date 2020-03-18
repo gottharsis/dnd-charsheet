@@ -5,13 +5,15 @@
       <div class="level-item has-text-centered">
         <div>
           <p class="heading is-size-4">Spell DC</p>
-          <p class="has-text-weight-bold is-size-3">{{ dc }}</p>
+          <p class="has-text-weight-bold is-size-3">
+            {{ spellCastingStrings.dc }}
+          </p>
         </div>
       </div>
       <div class="level-item has-text-centered">
         <div>
           <p class="heading is-size-4">Spell Attack Bonus</p>
-          <p class="has-text-weight-bold is-size-3">+{{ bonus }}</p>
+          <p class="has-text-weight-bold is-size-3">{{ bonus }}</p>
         </div>
       </div>
       <div class="level-item has-text-centered">
@@ -114,15 +116,17 @@ import EditSlots from "./SpellTab/EditSlots";
 import SpellDetail from "./SpellTab/SpellDetail";
 import AllSpells from "./SpellTab/AllSpells";
 import orderBy from "lodash/orderBy";
+import { modifierString } from "@/util";
 
 const {
-  mapGetters: CharGetter,
+  mapGetters: charGetter,
   mapState: charState,
   mapActions: charActions
 } = createNamespacedHelpers("Character");
+
 export default {
   computed: {
-    ...GuideState(["spells"]),
+    ...GuideState(["spells", "classes"]),
     ...charState({
       knownIds: state => state.character.magic.knownSpellIds,
       preparedIds: state => state.character.magic.preparedSpellIds,
@@ -130,10 +134,13 @@ export default {
         state.character.magic.spellSlots
           .filter(i => i.max > 0)
           .map(i => i.level),
-      dc: state => state.character.magic.dc,
-      bonus: state => state.character.magic.bonus,
-      castingAbility: state => state.character.magic.castingAbility
+      rawDc: state => state.character.magic.dc,
+      rawBonus: state => state.character.magic.bonus,
+      rawCastingAbility: state => state.character.magic.castingAbility,
+      charClass: state => state.character.class
     }),
+
+    ...charGetter(["spellCastingStrings"]),
 
     knownSpells() {
       return this.spells
@@ -156,10 +163,20 @@ export default {
         name: this.getSortIcon("name"),
         level: this.getSortIcon("level")
       };
+    },
+
+    dc() {
+      return this.combineClasses(this.rawDc);
+    },
+    bonus() {
+      return this.combineClasses(this.rawBonus, true);
+    },
+    castingAbility() {
+      return this.combineClasses(this.rawCastingAbility);
     }
   },
   methods: {
-    ...CharGetter(["isSpellKnown", "isSpellPrepared"]),
+    ...charGetter(["isSpellKnown", "isSpellPrepared"]),
     ...charActions([
       "learnSpell",
       "restoreAllSpellSlots",
@@ -197,6 +214,25 @@ export default {
       if (this.sort.order[prop] == "desc")
         return '<i class="fas fa-sort-down"></i>';
       return "";
+    },
+
+    combineClasses(property, mod = false) {
+      if (typeof property === "number") {
+        return mod ? modifierString(property) : property;
+      }
+
+      const vals = [];
+      for (let cl of this.charClass) {
+        if (property.hasOwnProperty(cl.id)) {
+          if (mod) {
+            vals.push(modifierString(property[cl.id]));
+          } else {
+            vals.push(property[cl.id]);
+          }
+        }
+      }
+
+      return vals.join(" / ");
     }
   },
   data() {

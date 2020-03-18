@@ -9,7 +9,9 @@
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading is-size-4">Spell DC</p>
-                  <p class="has-text-weight-bold is-size-3">{{ dc }}</p>
+                  <p class="has-text-weight-bold is-size-3">
+                    {{ spellCastingStrings.dc }}
+                  </p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
@@ -135,7 +137,8 @@ export default {
       speed: state => state.character.speed,
       proficiencyBonus: state =>
         modifierString(state.character.proficiencyBonus)
-    })
+    }),
+    ...mapGetters(["spellCastingStrings"])
   },
   components: {
     SkillTable,

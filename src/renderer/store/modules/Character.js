@@ -8,6 +8,8 @@ import {
 } from "../../data/persistCharacter";
 import { Character } from "../../data/character";
 
+import { modifierString } from "@/util";
+
 const state = {
   character: new Character(),
   characterFile: "",
@@ -461,6 +463,35 @@ const getters = {
       ].join(" ")
     );
     return data.join("\t|\t");
+  },
+  spellCastingStrings: state => {
+    const cls = state.character.class;
+    const magic = state.character.magic;
+
+    const combineClasses = (property, mod = false) => {
+      if (typeof property === "number") {
+        return mod ? modifierString(property) : property;
+      }
+
+      const vals = [];
+      for (let cl of cls) {
+        if (Object.hasOwnProperty.call(property, cl.id)) {
+          if (mod) {
+            vals.push(modifierString(property[cl.id]));
+          } else {
+            vals.push(property[cl.id]);
+          }
+        }
+      }
+
+      return vals.join(" / ");
+    };
+
+    return {
+      dc: combineClasses(magic.dc),
+      bonus: combineClasses(magic.bonus, true),
+      ability: combineClasses(magic.castingAbility)
+    };
   }
 };
 
