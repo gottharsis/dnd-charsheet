@@ -450,6 +450,17 @@ const getters = {
       res.push(sc);
     }
     return res;
+  },
+  classString: (state, getters, rootState) => {
+    const classes = state.character.class;
+    const data = classes.map(i =>
+      [
+        rootState.Guide.classes[i.id].subclasses[i.subclass].name,
+        rootState.Guide.classes[i.id].name,
+        i.level
+      ].join(" ")
+    );
+    return data.join("\t|\t");
   }
 };
 

@@ -34,13 +34,6 @@
     ],
     "raceId": 4,
     "classId": 11,
-    "classes": [
-      {
-        "id": 11,
-        "level": 6,
-        "subclass": null
-      }
-    ],
     "health": {
         "maxHp": 54,
         "currentHp": 8,

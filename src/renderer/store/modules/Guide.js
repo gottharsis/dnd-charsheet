@@ -41,7 +41,7 @@ const dataDir = join(__static, "data");
 const state = {
   armors: [],
   backgrounds: [],
-  classes: [],
+  classes: {},
   races: [],
   skills: [],
   spells: [],

@@ -2,12 +2,11 @@
   <div class="home columns">
     <ability-scores-bar />
     <div class="column main-content">
-      <error-indicator />
       <h1 class="is-size-1 has-text-centered has-text-weight-bold">
         {{ character.name }}
       </h1>
       <h2 class="is-size-3 has-text-centered">
-        {{ playerClass }} {{ character.level }}
+        {{ classString }}
       </h2>
 
       <div class="container">
@@ -26,7 +25,9 @@ import ErrorIndicator from "./HomePage/ErrorIndicator";
 import Tabs from "./HomePage/Tabs";
 import DiceRoller from "./HomePage/DiceRoller";
 
-const { mapState, mapActions } = createNamespacedHelpers("Character");
+const { mapState, mapActions, mapGetters } = createNamespacedHelpers(
+  "Character"
+);
 const { mapGetters: guideGetters, mapState: Guide } = createNamespacedHelpers(
   "Guide"
 );
@@ -38,9 +39,7 @@ export default {
     ...mapState({
       character: state => state.character
     }),
-    playerClass() {
-      return this.getClassById()(this.character.classId).name;
-    }
+    ...mapGetters(["classString"])
   },
   methods: {
     ...guideGetters(["getClassById"]),

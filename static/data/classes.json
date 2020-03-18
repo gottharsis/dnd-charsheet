@@ -1,31 +1,62 @@
-[
-
 {
-        "id": 11,
-        "name": "Warlock",
-        "hitDice": 8,
-        "savingThrows": [
-                "WIS", "CHA"
-        ],
-        "skills": [
-                "Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"
-        ],
-        "data": ":/class_data/warlock.html"
-},
+  "warlock": {
+    "id": "warlock",
+    "name": "Warlock",
+    "hitDice": "d8",
+    "savingThrows": ["WIS", "CHA"],
+    "skills": [
+      "Arcana",
+      "Deception",
+      "History",
+      "Intimidation",
+      "Investigation",
+      "Nature",
+      "Religion"
+    ],
+    "data": ":/class_data/warlock.html",
+    "subclasses": {
+      "fiend": {
+        "name": "Fiend"
+      },
+      "archfey": {
+        "name": "Archfey"
+      }
+    }
+  },
 
+  "wizard": {
+    "id": "wizard",
+    "name": "Wizard",
+    "hitDice": 6,
+    "savingThrows": ["INT", "WIS"],
+    "skills": [
+      "Arcana",
+      "Insight",
+      "History",
+      "Medicine",
+      "Investigation",
+      "Religion"
+    ],
+    "data": ":/class_data/wizard.html",
+    "subclasses": {
+      "divination": {
+        "name": "Divination"
+      }
+    }
+  },
 
-{
-        "id": 10,
-        "name": "Wizard",
-        "hitDice": 6,
-        "savingThrows": [
-                "INT", "WIS"
-        ],
-        "skills": [
-                "Arcana", "Insight", "History", "Medecine", "Investigation", "Religion"
-        ],
-        "data": ":/class_data/wizard.html"
+  "cleric": {
+    "id": "cleric",
+    "name": "Cleric",
+    "hitDice": "d8",
+    "savingThrows": ["WIS", "CHA"],
+    "subclasses": {
+      "arcana": {
+        "name": "Arcana"
+      },
+      "knowledge": {
+        "name": "Knowledge"
+      }
+    }
+  }
 }
-
-
-]
