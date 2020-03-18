@@ -1,360 +1,317 @@
 {
-    "name": "Test Multiclass",
-    "abilityScores": [
-        {
-            "stat": "STR",
-            "score": 11,
-            "mod": 0
-        },
-        {
-            "stat": "DEX",
-            "score": 16,
-            "mod": 3
-        },
-        {
-            "stat": "CON",
-            "score": 16,
-            "mod": 3
-        },
-        {
-            "stat": "INT",
-            "score": 12,
-            "mod": 1
-        },
-        {
-            "stat": "WIS",
-            "score": 13,
-            "mod": 1
-        },
-        {
-            "stat": "CHA",
-            "score": 18,
-            "mod": 4
-        }
-    ],
-    "raceId": 4,
-    "classId": 11,
-    "health": {
-        "maxHp": 54,
-        "currentHp": 8,
-        "tempHp": 0,
-        "remainingHitDice": 6,
-        "maxHitDice": 6,
-        "hitDice": "d8"
+  "name": "Test Multiclass",
+  "abilityScores": [
+    {
+      "stat": "STR",
+      "score": 11,
+      "mod": 0
     },
-    "inventory": {
-        "weaponIds": [
-            2,
-            2,
-            11,
-            28
-        ],
-        "wealth": {
-            "gold": "250",
-            "silver": "7",
-            "copper": 0,
-            "platinum": "0"
-        },
-        "items": [
-            {
-                "id": "item_c1223a85-0dd0-4adf-b42c-69b1f37615e4",
-                "name": "Basilisk Eyes",
-                "weight": 0,
-                "description": "",
-                "quantity": 1
-            },
-            {
-                "id": "item_d10557bf-4785-492b-ac32-3d3e710f1b6d",
-                "name": "Clothes Fine",
-                "weight": 6,
-                "description": "",
-                "quantity": 1
-            },
-            {
-                "id": "item_c478e1f1-f590-4ee5-966d-49690ff66ffd",
-                "name": "Vial of Acid Blood",
-                "weight": 0,
-                "description": "Blood from the giant cockroach things",
-                "quantity": 1
-            },
-            {
-                "id": "item_92a1e1cf-b339-4bd6-b57c-d93e03449e1b",
-                "name": "Cold weather clothes",
-                "weight": 0,
-                "description": "",
-                "quantity": 1
-            },
-            {
-                "id": "item_07703867-a8d9-427a-8e1f-295b3ea1c34f",
-                "name": "Magic Fire Bow",
-                "weight": 0,
-                "description": "",
-                "quantity": 1
-            },
-            {
-                "id": "item_e90b89b9-76b8-4984-9a1b-c26784b8d870",
-                "name": "Necromancer mask",
-                "weight": 0,
-                "description": "",
-                "quantity": 1
-            }
-        ],
-        "magicItems": [
-            {
-                "name": "Test magic item 1",
-                "weight": 7,
-                "description": "THis si a test magic item",
-                "maxCharges": 7,
-                "attuned": false,
-                "charges": 7,
-                "id": 1
-            }
-        ]
+    {
+      "stat": "DEX",
+      "score": 16,
+      "mod": 3
     },
-    "magic": {
-        "spellSlots": [
-            {
-                "level": 0,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 1,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 2,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 3,
-                "max": 2,
-                "used": 2
-            },
-            {
-                "level": 4,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 5,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 6,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 7,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 8,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 9,
-                "max": 0,
-                "used": 0
-            }
-        ],
-        "knownSpellIds": [
-            "178",
-            "38",
-            "87",
-            "99",
-            "114",
-            "181",
-            "187",
-            "211",
-            "226",
-            "317"
-        ],
-        "preparedSpellIds": [],
-        "dc": {
-            "cleric": 15,
-            "wizard": 16
-        },
-        "bonus": {
-            "cleric": 5,
-            "wizard": 7
-        },
-        "castingAbility": {
-            "cleric": "WIS",
-            "wizard": "CHA"
-        },
-        "reset": "short",
-        "modifiers": {
-            "cleric": {
-                "dc": 15,
-                "bonus": 7,
-                "castingAbility": "WIS"
-            },
-            "wizard": {
-                "dc": 15,
-                "bonus": 7,
-                "castingAbility": "INT"
-            },
-            "dc": 15,
-            "bonus": 7,
-            "castingAbility": "CHA"
-        },
-        "toPrepare": {
-            "cleric": 5,
-            "wizard": 9
-        }
+    {
+      "stat": "CON",
+      "score": 16,
+      "mod": 3
     },
-    "armorId": 1,
-    "level": 6,
-    "skillIds": [
-        16,
-        6,
-        14,
-        19,
-        10
-    ],
-    "notes": [
-        {
-            "id": "note_9168bedb-0e80-4b06-9ca7-081674a354ff",
-            "title": "Companion",
-            "content": "# Companion: Huginn\n### Imp\n\n## Attack\n+5 to hit, 1d4 + 3 piercing damage\n\n3d6 damage, or half on a successful DC 11 CON saving throw\n\n## Stats and Modifiers\n\n### Stuff\n#### Initiative: \n\n+3\n#### Proficiency Bonus:\n\n +2\nHP: 8/10\n| stat &nbsp; &nbsp;  &nbsp;   | score &nbsp; &nbsp;  &nbsp;   | mod &nbsp; &nbsp;  &nbsp;   |\n| -------- | -------- | -------- |\n| STR | 6 | -2 |\n| DEX | 17 | +3 |\n| CON | 13 | +1 |\n| INT | 11 | 0 |\n| WIS | 12 | +2 |\n| CHA | 14 | +2 |\n\n## Skills\nDeception, Insight, Persuasion, Stealth\n\n## Features\n**Resistance:** cold, bludgeoning, piercing, slashing from nonmagical/silver weapons\n\n**Immunity** Fire, poison\n\n**Condition Immunity** poisoned\n\n**Languages** Infernal, Common\n\n## Traits\n**Invisibility** can turn invisible as action (until attacks or concentration ends)\n\n**Shapechanger** can become a rat, raven, or spider\n\n**Magic Resistance** adv. on saving throw vs magic"
-        },
-        {
-            "id": "note_a3ab0ddc-1cdd-4fb8-b02d-af0234135ac3",
-            "title": "Book of Misspells",
-            "content": "# Misspells\n- Massage \n- Mage Armoire \n- Hold Person ?\n- Speak With Dad \n- Ick Storm - calls sludge down in 20 foot radius, range is 300 feet\n- Telepoot  - really loud fart sound where \n- Wash \n- Friarball  - shoots a friar \n- Magic Rissole - creates 3 balls of food"
-        },
-        {
-            "id": "note_82d52c95-73eb-4e03-a3ab-7c645e353e82",
-            "title": "Invocations",
-            "content": "# Invocations\n\n### Agonizing Blast\nAdd CHA modifier to damage of eldritch blast\n\n### Voice of the Chain Master\nYou can communicate telepathically with your familiar and perceive through your familiar's senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.\n\n### Mask of Many Faces\nYou can cast Disguise Self at will, without expending a spell slot."
-        },
-        {
-            "id": "note_e28e591d-98b9-4805-99c2-4cba405d57a5",
-            "title": "Status",
-            "content": "# Status\n## Exhaustion\n1 level\n\nDisadvantage on ability checks"
-        }
-    ],
-    "languages": [
-        "Common",
-        "Dwarvish",
-        "Elvish",
-        "Sylvan"
-    ],
-    "abilities": [
-        {
-            "id": 1,
-            "name": "Fey Presence",
-            "description": "As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.",
-            "max": 1,
-            "used": 0,
-            "source": "Warlock (Archfey)",
-            "reset": "long"
-        },
-        {
-            "id": 2,
-            "name": "Misty Escape",
-            "description": "Starting at 6th level, you can vanish in a puff of mist in response to harm. When you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell.",
-            "max": 1,
-            "used": 1,
-            "source": "Warlock (Archfey)",
-            "reset": "short"
-        }
-    ],
-    "savingThrows": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        true,
-        true
-    ],
-    "proficiencyBonus": 3,
-    "proficiency": 0,
-    "abilityScoresOld": [
-        11,
-        16,
-        16,
-        12,
-        13,
-        18
-    ],
-    "ac": 16,
-    "armor": {
-        "name": "Leather + Shield",
-        "ac": 13,
-        "addDexMod": true,
-        "attributes": "",
-        "category": "light"
+    {
+      "stat": "INT",
+      "score": 12,
+      "mod": 1
     },
-    "skills": {
-        "History": {
-            "proficiency": 1
-        },
-        "Religion": {
-            "proficiency": 1
-        },
-        "Perception": {
-            "proficiency": 1
-        },
-        "Deception": {
-            "proficiency": 1
-        },
-        "Persuasion": {
-            "proficiency": 1
-        }
+    {
+      "stat": "WIS",
+      "score": 13,
+      "mod": 1
     },
-    "features": [
-        {
-            "name": "Fey Ancestry",
-            "description": "adv. on saving throws vs charmed, magic cannot put you to sleep",
-            "source": "Racial (High Elf)"
-        },
-        {
-            "name": "Trance",
-            "description": "long rest is only 4 hours",
-            "source": "Racial (High Elf)"
-        }
+    {
+      "stat": "CHA",
+      "score": 18,
+      "mod": 4
+    }
+  ],
+  "raceId": 4,
+  "classId": 11,
+  "health": {
+    "maxHp": 54,
+    "currentHp": 8,
+    "tempHp": 0,
+    "remainingHitDice": 6,
+    "maxHitDice": 6,
+    "hitDice": "d8"
+  },
+  "inventory": {
+    "weaponIds": [2, 2, 11, 28],
+    "wealth": {
+      "gold": "250",
+      "silver": "7",
+      "copper": 0,
+      "platinum": "0"
+    },
+    "items": [
+      {
+        "id": "item_c1223a85-0dd0-4adf-b42c-69b1f37615e4",
+        "name": "Basilisk Eyes",
+        "weight": 0,
+        "description": "",
+        "quantity": 1
+      },
+      {
+        "id": "item_d10557bf-4785-492b-ac32-3d3e710f1b6d",
+        "name": "Clothes Fine",
+        "weight": 6,
+        "description": "",
+        "quantity": 1
+      },
+      {
+        "id": "item_c478e1f1-f590-4ee5-966d-49690ff66ffd",
+        "name": "Vial of Acid Blood",
+        "weight": 0,
+        "description": "Blood from the giant cockroach things",
+        "quantity": 1
+      },
+      {
+        "id": "item_92a1e1cf-b339-4bd6-b57c-d93e03449e1b",
+        "name": "Cold weather clothes",
+        "weight": 0,
+        "description": "",
+        "quantity": 1
+      },
+      {
+        "id": "item_07703867-a8d9-427a-8e1f-295b3ea1c34f",
+        "name": "Magic Fire Bow",
+        "weight": 0,
+        "description": "",
+        "quantity": 1
+      },
+      {
+        "id": "item_e90b89b9-76b8-4984-9a1b-c26784b8d870",
+        "name": "Necromancer mask",
+        "weight": 0,
+        "description": "",
+        "quantity": 1
+      }
     ],
-    "speed": 30,
-    "abilites": [
-        {
-            "id": 1,
-            "name": "Fey Presence",
-            "description": "As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.",
-            "max": 1,
-            "used": 0,
-            "source": "Warlock (Archfey)",
-            "reset": "long"
-        },
-        {
-            "id": 2,
-            "name": "Misty Escape",
-            "description": "Starting at 6th level, you can vanish in a puff of mist in response to harm. When you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell.",
-            "max": 1,
-            "used": 0,
-            "source": "Warlock (Archfey)",
-            "reset": "short"
-        }
-    ],
-    "class": [
-        {
-            "id": "cleric",
-            "level": 1,
-            "subclass": "knowledge"
-        },
-        {
-            "id": "wizard",
-            "level": 5,
-            "subclass": "divination"
-        }
+    "magicItems": [
+      {
+        "name": "Test magic item 1",
+        "weight": 7,
+        "description": "THis si a test magic item",
+        "maxCharges": 7,
+        "attuned": false,
+        "charges": 7,
+        "id": 1
+      }
     ]
+  },
+  "magic": {
+    "spellSlots": [
+      {
+        "level": 0,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 1,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 2,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 3,
+        "max": 2,
+        "used": 2
+      },
+      {
+        "level": 4,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 5,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 6,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 7,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 8,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 9,
+        "max": 0,
+        "used": 0
+      }
+    ],
+    "knownSpellIds": ["blink", "hellish-rebuke"],
+    "preparedSpellIds": [],
+    "dc": {
+      "cleric": 15,
+      "wizard": 16
+    },
+    "bonus": {
+      "cleric": 5,
+      "wizard": 7
+    },
+    "castingAbility": {
+      "cleric": "WIS",
+      "wizard": "CHA"
+    },
+    "reset": "short",
+    "modifiers": {
+      "cleric": {
+        "dc": 15,
+        "bonus": 7,
+        "castingAbility": "WIS"
+      },
+      "wizard": {
+        "dc": 15,
+        "bonus": 7,
+        "castingAbility": "INT"
+      },
+      "dc": 15,
+      "bonus": 7,
+      "castingAbility": "CHA"
+    },
+    "toPrepare": {
+      "cleric": 5,
+      "wizard": 9
+    }
+  },
+  "armorId": 1,
+  "level": 6,
+  "skillIds": [16, 6, 14, 19, 10],
+  "notes": [
+    {
+      "id": "note_9168bedb-0e80-4b06-9ca7-081674a354ff",
+      "title": "Companion",
+      "content": "# Companion: Huginn\n### Imp\n\n## Attack\n+5 to hit, 1d4 + 3 piercing damage\n\n3d6 damage, or half on a successful DC 11 CON saving throw\n\n## Stats and Modifiers\n\n### Stuff\n#### Initiative: \n\n+3\n#### Proficiency Bonus:\n\n +2\nHP: 8/10\n| stat &nbsp; &nbsp;  &nbsp;   | score &nbsp; &nbsp;  &nbsp;   | mod &nbsp; &nbsp;  &nbsp;   |\n| -------- | -------- | -------- |\n| STR | 6 | -2 |\n| DEX | 17 | +3 |\n| CON | 13 | +1 |\n| INT | 11 | 0 |\n| WIS | 12 | +2 |\n| CHA | 14 | +2 |\n\n## Skills\nDeception, Insight, Persuasion, Stealth\n\n## Features\n**Resistance:** cold, bludgeoning, piercing, slashing from nonmagical/silver weapons\n\n**Immunity** Fire, poison\n\n**Condition Immunity** poisoned\n\n**Languages** Infernal, Common\n\n## Traits\n**Invisibility** can turn invisible as action (until attacks or concentration ends)\n\n**Shapechanger** can become a rat, raven, or spider\n\n**Magic Resistance** adv. on saving throw vs magic"
+    },
+    {
+      "id": "note_a3ab0ddc-1cdd-4fb8-b02d-af0234135ac3",
+      "title": "Book of Misspells",
+      "content": "# Misspells\n- Massage \n- Mage Armoire \n- Hold Person ?\n- Speak With Dad \n- Ick Storm - calls sludge down in 20 foot radius, range is 300 feet\n- Telepoot  - really loud fart sound where \n- Wash \n- Friarball  - shoots a friar \n- Magic Rissole - creates 3 balls of food"
+    },
+    {
+      "id": "note_82d52c95-73eb-4e03-a3ab-7c645e353e82",
+      "title": "Invocations",
+      "content": "# Invocations\n\n### Agonizing Blast\nAdd CHA modifier to damage of eldritch blast\n\n### Voice of the Chain Master\nYou can communicate telepathically with your familiar and perceive through your familiar's senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.\n\n### Mask of Many Faces\nYou can cast Disguise Self at will, without expending a spell slot."
+    },
+    {
+      "id": "note_e28e591d-98b9-4805-99c2-4cba405d57a5",
+      "title": "Status",
+      "content": "# Status\n## Exhaustion\n1 level\n\nDisadvantage on ability checks"
+    }
+  ],
+  "languages": ["Common", "Dwarvish", "Elvish", "Sylvan"],
+  "abilities": [
+    {
+      "id": 1,
+      "name": "Fey Presence",
+      "description": "As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.",
+      "max": 1,
+      "used": 0,
+      "source": "Warlock (Archfey)",
+      "reset": "long"
+    },
+    {
+      "id": 2,
+      "name": "Misty Escape",
+      "description": "Starting at 6th level, you can vanish in a puff of mist in response to harm. When you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell.",
+      "max": 1,
+      "used": 1,
+      "source": "Warlock (Archfey)",
+      "reset": "short"
+    }
+  ],
+  "savingThrows": [false, false, false, false, false, false, true, true],
+  "proficiencyBonus": 3,
+  "proficiency": 0,
+  "abilityScoresOld": [11, 16, 16, 12, 13, 18],
+  "ac": 16,
+  "armor": {
+    "name": "Scale Mail",
+    "ac": 13,
+    "addDexMod": true,
+    "attributes": "",
+    "category": "light"
+  },
+  "skills": {
+    "History": {
+      "proficiency": 1
+    },
+    "Religion": {
+      "proficiency": 1
+    },
+    "Perception": {
+      "proficiency": 1
+    },
+    "Deception": {
+      "proficiency": 1
+    },
+    "Persuasion": {
+      "proficiency": 1
+    }
+  },
+  "features": [
+    {
+      "name": "Fey Ancestry",
+      "description": "adv. on saving throws vs charmed, magic cannot put you to sleep",
+      "source": "Racial (High Elf)"
+    },
+    {
+      "name": "Trance",
+      "description": "long rest is only 4 hours",
+      "source": "Racial (High Elf)"
+    }
+  ],
+  "speed": 30,
+  "abilites": [
+    {
+      "id": 1,
+      "name": "Fey Presence",
+      "description": "As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.",
+      "max": 1,
+      "used": 0,
+      "source": "Warlock (Archfey)",
+      "reset": "long"
+    },
+    {
+      "id": 2,
+      "name": "Misty Escape",
+      "description": "Starting at 6th level, you can vanish in a puff of mist in response to harm. When you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell.",
+      "max": 1,
+      "used": 0,
+      "source": "Warlock (Archfey)",
+      "reset": "short"
+    }
+  ],
+  "class": [
+    {
+      "id": "cleric",
+      "level": 1,
+      "subclass": "knowledge"
+    },
+    {
+      "id": "wizard",
+      "level": 5,
+      "subclass": "divination"
+    }
+  ]
 }

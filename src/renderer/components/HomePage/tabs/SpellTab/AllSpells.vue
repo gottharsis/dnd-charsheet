@@ -55,12 +55,12 @@
       <div style="" class="spell-menu">
         <div
           v-for="spell in resultsPage"
-          :key="spell.id"
+          :key="spell.slug"
           :class="{
             'has-cursor-pointer': true,
             'has-padding-10': true,
             'spell-menu-item': true,
-            selected: selectedSpell ? selectedSpell.id === spell.id : false
+            selected: selectedSpell ? selectedSpell.slug === spell.slug : false
           }"
           @click="selectedSpell = spell"
         >
@@ -124,10 +124,10 @@ const searchOptions = {
 export default {
   computed: {
     ...guide({
-      spells: state => state.spells
+      spells: state => Object.values(state.spells)
     }),
     currentSpellKnown() {
-      return this.isSpellKnown()(this.selectedSpell.id);
+      return this.isSpellKnown()(this.selectedSpell.slug);
     },
     searchResults() {
       const search = this.searchString
@@ -234,10 +234,10 @@ export default {
       if (this.offset < 0) this.offset = 0;
     },
     learnCurrentSpell() {
-      this.learnSpell({ spellId: this.selectedSpell.id });
+      this.learnSpell({ spellId: this.selectedSpell.slug });
     },
     forgetCurrentSpell() {
-      this.forgetSpell({ spellId: this.selectedSpell.id });
+      this.forgetSpell({ spellId: this.selectedSpell.slug });
     }
   },
   components: {

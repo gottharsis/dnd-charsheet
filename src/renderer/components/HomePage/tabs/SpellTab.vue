@@ -64,7 +64,7 @@
       <tbody>
         <tr
           v-for="spell in sortedSpells"
-          :key="spell.id"
+          :key="spell.slug"
           @click="showSpellDetail(spell)"
         >
           <td>{{ spell.name }}</td>
@@ -143,12 +143,10 @@ export default {
     ...charGetter(["spellCastingStrings"]),
 
     knownSpells() {
-      return this.spells
-        .filter(({ id }) => this.knownIds.includes(id))
-        .map(sp => ({
-          ...sp,
-          isPrepared: this.preparedIds.includes(sp.id)
-        }));
+      return this.knownIds.map(id => ({
+        ...this.spells[id],
+        isPrepared: this.preparedIds.includes(id)
+      }));
     },
     sortedSpells() {
       const orders = this.sort.properties.map(prop => this.sort.order[prop]);

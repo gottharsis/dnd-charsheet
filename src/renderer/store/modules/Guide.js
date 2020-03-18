@@ -44,7 +44,7 @@ const state = {
   classes: {},
   races: [],
   skills: [],
-  spells: [],
+  spells: {},
   weapons: [],
   stats: []
 };
@@ -69,7 +69,7 @@ const actions = {
       });
     } catch (e) {
       console.error(`Failure reading file ${fp}`);
-      console.error(JSON.stringify(e));
+      console.error(e);
     }
   },
 
