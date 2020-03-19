@@ -2,12 +2,14 @@
   <div class="home columns">
     <ability-scores-bar />
     <div class="column main-content">
-      <h1 class="is-size-1 has-text-centered has-text-weight-bold">
-        {{ character.name }}
-      </h1>
-      <h2 class="is-size-3 has-text-centered">
-        {{ classString }}
-      </h2>
+      <div @dblclick="editBasicInfo">
+        <h1 class="is-size-1 has-text-centered has-text-weight-bold">
+          {{ character.name }}
+        </h1>
+        <h2 class="is-size-3 has-text-centered">
+          {{ classString }}
+        </h2>
+      </div>
 
       <div class="container">
         <tabs ref="tabs" />
@@ -15,6 +17,10 @@
       </div>
     </div>
     <dice-roller />
+
+    <b-modal :active.sync="showBasicInfoEdit">
+      <basic-info-edit-modal />
+    </b-modal>
   </div>
 </template>
 
@@ -22,6 +28,7 @@
 import { createNamespacedHelpers } from "vuex";
 import AbilityScoresBar from "./HomePage/AbilityScoresBar";
 import ErrorIndicator from "./HomePage/ErrorIndicator";
+import BasicInfoEditModal from "./HomePage/BasicInfoEditModal";
 import Tabs from "./HomePage/Tabs";
 import DiceRoller from "./HomePage/DiceRoller";
 
@@ -71,16 +78,22 @@ export default {
           this.$refs.tabs.setActiveIndex(4);
           break;
       }
+    },
+    editBasicInfo() {
+      this.showBasicInfoEdit = true;
     }
   },
   components: {
     AbilityScoresBar,
+    BasicInfoEditModal,
     ErrorIndicator,
     Tabs,
     DiceRoller
   },
   data() {
-    return {};
+    return {
+      showBasicInfoEdit: false
+    };
   },
   mounted() {
     window.addEventListener("keyup", this.keyListener);

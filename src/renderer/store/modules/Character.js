@@ -18,6 +18,21 @@ const state = {
 };
 
 const mutations = {
+  SET_NAME(state, { name }) {
+    state.character.name = name;
+  },
+  SET_CLASS(state, { cls }) {
+    state.character.class = cls;
+  },
+  SET_RACE(state, { raceId }) {
+    state.character.raceId = raceId;
+  },
+  SET_PROFICIENCY_BONUS(state, { proficiencyBonus }) {
+    state.character.proficiencyBonus = proficiencyBonus;
+  },
+  SET_SPEED(state, { speed }) {
+    state.character.speed = speed;
+  },
   SET_CHARACTER(state, { character, characterFile }) {
     const overwriteMerge = (destinationArray, sourceArray, options) =>
       sourceArray;
@@ -182,6 +197,23 @@ const actions = {
     saveCharacter(state.character, state.characterFile);
   },
 
+  setBasicInfo({ commit }, { name, cls, speed, proficiencyBonus }) {
+    if (!isNil(name)) {
+      commit("SET_NAME", { name });
+    }
+
+    if (!isNil(cls)) {
+      commit("SET_CLASS", { cls });
+    }
+
+    if (!isNil(proficiencyBonus)) {
+      commit("SET_PROFICIENCY_BONUS", { proficiencyBonus });
+    }
+
+    if (!isNil(speed)) {
+      commit("SET_SPEED", { speed });
+    }
+  },
   learnSpell({ commit }, { spellId }) {
     console.log("Learning spell with id " + spellId);
     commit("LEARN_SPELL", { spellId });

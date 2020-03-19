@@ -1,5 +1,5 @@
 {
-    "name": "Test Multiclass",
+    "name": "Lurien",
     "abilityScores": [
         {
             "stat": "STR",
@@ -316,7 +316,7 @@
             "source": "Racial (High Elf)"
         }
     ],
-    "speed": 30,
+    "speed": 50,
     "abilites": [
         {
             "id": 1,
