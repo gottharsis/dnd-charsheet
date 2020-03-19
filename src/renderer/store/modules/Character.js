@@ -36,6 +36,17 @@ const mutations = {
   SET_ABILITY_SCORES(state, { abilityScores }) {
     state.character.abilityScores = abilityScores;
   },
+  SET_SPELL_STATS(state, { dc, bonus, castingAbility }) {
+    if (!isNil(bonus)) {
+      state.character.magic.bonus = bonus;
+    }
+    if (!isNil(dc)) {
+      state.character.magic.dc = dc;
+    }
+    if (!isNil(castingAbility)) {
+      state.character.magic.castingAbility = castingAbility;
+    }
+  },
   SET_CHARACTER(state, { character, characterFile }) {
     const overwriteMerge = (destinationArray, sourceArray, options) =>
       sourceArray;
@@ -225,6 +236,9 @@ const actions = {
     ) {
       commit("SET_ABILITY_SCORES", { abilityScores });
     }
+  },
+  setSpellStats({ commit }, { dc, castingAbility, bonus }) {
+    commit("SET_SPELL_STATS", { dc, castingAbility, bonus });
   },
   learnSpell({ commit }, { spellId }) {
     console.log("Learning spell with id " + spellId);

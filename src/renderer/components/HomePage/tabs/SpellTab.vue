@@ -1,7 +1,7 @@
 <template>
   <div id="spell-tab">
     <!-- <div class="has-text-weight-bold is-3 has-text-weight-bold">Spells</div> -->
-    <div class="level">
+    <div class="level" @dblclick="editSpellStats = true">
       <div class="level-item has-text-centered">
         <div>
           <p class="heading is-size-4">Spell DC</p>
@@ -102,6 +102,10 @@
       </div>
     </b-modal>
 
+    <b-modal :active.sync="editSpellStats">
+      <edit-spell-stats-modal />
+    </b-modal>
+
     <!-- <b-modal :active.sync="showAllSpells"> -->
     <all-spells />
     <!-- </b-modal> -->
@@ -113,6 +117,7 @@ import { createNamespacedHelpers } from "vuex";
 const { mapState: GuideState } = createNamespacedHelpers("Guide");
 import SpellSlotIndicator from "./SpellTab/SpellSlotIndicator";
 import EditSlots from "./SpellTab/EditSlots";
+import EditSpellStatsModal from "./SpellTab/EditSpellStatsModal";
 import SpellDetail from "./SpellTab/SpellDetail";
 import AllSpells from "./SpellTab/AllSpells";
 import orderBy from "lodash/orderBy";
@@ -236,6 +241,7 @@ export default {
   data() {
     return {
       isEditModalOpen: false,
+      editSpellStats: false,
       detailSpell: null,
       showAllSpells: false,
       searchString: "",
@@ -255,7 +261,8 @@ export default {
     SpellSlotIndicator,
     EditSlots,
     SpellDetail,
-    AllSpells
+    AllSpells,
+    EditSpellStatsModal
   }
 };
 </script>
