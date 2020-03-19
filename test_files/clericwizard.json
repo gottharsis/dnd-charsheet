@@ -3,8 +3,8 @@
     "abilityScores": [
         {
             "stat": "STR",
-            "score": 11,
-            "mod": 0
+            "score": 13,
+            "mod": 1
         },
         {
             "stat": "DEX",
@@ -316,7 +316,7 @@
             "source": "Racial (High Elf)"
         }
     ],
-    "speed": 50,
+    "speed": "Walk 20 / Fly 50",
     "abilites": [
         {
             "id": 1,

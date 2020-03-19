@@ -29,6 +29,7 @@ import { createNamespacedHelpers } from "vuex";
 import AbilityScoresBar from "./HomePage/AbilityScoresBar";
 import ErrorIndicator from "./HomePage/ErrorIndicator";
 import BasicInfoEditModal from "./HomePage/BasicInfoEditModal";
+import EditAbilityScoresModal from "./HomePage/EditAbilityScoresModal";
 import Tabs from "./HomePage/Tabs";
 import DiceRoller from "./HomePage/DiceRoller";
 
@@ -86,6 +87,7 @@ export default {
   components: {
     AbilityScoresBar,
     BasicInfoEditModal,
+    EditAbilityScoresModal,
     ErrorIndicator,
     Tabs,
     DiceRoller

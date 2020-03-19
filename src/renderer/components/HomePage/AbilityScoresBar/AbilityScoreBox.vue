@@ -2,14 +2,16 @@
   <div class="ability-score-box box tile">
     <!-- <div class="tile is-ancestor"> -->
     <div class="tile is-vertical">
-      <div class="tile is-child has-text-centered is-size-4">
+      <div
+        class="tile is-child has-text-centered is-size-4 flex-column justify-space-evenly"
+      >
         <div class="has-text-weight-bold">{{ score.stat }}</div>
         <div>{{ score.score }}</div>
       </div>
     </div>
     <div class="tile">
       <div
-        class="tile is-child has-text-centered is-size-1 has-text-weight-bold"
+        class="tile is-child has-text-centered is-size-1 has-text-weight-bold flex-column justify-center"
       >
         {{ modifier }}
       </div>

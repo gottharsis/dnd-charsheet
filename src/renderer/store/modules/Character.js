@@ -33,6 +33,9 @@ const mutations = {
   SET_SPEED(state, { speed }) {
     state.character.speed = speed;
   },
+  SET_ABILITY_SCORES(state, { abilityScores }) {
+    state.character.abilityScores = abilityScores;
+  },
   SET_CHARACTER(state, { character, characterFile }) {
     const overwriteMerge = (destinationArray, sourceArray, options) =>
       sourceArray;
@@ -212,6 +215,15 @@ const actions = {
 
     if (!isNil(speed)) {
       commit("SET_SPEED", { speed });
+    }
+  },
+  setAbilityScores({ commit }, { abilityScores }) {
+    if (
+      !isNil(abilityScores) &&
+      Array.isArray(abilityScores) &&
+      abilityScores.length
+    ) {
+      commit("SET_ABILITY_SCORES", { abilityScores });
     }
   },
   learnSpell({ commit }, { spellId }) {
