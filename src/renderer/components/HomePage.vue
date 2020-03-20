@@ -53,6 +53,10 @@ export default {
     ...guideGetters(["getClassById"]),
     ...hotkeys(["openDiceRoller"]),
     keyListener(event) {
+      const node = event.target.nodeName.toLowerCase();
+      if (/textarea|input|select/.test(node)) {
+        return;
+      }
       if (!event.shiftKey) return;
       switch (event.key) {
         case "R":
