@@ -126,7 +126,6 @@
             "mending",
             "guidance",
             "ray-of-frost",
-            "shape-water",
             "mold-earth",
             "identify-ritual",
             "command",
@@ -142,7 +141,6 @@
             "shield",
             "grease",
             "disguise-self",
-            "tensers-floating-disk-ritual",
             "alarm-ritual",
             "detect-thoughts",
             "locate-object",
@@ -151,12 +149,13 @@
             "leomunds-tiny-hut-ritual",
             "fireball",
             "thaumaturgy",
-            "toll-the-dead"
+            "toll-the-dead",
+            "catapult",
+            "mage-hand"
         ],
         "preparedSpellIds": [
             "identify-ritual",
             "command",
-            "bless",
             "detect-magic-ritual",
             "healing-word",
             "guiding-bolt",
@@ -169,8 +168,9 @@
             "disguise-self",
             "detect-thoughts",
             "enlargereduce",
-            "phantasmal-force",
-            "fireball"
+            "fireball",
+            "bless",
+            "phantasmal-force"
         ],
         "dc": {
             "cleric": 14,
@@ -331,7 +331,7 @@
             "source": "Mephistopheles Tiefling"
         }
     ],
-    "speed": "30/Swim 15",
+    "speed": "30 / 15 (Swim)",
     "abilites": [
         {
             "id": 1,
