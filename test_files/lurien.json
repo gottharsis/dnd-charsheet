@@ -124,7 +124,6 @@
         "knownSpellIds": [
             "minor-illusion",
             "mending",
-            "thaumaturgy",
             "guidance",
             "ray-of-frost",
             "shape-water",
@@ -150,7 +149,8 @@
             "enlargereduce",
             "phantasmal-force",
             "leomunds-tiny-hut-ritual",
-            "fireball"
+            "fireball",
+            "thaumaturgy"
         ],
         "preparedSpellIds": [
             "identify-ritual",
@@ -225,13 +225,7 @@
         19,
         10
     ],
-    "notes": [
-        {
-            "id": "note_be55d9da-7be3-4fba-9288-df14b682a8af",
-            "title": "Untitled Note",
-            "content": ""
-        }
-    ],
+    "notes": [],
     "languages": [
         "Common",
         "Infernal",

@@ -555,7 +555,10 @@ const getters = {
       castingAbility: combineClasses(magic.castingAbility),
       toPrepare: combineClasses(magic.toPrepare)
     };
-  }
+  },
+  numPrepared: state =>
+    state.character.magic.preparedSpellIds.length -
+    state.character.magic.alwaysPreparedIds.length
 };
 
 export default {
