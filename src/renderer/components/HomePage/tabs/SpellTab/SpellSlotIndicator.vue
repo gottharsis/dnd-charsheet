@@ -14,7 +14,7 @@
         <b-button @click="restore(1)">
           <i class="fas fa-scroll"></i>
         </b-button>
-        <b-button @click="restore">
+        <b-button @click="restore(-1)">
           <i class="fas fa-sync-alt"></i>
         </b-button>
         <b-button @click="cast">
