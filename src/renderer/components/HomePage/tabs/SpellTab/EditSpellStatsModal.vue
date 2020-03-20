@@ -46,6 +46,16 @@
         </div>
       </section>
 
+      <section>
+        <h2>To Prepare</h2>
+
+        <div v-for="k in Object.keys(toPrepare)" :key="k">
+          <b-field :label="k">
+            <b-input v-model.number="toPrepare[k]" />
+          </b-field>
+        </div>
+      </section>
+
       <b-button native-type="submit">
         Save Changes
       </b-button>
@@ -63,7 +73,8 @@ export default {
     return {
       dc: {},
       bonus: {},
-      castingAbility: {}
+      castingAbility: {},
+      toPrepare: {}
     };
   },
   computed: {
@@ -72,7 +83,8 @@ export default {
       currBonus: state => state.character.magic.bonus,
       currCastingAbility: state => state.character.magic.castingAbility,
       proficiencyBonus: state => state.character.proficiencyBonus,
-      abilityScores: state => state.character.abilityScores
+      abilityScores: state => state.character.abilityScores,
+      currToPrepare: state => state.character.magic.toPrepare
     })
   },
 
@@ -80,6 +92,7 @@ export default {
     this.dc = cloneDeep(this.currDc);
     this.bonus = cloneDeep(this.currBonus);
     this.castingAbility = cloneDeep(this.currCastingAbility);
+    this.toPrepare = cloneDeep(this.currToPrepare);
   },
   methods: {
     ...mapActions(["setSpellStats"]),
@@ -87,7 +100,8 @@ export default {
       this.setSpellStats({
         dc: this.dc,
         castingAbility: this.castingAbility,
-        bonus: this.bonus
+        bonus: this.bonus,
+        toPrepare: this.toPrepare
       });
       this.$parent.close();
     }

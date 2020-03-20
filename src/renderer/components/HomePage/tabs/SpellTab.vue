@@ -13,13 +13,17 @@
       <div class="level-item has-text-centered">
         <div>
           <p class="heading is-size-4">Spell Attack Bonus</p>
-          <p class="has-text-weight-bold is-size-3">{{ bonus }}</p>
+          <p class="has-text-weight-bold is-size-3">
+            {{ spellCastingStrings.bonus }}
+          </p>
         </div>
       </div>
       <div class="level-item has-text-centered">
         <div>
           <p class="heading is-size-4">Casting Ability</p>
-          <p class="has-text-weight-bold is-size-3">{{ castingAbility }}</p>
+          <p class="has-text-weight-bold is-size-3">
+            {{ spellCastingStrings.castingAbility }}
+          </p>
         </div>
       </div>
     </div>
@@ -39,10 +43,8 @@
     </div>
     <div class="flex-row justify-space-between">
       <h2 class="is-size-2 has-text-weight-bold">Known Spells</h2>
-      <div>
-        <b-button @click="showAllSpells = true">
-          All Spells
-        </b-button>
+      <div class="is-size-3">
+        To Prepare: {{ spellCastingStrings.toPrepare }}
       </div>
     </div>
     <section class="filter-spells-control">
@@ -70,23 +72,32 @@
           <td>{{ spell.name }}</td>
           <td>{{ spell.level }}</td>
           <td>{{ spell.school }}</td>
-          <td>
-            <template v-if="spell.isPrepared">
+          <td class="flex-row justify-space-between">
+            <template v-if="spell.isPrepared || spell.level == 0">
               <b-button
-                type="is-danger"
-                @click.prevent.stop="unprepareSpell({ spellId: spell.id })"
+                type="is-success"
+                @click.prevent.stop="unprepare(spell)"
+                icon-left="check"
+                icon-pack="fas"
+                :disabled="spell.alwaysPrepared || spell.level == 0"
               >
-                Unprepare
+                Prepared
               </b-button>
             </template>
             <template v-else>
-              <b-button
-                type="is-info"
-                @click.prevent.stop="prepareSpell({ spellId: spell.id })"
-              >
+              <b-button type="is-info" @click.prevent.stop="prepare(spell)">
                 Prepare
               </b-button>
             </template>
+
+            <b-button
+              type="is-danger"
+              icon-left="trash"
+              icon-pack="fas"
+              @click.prevent.stop="remove(spell)"
+            >
+              Forget
+            </b-button>
           </td>
         </tr>
       </tbody>
@@ -135,14 +146,16 @@ export default {
     ...charState({
       knownIds: state => state.character.magic.knownSpellIds,
       preparedIds: state => state.character.magic.preparedSpellIds,
+      alwaysPreparedIds: state => state.character.magic.alwaysPreparedIds,
       spellLevels: state =>
         state.character.magic.spellSlots
           .filter(i => i.max > 0)
           .map(i => i.level),
-      rawDc: state => state.character.magic.dc,
-      rawBonus: state => state.character.magic.bonus,
-      rawCastingAbility: state => state.character.magic.castingAbility,
-      charClass: state => state.character.class
+      // rawDc: state => state.character.magic.dc,
+      // rawBonus: state => state.character.magic.bonus,
+      // rawCastingAbility: state => state.character.magic.castingAbility,
+      charClass: state => state.character.class,
+      toPrepare: state => state.character.magic.toPrepare
     }),
 
     ...charGetter(["spellCastingStrings"]),
@@ -150,7 +163,8 @@ export default {
     knownSpells() {
       return this.knownIds.map(id => ({
         ...this.spells[id],
-        isPrepared: this.preparedIds.includes(id)
+        isPrepared: this.preparedIds.includes(id),
+        alwaysPrepared: this.alwaysPreparedIds.includes(id)
       }));
     },
     sortedSpells() {
@@ -166,17 +180,17 @@ export default {
         name: this.getSortIcon("name"),
         level: this.getSortIcon("level")
       };
-    },
-
-    dc() {
-      return this.combineClasses(this.rawDc);
-    },
-    bonus() {
-      return this.combineClasses(this.rawBonus, true);
-    },
-    castingAbility() {
-      return this.combineClasses(this.rawCastingAbility);
     }
+
+    // dc() {
+    //   return this.combineClasses(this.rawDc);
+    // },
+    // bonus() {
+    //   return this.combineClasses(this.rawBonus, true);
+    // },
+    // castingAbility() {
+    //   return this.combineClasses(this.rawCastingAbility);
+    // }
   },
   methods: {
     ...charGetter(["isSpellKnown", "isSpellPrepared"]),
@@ -184,7 +198,8 @@ export default {
       "learnSpell",
       "restoreAllSpellSlots",
       "prepareSpell",
-      "unprepareSpell"
+      "unprepareSpell",
+      "forgetSpell"
     ]),
     showSpellDetail(spell) {
       this.detailSpell = spell;
@@ -193,11 +208,15 @@ export default {
       this.detailSpell = null;
     },
     prepare(spell) {
-      this.prepareSpell({ spellId: spell.id });
+      this.prepareSpell({ spellId: spell.slug });
     },
 
     unprepare(spell) {
-      this.unprepareSpell({ spellId: spell.id });
+      this.unprepareSpell({ spellId: spell.slug });
+    },
+    remove(spell) {
+      this.unprepare(spell);
+      this.forgetSpell({ spellId: spell.slug });
     },
     cycleSort(prop) {
       if (this.sort.order[prop] == null) {

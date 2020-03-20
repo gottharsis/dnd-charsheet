@@ -36,7 +36,7 @@ const mutations = {
   SET_ABILITY_SCORES(state, { abilityScores }) {
     state.character.abilityScores = abilityScores;
   },
-  SET_SPELL_STATS(state, { dc, bonus, castingAbility }) {
+  SET_SPELL_STATS(state, { dc, bonus, castingAbility, toPrepare }) {
     if (!isNil(bonus)) {
       state.character.magic.bonus = bonus;
     }
@@ -45,6 +45,10 @@ const mutations = {
     }
     if (!isNil(castingAbility)) {
       state.character.magic.castingAbility = castingAbility;
+    }
+
+    if (!isNil(toPrepare)) {
+      state.character.magic.toPrepare = toPrepare;
     }
   },
   SET_CHARACTER(state, { character, characterFile }) {
@@ -166,7 +170,7 @@ const mutations = {
     state.character.abilities.push(ability);
   },
   SET_ABILITY_LIST(state, { abilityList }) {
-    state.character.abilites = abilityList;
+    state.character.abilities = abilityList;
   },
 
   SET_INVENTORY_ITEMS(state, { items }) {
@@ -237,8 +241,8 @@ const actions = {
       commit("SET_ABILITY_SCORES", { abilityScores });
     }
   },
-  setSpellStats({ commit }, { dc, castingAbility, bonus }) {
-    commit("SET_SPELL_STATS", { dc, castingAbility, bonus });
+  setSpellStats({ commit }, { dc, castingAbility, bonus, toPrepare }) {
+    commit("SET_SPELL_STATS", { dc, castingAbility, bonus, toPrepare });
   },
   learnSpell({ commit }, { spellId }) {
     console.log("Learning spell with id " + spellId);
@@ -505,7 +509,7 @@ const getters = {
     for (let i = 0; i < 6; i++) {
       let sc = abilityScores[i].mod;
       if (savingThrows[i]) {
-        sc += proficiency;
+        sc += proficiencyBonus;
       }
       res.push(sc);
     }
@@ -548,7 +552,8 @@ const getters = {
     return {
       dc: combineClasses(magic.dc),
       bonus: combineClasses(magic.bonus, true),
-      ability: combineClasses(magic.castingAbility)
+      castingAbility: combineClasses(magic.castingAbility),
+      toPrepare: combineClasses(magic.toPrepare)
     };
   }
 };

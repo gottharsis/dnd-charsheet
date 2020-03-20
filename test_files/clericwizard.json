@@ -174,12 +174,12 @@
             "wizard": 16
         },
         "bonus": {
-            "cleric": 5,
+            "cleric": 4,
             "wizard": 7
         },
         "castingAbility": {
             "cleric": "WIS",
-            "wizard": "CHA"
+            "wizard": "INT"
         },
         "reset": "short",
         "modifiers": {
