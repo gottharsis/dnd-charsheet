@@ -1,374 +1,337 @@
 {
-    "name": "Lurien",
-    "abilityScores": [
-        {
-            "stat": "STR",
-            "score": 9,
-            "mod": -1
-        },
-        {
-            "stat": "DEX",
-            "score": 14,
-            "mod": 2
-        },
-        {
-            "stat": "CON",
-            "score": 14,
-            "mod": 2
-        },
-        {
-            "stat": "INT",
-            "score": 18,
-            "mod": 4
-        },
-        {
-            "stat": "WIS",
-            "score": 16,
-            "mod": 3
-        },
-        {
-            "stat": "CHA",
-            "score": 12,
-            "mod": 1
-        }
-    ],
-    "raceId": 4,
-    "classId": 11,
-    "health": {
-        "maxHp": 43,
-        "currentHp": 43,
-        "tempHp": 0,
-        "remainingHitDice": 6,
-        "maxHitDice": 6,
-        "hitDice": "d6"
+  "name": "Lurien",
+  "abilityScores": [
+    {
+      "stat": "STR",
+      "score": 9,
+      "mod": -1
     },
-    "inventory": {
-        "weaponIds": [
-            2,
-            2,
-            11,
-            28
-        ],
-        "wealth": {
-            "gold": "625",
-            "silver": "0",
-            "copper": 0,
-            "platinum": "0"
-        },
-        "items": [],
-        "magicItems": [
-            {
-                "name": "Test magic item 1",
-                "weight": 7,
-                "description": "THis si a test magic item",
-                "maxCharges": 7,
-                "attuned": false,
-                "charges": 7,
-                "id": 1
-            }
-        ]
+    {
+      "stat": "DEX",
+      "score": 14,
+      "mod": 2
     },
-    "magic": {
-        "spellSlots": [
-            {
-                "level": 0,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 1,
-                "max": 4,
-                "used": 0
-            },
-            {
-                "level": 2,
-                "max": 3,
-                "used": 0
-            },
-            {
-                "level": 3,
-                "max": 3,
-                "used": 0
-            },
-            {
-                "level": 4,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 5,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 6,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 7,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 8,
-                "max": 0,
-                "used": 0
-            },
-            {
-                "level": 9,
-                "max": 0,
-                "used": 0
-            }
-        ],
-        "knownSpellIds": [
-            "minor-illusion",
-            "mending",
-            "guidance",
-            "ray-of-frost",
-            "mold-earth",
-            "identify-ritual",
-            "command",
-            "bless",
-            "detect-magic-ritual",
-            "healing-word",
-            "guiding-bolt",
-            "magic-missile",
-            "web",
-            "find-familiar-ritual",
-            "silent-image",
-            "tashas-hideous-laughter",
-            "shield",
-            "grease",
-            "disguise-self",
-            "alarm-ritual",
-            "detect-thoughts",
-            "locate-object",
-            "enlargereduce",
-            "phantasmal-force",
-            "leomunds-tiny-hut-ritual",
-            "fireball",
-            "thaumaturgy",
-            "toll-the-dead",
-            "catapult",
-            "mage-hand"
-        ],
-        "preparedSpellIds": [
-            "identify-ritual",
-            "command",
-            "detect-magic-ritual",
-            "healing-word",
-            "guiding-bolt",
-            "magic-missile",
-            "web",
-            "silent-image",
-            "tashas-hideous-laughter",
-            "shield",
-            "grease",
-            "disguise-self",
-            "detect-thoughts",
-            "enlargereduce",
-            "fireball",
-            "bless",
-            "phantasmal-force"
-        ],
-        "dc": {
-            "cleric": 14,
-            "wizard": 15
-        },
-        "bonus": {
-            "cleric": 6,
-            "wizard": 7
-        },
-        "castingAbility": {
-            "cleric": "WIS",
-            "wizard": "INT"
-        },
-        "reset": "short",
-        "modifiers": {
-            "cleric": {
-                "dc": 15,
-                "bonus": 7,
-                "castingAbility": "WIS"
-            },
-            "wizard": {
-                "dc": 15,
-                "bonus": 7,
-                "castingAbility": "INT"
-            },
-            "dc": 15,
-            "bonus": 7,
-            "castingAbility": "CHA"
-        },
-        "toPrepare": {
-            "cleric": 4,
-            "wizard": 9
-        },
-        "alwaysPrepared": [
-            "identify-ritual",
-            "command",
-            "magic-missile",
-            "web"
-        ],
-        "alwaysPreparedIds": [
-            "identify-ritual",
-            "command",
-            "magic-missile",
-            "web"
-        ]
+    {
+      "stat": "CON",
+      "score": 14,
+      "mod": 2
     },
-    "armorId": 1,
-    "level": 6,
-    "skillIds": [
-        16,
-        6,
-        14,
-        19,
-        10
-    ],
-    "notes": [],
-    "languages": [
-        "Common",
-        "Infernal",
-        "Dwarvish",
-        "Sylvan",
-        "Celestial",
-        "Primordial"
-    ],
-    "abilities": [
-        {
-            "name": "Cast Magic Missile Lv. 2",
-            "description": "Cast Magic Missile at level 2. From Mephistopheles Tiefling. Reset on long rest",
-            "max": 1,
-            "used": 0,
-            "id": "ability_193c7e69-8c6e-43f0-a0d9-3ca5700841b3"
-        },
-        {
-            "name": "Cast Web",
-            "description": "Cast Web. From Mephistopheles Tiefling. Reset on LR.",
-            "max": 1,
-            "used": 0,
-            "id": "ability_b6ab8373-6c30-4296-8fa8-ee80628bea46"
-        }
-    ],
-    "savingThrows": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        true,
-        true
-    ],
-    "proficiencyBonus": 3,
-    "proficiency": 0,
-    "abilityScoresOld": [
-        11,
-        16,
-        16,
-        12,
-        13,
-        18
-    ],
-    "ac": 18,
-    "armor": {
-        "name": "Scale Mail + Shield",
-        "ac": 16,
-        "addDexMod": true,
-        "attributes": "",
-        "category": "light"
+    {
+      "stat": "INT",
+      "score": 18,
+      "mod": 4
     },
-    "skills": {
-        "Arcana": {
-            "proficiency": 2
-        },
-        "History": {
-            "proficiency": 2
-        },
-        "Investigation": {
-            "proficiency": 1
-        },
-        "Insight": {
-            "proficiency": 1
-        },
-        "Perception": {
-            "proficiency": 1
-        },
-        "Persuasion": {
-            "proficiency": 1
-        }
+    {
+      "stat": "WIS",
+      "score": 16,
+      "mod": 3
     },
-    "features": [
-        {
-            "name": "Observant (Feat)",
-            "description": "+5 to passive perception & passive investigation, +1 to INT or WIS",
-            "source": "Feat"
-        },
-        {
-            "name": "Arcane Recovery",
-            "description": "Recover ceil(5/2) = 3 levels of spell slots on short rest",
-            "source": "Wizard"
-        },
-        {
-            "name": "Portent",
-            "description": "Roll 2 d20's at end of long rest, can replace any check/saving throw/attack roll",
-            "source": "Divination wizard"
-        },
-        {
-            "name": "Darkvision",
-            "description": "See 60 ft in the dark",
-            "source": "Racial (Tiefling)"
-        },
-        {
-            "name": "Hellish Resistance",
-            "description": "Resistance to fire damage",
-            "source": "Racial (Tiefling)"
-        },
-        {
-            "name": "Legacy of Cania",
-            "description": "Know mage hand. Can cast magic missile lv. 2 and web 1/day",
-            "source": "Mephistopheles Tiefling"
-        }
-    ],
-    "speed": "30 / 15 (Swim)",
-    "abilites": [
-        {
-            "id": 1,
-            "name": "Fey Presence",
-            "description": "As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.",
-            "max": 1,
-            "used": 0,
-            "source": "Warlock (Archfey)",
-            "reset": "long"
-        },
-        {
-            "id": 2,
-            "name": "Misty Escape",
-            "description": "Starting at 6th level, you can vanish in a puff of mist in response to harm. When you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell.",
-            "max": 1,
-            "used": 1,
-            "source": "Warlock (Archfey)",
-            "reset": "short"
-        },
-        {
-            "name": "Test ability 2",
-            "description": "This is a test abliity",
-            "max": 2,
-            "used": 0,
-            "id": "ability_9473c98d-2ae7-4b74-a7d8-821621b330bb"
-        }
-    ],
-    "class": [
-        {
-            "id": "cleric",
-            "level": 1,
-            "subclass": "knowledge"
-        },
-        {
-            "id": "wizard",
-            "level": 5,
-            "subclass": "divination"
-        }
+    {
+      "stat": "CHA",
+      "score": 12,
+      "mod": 1
+    }
+  ],
+  "raceId": 4,
+  "classId": 11,
+  "health": {
+    "maxHp": 43,
+    "currentHp": 43,
+    "tempHp": 0,
+    "remainingHitDice": 6,
+    "maxHitDice": 6,
+    "hitDice": "d6"
+  },
+  "inventory": {
+    "weaponIds": [2, 2, 11, 28],
+    "wealth": {
+      "gold": "625",
+      "silver": "0",
+      "copper": 0,
+      "platinum": "0"
+    },
+    "items": [],
+    "magicItems": [
+      {
+        "name": "Test magic item 1",
+        "weight": 7,
+        "description": "THis si a test magic item",
+        "maxCharges": 7,
+        "attuned": false,
+        "charges": 7,
+        "id": 1
+      }
     ]
+  },
+  "magic": {
+    "spellSlots": [
+      {
+        "level": 0,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 1,
+        "max": 4,
+        "used": 0
+      },
+      {
+        "level": 2,
+        "max": 3,
+        "used": 0
+      },
+      {
+        "level": 3,
+        "max": 3,
+        "used": 0
+      },
+      {
+        "level": 4,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 5,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 6,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 7,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 8,
+        "max": 0,
+        "used": 0
+      },
+      {
+        "level": 9,
+        "max": 0,
+        "used": 0
+      }
+    ],
+    "knownSpellIds": [
+      "minor-illusion",
+      "mending",
+      "guidance",
+      "ray-of-frost",
+      "mold-earth",
+      "identify-ritual",
+      "command",
+      "bless",
+      "detect-magic-ritual",
+      "healing-word",
+      "guiding-bolt",
+      "magic-missile",
+      "web",
+      "find-familiar-ritual",
+      "silent-image",
+      "tashas-hideous-laughter",
+      "shield",
+      "grease",
+      "disguise-self",
+      "alarm-ritual",
+      "detect-thoughts",
+      "locate-object",
+      "enlargereduce",
+      "phantasmal-force",
+      "leomunds-tiny-hut-ritual",
+      "fireball",
+      "thaumaturgy",
+      "toll-the-dead",
+      "catapult",
+      "mage-hand"
+    ],
+    "preparedSpellIds": [
+      "identify-ritual",
+      "command",
+      "detect-magic-ritual",
+      "healing-word",
+      "guiding-bolt",
+      "magic-missile",
+      "web",
+      "silent-image",
+      "tashas-hideous-laughter",
+      "shield",
+      "grease",
+      "disguise-self",
+      "detect-thoughts",
+      "enlargereduce",
+      "fireball",
+      "bless",
+      "phantasmal-force"
+    ],
+    "dc": {
+      "cleric": 14,
+      "wizard": 15
+    },
+    "bonus": {
+      "cleric": 6,
+      "wizard": 7
+    },
+    "castingAbility": {
+      "cleric": "WIS",
+      "wizard": "INT"
+    },
+    "reset": "short",
+    "modifiers": {
+      "cleric": {
+        "dc": 15,
+        "bonus": 7,
+        "castingAbility": "WIS"
+      },
+      "wizard": {
+        "dc": 15,
+        "bonus": 7,
+        "castingAbility": "INT"
+      },
+      "dc": 15,
+      "bonus": 7,
+      "castingAbility": "CHA"
+    },
+    "toPrepare": {
+      "cleric": 4,
+      "wizard": 9
+    },
+    "alwaysPrepared": ["identify-ritual", "command", "magic-missile", "web"],
+    "alwaysPreparedIds": ["identify-ritual", "command", "magic-missile", "web"]
+  },
+  "armorId": 1,
+  "level": 6,
+  "skillIds": [16, 6, 14, 19, 10],
+  "notes": [],
+  "languages": [
+    "Common",
+    "Infernal",
+    "Dwarvish",
+    "Sylvan",
+    "Celestial",
+    "Primordial"
+  ],
+  "abilities": [
+    {
+      "name": "Cast Magic Missile Lv. 2",
+      "description": "Cast Magic Missile at level 2. From Mephistopheles Tiefling. Reset on long rest",
+      "max": 1,
+      "used": 0,
+      "id": "ability_193c7e69-8c6e-43f0-a0d9-3ca5700841b3"
+    },
+    {
+      "name": "Cast Web",
+      "description": "Cast Web. From Mephistopheles Tiefling. Reset on LR.",
+      "max": 1,
+      "used": 0,
+      "id": "ability_b6ab8373-6c30-4296-8fa8-ee80628bea46"
+    }
+  ],
+  "savingThrows": [false, false, false, false, true, true],
+  "proficiencyBonus": 3,
+  "proficiency": 0,
+  "abilityScoresOld": [11, 16, 16, 12, 13, 18],
+  "ac": 18,
+  "armor": {
+    "name": "Scale Mail + Shield",
+    "ac": 16,
+    "addDexMod": true,
+    "attributes": "",
+    "category": "light"
+  },
+  "skills": {
+    "Arcana": {
+      "proficiency": 2
+    },
+    "History": {
+      "proficiency": 2
+    },
+    "Investigation": {
+      "proficiency": 1
+    },
+    "Insight": {
+      "proficiency": 1
+    },
+    "Perception": {
+      "proficiency": 1
+    },
+    "Persuasion": {
+      "proficiency": 1
+    }
+  },
+  "features": [
+    {
+      "name": "Observant (Feat)",
+      "description": "+5 to passive perception & passive investigation, +1 to INT or WIS",
+      "source": "Feat"
+    },
+    {
+      "name": "Arcane Recovery",
+      "description": "Recover ceil(5/2) = 3 levels of spell slots on short rest",
+      "source": "Wizard"
+    },
+    {
+      "name": "Portent",
+      "description": "Roll 2 d20's at end of long rest, can replace any check/saving throw/attack roll",
+      "source": "Divination wizard"
+    },
+    {
+      "name": "Darkvision",
+      "description": "See 60 ft in the dark",
+      "source": "Racial (Tiefling)"
+    },
+    {
+      "name": "Hellish Resistance",
+      "description": "Resistance to fire damage",
+      "source": "Racial (Tiefling)"
+    },
+    {
+      "name": "Legacy of Cania",
+      "description": "Know mage hand. Can cast magic missile lv. 2 and web 1/day",
+      "source": "Mephistopheles Tiefling"
+    }
+  ],
+  "speed": "30 / 15 (Swim)",
+  "abilites": [
+    {
+      "id": 1,
+      "name": "Fey Presence",
+      "description": "As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.",
+      "max": 1,
+      "used": 0,
+      "source": "Warlock (Archfey)",
+      "reset": "long"
+    },
+    {
+      "id": 2,
+      "name": "Misty Escape",
+      "description": "Starting at 6th level, you can vanish in a puff of mist in response to harm. When you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell.",
+      "max": 1,
+      "used": 1,
+      "source": "Warlock (Archfey)",
+      "reset": "short"
+    },
+    {
+      "name": "Test ability 2",
+      "description": "This is a test abliity",
+      "max": 2,
+      "used": 0,
+      "id": "ability_9473c98d-2ae7-4b74-a7d8-821621b330bb"
+    }
+  ],
+  "class": [
+    {
+      "id": "cleric",
+      "level": 1,
+      "subclass": "knowledge"
+    },
+    {
+      "id": "wizard",
+      "level": 5,
+      "subclass": "divination"
+    }
+  ]
 }

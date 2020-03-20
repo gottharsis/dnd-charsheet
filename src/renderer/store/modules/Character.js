@@ -502,8 +502,11 @@ const getters = {
     return mod;
   },
   savingThrowBonuses: state => {
+    console.log("Caluclating saving throw bonuses");
     const ch = state.character;
     const { savingThrows, proficiencyBonus, abilityScores } = ch;
+    console.log(proficiencyBonus);
+    console.log(savingThrows);
 
     let res = [];
     for (let i = 0; i < 6; i++) {
