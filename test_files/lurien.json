@@ -150,7 +150,8 @@
             "phantasmal-force",
             "leomunds-tiny-hut-ritual",
             "fireball",
-            "thaumaturgy"
+            "thaumaturgy",
+            "toll-the-dead"
         ],
         "preparedSpellIds": [
             "identify-ritual",

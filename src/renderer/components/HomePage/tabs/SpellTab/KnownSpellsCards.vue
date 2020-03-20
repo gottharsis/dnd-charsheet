@@ -96,7 +96,8 @@ export default {
       // rawBonus: state => state.character.magic.bonus,
       // rawCastingAbility: state => state.character.magic.castingAbility,
       charClass: state => state.character.class,
-      toPrepare: state => state.character.magic.toPrepare
+      toPrepare: state => state.character.magic.toPrepare,
+      customSpells: state => state.character.magic.customSpells
     }),
 
     ...charGetter(["spellCastingStrings", "numPrepared"]),
