@@ -43,7 +43,7 @@ export default {
     AbilityModal
   },
   props: {
-    abilityId: Number
+    abilityId: String
   },
   computed: {
     ...mapState({
