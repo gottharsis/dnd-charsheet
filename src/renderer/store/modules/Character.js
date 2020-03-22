@@ -201,6 +201,13 @@ const mutations = {
 
     if (isNil(note)) return;
     Object.assign(currNote, note);
+  },
+
+  SET_SAVED_ROLLS(state, { savedRolls }) {
+    if (isNil(savedRolls)) {
+      return;
+    }
+    state.character.savedRolls = savedRolls;
   }
 };
 
@@ -469,6 +476,9 @@ const actions = {
   deleteNote({ commit, state }, { note }) {
     const notes = state.character.notes.filter(n => n.id !== note.id);
     commit("SET_NOTES", { notes });
+  },
+  setSavedRolls({ commit }, { savedRolls }) {
+    commit("SET_SAVED_ROLLS", { savedRolls });
   }
 };
 

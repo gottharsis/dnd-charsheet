@@ -7,11 +7,22 @@
       <b-field>
         <input class="input" v-model="rollInput" ref="rollInput" />
       </b-field>
-      <b-field>
-        <b-button native-type="submit">
-          Roll
+
+      <div class="buttons">
+        <b-button
+          v-for="[key, saved] in Object.entries(savedRolls)"
+          :key="key"
+          :type="lastSavedRoll == key ? 'is-info' : ''"
+          @click="roll(saved.roll)"
+        >
+          {{ saved.name }} ({{ key }})
         </b-button>
-      </b-field>
+        <b-button
+          icon-left="edit"
+          icon-pack="fas"
+          @click="isEditModalOpen = true"
+        ></b-button>
+      </div>
     </form>
     <div v-if="rollInputLast" class="results">
       <p>
@@ -38,6 +49,31 @@
         </div>
       </div>
     </div>
+
+    <b-modal :active.sync="isEditModalOpen">
+      <div class="box content">
+        <h2 class="has-text-centered">Edit Saved rolls</h2>
+        <form @submit.prevent="submitForm">
+          <div v-for="key in rollKeys" :key="key" class="columns">
+            <div class="column is-2">
+              <h1 class="has-text-centered">
+                {{ key }}
+              </h1>
+            </div>
+            <div class="column flex-row">
+              <b-field label="Name" class="roll-input">
+                <b-input v-model="customRolls[key].name"></b-input>
+              </b-field>
+              <b-field label="Roll" class="roll-input">
+                <b-input v-model="customRolls[key].roll"></b-input>
+              </b-field>
+              <hr />
+            </div>
+          </div>
+          <b-button native-type="submit">Save Changes</b-button>
+        </form>
+      </div>
+    </b-modal>
   </div>
 </template>
 
@@ -47,9 +83,18 @@ import { DiceRoll, DiceRoller } from "rpg-dice-roller/lib/esm/bundle";
 import { createNamespacedHelpers } from "vuex";
 const { mapActions } = createNamespacedHelpers("Hotkeys");
 import flatten from "lodash/flattenDeep";
+import isNil from "lodash/isNil";
+import cloneDeep from "lodash/cloneDeep";
+const {
+  mapState: charState,
+  mapActions: charActions
+} = createNamespacedHelpers("Character");
 
 export default {
   computed: {
+    ...charState({
+      savedRolls: state => state.character.savedRolls
+    }),
     rollsFinal() {
       const total = roll => roll.total;
       const individual = roll =>
@@ -73,38 +118,100 @@ export default {
     }
   },
   methods: {
-    roll() {
-      const input = this.rollInput || this.rollInputLast;
+    roll(expression) {
+      const input =
+        typeof expression == "string"
+          ? expression
+          : this.rollInput || this.rollInputLast;
       const inputParse = input.split(",").map(i => i.trim());
       const roll = this.roller.roll.apply(this.roller, inputParse);
       this.lastRoll = roll;
       this.rollInputLast = input;
       this.rollInput = "";
+      if (typeof expression != "string") {
+        this.lastSavedRoll = "";
+      }
       this.$refs.rollInput.focus();
     },
-    closeOnEsc(event) {
+    keyListener(event) {
       if (event.key === "Escape") {
         this.closeDiceRoller();
+        return;
+      }
+      const saved = this.savedRolls[event.key];
+      if (!isNil(saved)) {
+        this.roll(saved.roll);
+        this.lastSavedRoll = event.key;
       }
     },
-    ...mapActions(["closeDiceRoller"])
+    ...mapActions(["closeDiceRoller"]),
+    ...charActions(["setSavedRolls"]),
+    submitForm() {
+      const rolls = cloneDeep(this.customRolls);
+      for (const key in rolls) {
+        console.log(key);
+        if (!(rolls[key] && rolls[key].name && rolls[key].roll)) {
+          delete rolls[key];
+        }
+      }
+      this.setSavedRolls({
+        savedRolls: rolls
+      });
+      console.log("successfully sset rolls ");
+      this.isEditModalOpen = false;
+      console.log("closed edit modal");
+    }
   },
   data() {
     return {
       lastRoll: [],
       rollInput: "",
       rollInputLast: "",
-      roller: null
+      lastSavedRoll: "",
+      roller: null,
+      isEditModalOpen: false,
+      rollKeys: ["q", "w", "e", "r", "t"],
+      customRolls: {
+        q: {
+          name: "",
+          roll: ""
+        },
+        w: {
+          name: "",
+          roll: ""
+        },
+        e: {
+          name: "",
+          roll: ""
+        },
+        r: {
+          name: "",
+          roll: ""
+        },
+        t: {
+          name: "",
+          roll: ""
+        }
+      }
     };
   },
   mixins: [clickaway],
   mounted() {
-    window.addEventListener("keyup", this.closeOnEsc);
+    window.addEventListener("keyup", this.keyListener);
     this.$refs.rollInput.focus();
     this.roller = new DiceRoller();
+
+    // for (const key of this.rollKeys) {
+    //   if (this.savedRolls.hasOwnProperty(key)) {
+    //     this.customRolls[key].name = this.savedRolls[key].name;
+    //     this.customRolls[key].roll = this.savedRolls[key].roll;
+    //   }
+    // }
+    const rls = cloneDeep(this.savedRolls);
+    Object.assign(this.customRolls, rls);
   },
   beforeDestroy() {
-    window.removeEventListener("keyup", this.closeOnEsc);
+    window.removeEventListener("keyup", this.keyListener);
   }
 };
 </script>
@@ -119,5 +226,13 @@ form {
 
 .results {
   height: 300px;
+}
+
+.roll-input {
+  flex: 1;
+  margin-right: 30px;
+  &:last-child {
+    margin-right: 0px;
+  }
 }
 </style>
