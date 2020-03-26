@@ -179,6 +179,9 @@ const mutations = {
   SET_INVENTORY_MAGIC_ITEMS(state, { magicItems }) {
     state.character.inventory.magicItems = magicItems;
   },
+  SET_WEAPONS(state, { weapons }) {
+    state.character.inventory.weapons = weapons;
+  },
   UPDATE_ITEM(state, { id, newItem }) {
     const item = state.character.inventory.items.find(i => i.id === id);
     if (isNil(item)) return;
@@ -457,6 +460,9 @@ const actions = {
   },
   setInventoryMagicItems({ commit }, { magicItems }) {
     commit("SET_INVENTORY_MAGIC_ITEMS", { magicItems });
+  },
+  setWeapons({ commit }, { weapons }) {
+    commit("SET_WEAPONS", { weapons });
   },
   updateItem({ commit }, { id, newItem }) {
     commit("UPDATE_ITEM", { id, newItem });

@@ -74,6 +74,30 @@
                 "charges": 7,
                 "id": 1
             }
+        ],
+        "weapons": [
+            {
+                "name": "Mace ",
+                "damage": "1d6 bludgeoning",
+                "weight": "4 lb.",
+                "category": "Simple Melee",
+                "properties": "",
+                "id": "weapon_1"
+            },
+            {
+                "name": "Toll the Dead",
+                "damage": "2d12 Necrotic",
+                "category": "Cantrip",
+                "properties": "WIS Save",
+                "id": "44ddb13a-2a2b-4132-90a9-ae8d5ed16e07"
+            },
+            {
+                "name": "Ray of Frost",
+                "damage": "2d8",
+                "category": "Cantrip",
+                "properties": "Reduce Movement by 10 ft.",
+                "id": "58f1c5b0-9bb6-490a-a21f-c18971c44a80"
+            }
         ]
     },
     "magic": {
