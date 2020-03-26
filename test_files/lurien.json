@@ -1,381 +1,439 @@
 {
-  "name": "Lurien",
-  "abilityScores": [
-    {
-      "stat": "STR",
-      "score": 9,
-      "mod": -1
-    },
-    {
-      "stat": "DEX",
-      "score": 14,
-      "mod": 2
-    },
-    {
-      "stat": "CON",
-      "score": 14,
-      "mod": 2
-    },
-    {
-      "stat": "INT",
-      "score": 18,
-      "mod": 4
-    },
-    {
-      "stat": "WIS",
-      "score": 16,
-      "mod": 3
-    },
-    {
-      "stat": "CHA",
-      "score": 12,
-      "mod": 1
-    }
-  ],
-  "raceId": 4,
-  "classId": 11,
-  "health": {
-    "maxHp": 43,
-    "currentHp": 24,
-    "tempHp": 0,
-    "remainingHitDice": 6,
-    "maxHitDice": 6,
-    "hitDice": "d6"
-  },
-  "inventory": {
-    "weaponIds": [2, 2, 11, 28],
-    "wealth": {
-      "gold": "625",
-      "silver": "0",
-      "copper": 0,
-      "platinum": "0"
-    },
-    "items": [
-      {
-        "id": "item_41918c1b-c6db-45e1-a22f-63b4f28940ca",
-        "name": "Helm of Telepathy",
-        "weight": 0,
-        "description": "Can cast detect thoughts (DC 13) at will. When concentrating, can cast suggestion dc 13 1/day",
-        "quantity": 1
-      }
+    "name": "Lurien",
+    "abilityScores": [
+        {
+            "stat": "STR",
+            "score": 9,
+            "mod": -1
+        },
+        {
+            "stat": "DEX",
+            "score": 14,
+            "mod": 2
+        },
+        {
+            "stat": "CON",
+            "score": 14,
+            "mod": 2
+        },
+        {
+            "stat": "INT",
+            "score": 18,
+            "mod": 4
+        },
+        {
+            "stat": "WIS",
+            "score": 16,
+            "mod": 3
+        },
+        {
+            "stat": "CHA",
+            "score": 12,
+            "mod": 1
+        }
     ],
-    "magicItems": [
-      {
-        "name": "Test magic item 1",
-        "weight": 7,
-        "description": "THis si a test magic item",
-        "maxCharges": 7,
-        "attuned": false,
-        "charges": 7,
-        "id": 1
-      }
-    ]
-  },
-  "magic": {
-    "spellSlots": [
-      {
-        "level": 0,
-        "max": 0,
-        "used": 0
-      },
-      {
-        "level": 1,
-        "max": 4,
-        "used": 2
-      },
-      {
-        "level": 2,
-        "max": 3,
-        "used": 1
-      },
-      {
-        "level": 3,
-        "max": 3,
-        "used": 1
-      },
-      {
-        "level": 4,
-        "max": 0,
-        "used": 0
-      },
-      {
-        "level": 5,
-        "max": 0,
-        "used": 0
-      },
-      {
-        "level": 6,
-        "max": 0,
-        "used": 0
-      },
-      {
-        "level": 7,
-        "max": 0,
-        "used": 0
-      },
-      {
-        "level": 8,
-        "max": 0,
-        "used": 0
-      },
-      {
-        "level": 9,
-        "max": 0,
-        "used": 0
-      }
+    "raceId": 4,
+    "classId": 11,
+    "health": {
+        "maxHp": 43,
+        "currentHp": 24,
+        "tempHp": 0,
+        "remainingHitDice": 6,
+        "maxHitDice": 6,
+        "hitDice": "d6"
+    },
+    "inventory": {
+        "weaponIds": [
+            2,
+            2,
+            11,
+            28
+        ],
+        "wealth": {
+            "gold": "625",
+            "silver": "0",
+            "copper": 0,
+            "platinum": "0"
+        },
+        "items": [
+            {
+                "id": "item_41918c1b-c6db-45e1-a22f-63b4f28940ca",
+                "name": "Helm of Telepathy",
+                "weight": 0,
+                "description": "Can cast detect thoughts (DC 13) at will. When concentrating, can cast suggestion dc 13 1/day",
+                "quantity": 1
+            }
+        ],
+        "magicItems": [
+            {
+                "name": "Test magic item 1",
+                "weight": 7,
+                "description": "THis si a test magic item",
+                "maxCharges": 7,
+                "attuned": false,
+                "charges": 7,
+                "id": 1
+            }
+        ]
+    },
+    "magic": {
+        "spellSlots": [
+            {
+                "level": 0,
+                "max": 0,
+                "used": 0
+            },
+            {
+                "level": 1,
+                "max": 4,
+                "used": 2
+            },
+            {
+                "level": 2,
+                "max": 3,
+                "used": 1
+            },
+            {
+                "level": 3,
+                "max": 3,
+                "used": 1
+            },
+            {
+                "level": 4,
+                "max": 0,
+                "used": 0
+            },
+            {
+                "level": 5,
+                "max": 0,
+                "used": 0
+            },
+            {
+                "level": 6,
+                "max": 0,
+                "used": 0
+            },
+            {
+                "level": 7,
+                "max": 0,
+                "used": 0
+            },
+            {
+                "level": 8,
+                "max": 0,
+                "used": 0
+            },
+            {
+                "level": 9,
+                "max": 0,
+                "used": 0
+            }
+        ],
+        "knownSpellIds": [
+            "minor-illusion",
+            "mending",
+            "guidance",
+            "ray-of-frost",
+            "mold-earth",
+            "identify-ritual",
+            "command",
+            "bless",
+            "detect-magic-ritual",
+            "healing-word",
+            "guiding-bolt",
+            "magic-missile",
+            "web",
+            "find-familiar-ritual",
+            "silent-image",
+            "tashas-hideous-laughter",
+            "shield",
+            "grease",
+            "disguise-self",
+            "alarm-ritual",
+            "detect-thoughts",
+            "locate-object",
+            "enlargereduce",
+            "phantasmal-force",
+            "leomunds-tiny-hut-ritual",
+            "fireball",
+            "thaumaturgy",
+            "toll-the-dead",
+            "catapult",
+            "mage-hand"
+        ],
+        "preparedSpellIds": [
+            "identify-ritual",
+            "command",
+            "detect-magic-ritual",
+            "healing-word",
+            "guiding-bolt",
+            "magic-missile",
+            "web",
+            "silent-image",
+            "tashas-hideous-laughter",
+            "shield",
+            "grease",
+            "disguise-self",
+            "enlargereduce",
+            "fireball",
+            "bless",
+            "phantasmal-force",
+            "locate-object"
+        ],
+        "dc": {
+            "cleric": 14,
+            "wizard": 15
+        },
+        "bonus": {
+            "cleric": 6,
+            "wizard": 7
+        },
+        "castingAbility": {
+            "cleric": "WIS",
+            "wizard": "INT"
+        },
+        "reset": "short",
+        "modifiers": {
+            "cleric": {
+                "dc": 15,
+                "bonus": 7,
+                "castingAbility": "WIS"
+            },
+            "wizard": {
+                "dc": 15,
+                "bonus": 7,
+                "castingAbility": "INT"
+            },
+            "dc": 15,
+            "bonus": 7,
+            "castingAbility": "CHA"
+        },
+        "toPrepare": {
+            "cleric": 4,
+            "wizard": 9
+        },
+        "alwaysPrepared": [
+            "identify-ritual",
+            "command",
+            "magic-missile",
+            "web"
+        ],
+        "alwaysPreparedIds": [
+            "identify-ritual",
+            "command",
+            "magic-missile",
+            "web"
+        ]
+    },
+    "armorId": 1,
+    "level": 6,
+    "skillIds": [
+        16,
+        6,
+        14,
+        19,
+        10
     ],
-    "knownSpellIds": [
-      "minor-illusion",
-      "mending",
-      "guidance",
-      "ray-of-frost",
-      "mold-earth",
-      "identify-ritual",
-      "command",
-      "bless",
-      "detect-magic-ritual",
-      "healing-word",
-      "guiding-bolt",
-      "magic-missile",
-      "web",
-      "find-familiar-ritual",
-      "silent-image",
-      "tashas-hideous-laughter",
-      "shield",
-      "grease",
-      "disguise-self",
-      "alarm-ritual",
-      "detect-thoughts",
-      "locate-object",
-      "enlargereduce",
-      "phantasmal-force",
-      "leomunds-tiny-hut-ritual",
-      "fireball",
-      "thaumaturgy",
-      "toll-the-dead",
-      "catapult",
-      "mage-hand"
+    "notes": [
+        {
+            "id": "note_157af207-1ce1-46dc-92b8-b76823491ccc",
+            "title": "Familiar (Owl)",
+            "content": "# Owl\n**Tiny beast, unaligned**\n\n**Armor Class:** 11\n**Hit Points** 1 (1d4 - 1)\n**Speed** 5 ft., fly 60 ft.\n| **Stat** |** Score **| **Mod** |\n| --- | --- | --- |\n| STR | 3 | -4 |  \n| DEX | 13  |  +1  |  \n| CON | 8  |  -1  | \n| INT |  2 | -4   | \n| WIS | 12 | +1 |\n| CHA | 7 | -2 |\n\n\n**Skills:** Perception +3, Stealth +3\n\n**Senses:** Darkvision 120 ft., Passive Perception 13\n\n**Languages:**  --\n\n### Flyby \nThe owl doesn't provoke opportunity attacks when it flies out of an enemy's reach.\n\n### Keen Hearing and Sight\nThe owl has advantage on Wisdom (Perception) checks that rely on hearing or sight.\n\n## Actions\n**Talons:** \n\n*Melee Weapon Attack*: +3 to hit, reach 5 ft., one target. Hit: 1 slashing damage."
+        },
+        {
+            "id": "note_5aa23fd6-b154-42e0-8e72-dd865e55d224",
+            "title": "Familiar (Bat) ",
+            "content": "# Bat\n**Tiny beast, unaligned**\n\n**Armor Class:** 12\n**Hit Points** 1 (1d4 - 1)\n**Speed** 5 ft., fly 30 ft.\n| **Stat** |** Score **| **Mod** |\n| --- | --- | --- |\n| STR | 2 | -4 |  \n| DEX | 15  |  +2  |  \n| CON | 8  |  -1  | \n| INT |  2 | -4   | \n| WIS | 12 | +1 |\n| CHA | 4 | -3 |\n\n\n**Senses:** Blindsight 60 ft., Passive Perception 11\n\n**Languages:**  --\n\n### Echolocation \nThe bat can't use its blindsight while deafened.\n\n### Keen Hearing\n The bat has advantage on Wisdom (Perception) checks that rely on hearing.\n"
+        },
+        {
+            "id": "note_b831f7e1-2c2b-4121-b1d9-10aec1547c07",
+            "title": "Familiar (Octopus)",
+            "content": "# Octopus\n**Small beast, unaligned**\n\n**Armor Class:** 12\n**Hit Points** 3 (1d6)\n**Speed** 5 ft., swim 30 ft.\n| **Stat** | ** Score ** | **Mod** |\n| --- | --- | --- |\n| STR | 4 | -3 |  \n| DEX | 15  |  +2  |  \n| CON | 11  |  +0  | \n| INT |  3 | -4   | \n| WIS | 10 | +0 |\n| CHA | 4 | -3 |\n\n**Skills:** Perception +2, Stealth +4\n\n**Senses:** Darkvision 30 ft., Passive Perception 12\n\n**Languages:**  --\n\n### Hold Breath \nWhile out of water, the octopus can hold its breath for 30 minutes.\n\n### Ink Cloud (Recharges after a Short or Long Rest)\nA 5-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action.\n"
+        },
+        {
+            "id": "note_19b9e2d8-7b61-4a0c-8ec9-2cc6e12de0ad",
+            "title": "Familiar (Spider)",
+            "content": "# Spider\n**Tiny beast, unaligned**\n\n**Armor Class:** 12\n**Hit Points** 1 (1d4-1)\n**Speed** 20 ft., climb 20 ft.\n| **Stat** | ** Score ** | **Mod** |\n| --- | --- | --- |\n| STR | 2 | -4 |  \n| DEX | 154 |  +2  |  \n| CON | 8  |  -1  | \n| INT |  1 | -5   | \n| WIS | 10 | +0 |\n| CHA | 2 | -4 |\n\n**Skills:** Stealth +4\n\n**Senses:** Darkvision 30 ft., Passive Perception 12\n\n**Languages:**  --\n\n### Spider Climb\n The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.\n\n\n### Web Sense: \nWhile in contact with a web, the spider knows the exact location of any other creature in contact with the same web.\n\n### Web Walker: \nThe spider ignores Movement restrictions caused by webbing.\n"
+        },
+        {
+            "id": "note_a7b3ffa9-6d10-4765-bc73-ec6c2e1f9bdf",
+            "title": "Portent",
+            "content": "# Portent\n12\n"
+        },
+        {
+            "id": "note_a4c3c2a7-9517-4306-85cd-324476bb018c",
+            "title": "Physical Description",
+            "content": "# Physical Description\n\n**Height:**  5'11\n\n**Color** Purple\n\n**Eye Color** Silver"
+        }
     ],
-    "preparedSpellIds": [
-      "identify-ritual",
-      "command",
-      "detect-magic-ritual",
-      "healing-word",
-      "guiding-bolt",
-      "magic-missile",
-      "web",
-      "silent-image",
-      "tashas-hideous-laughter",
-      "shield",
-      "grease",
-      "disguise-self",
-      "enlargereduce",
-      "fireball",
-      "bless",
-      "phantasmal-force",
-      "locate-object"
+    "languages": [
+        "Common",
+        "Infernal",
+        "Dwarvish",
+        "Sylvan",
+        "Celestial",
+        "Primordial"
     ],
-    "dc": {
-      "cleric": 14,
-      "wizard": 15
+    "abilities": [
+        {
+            "name": "Cast Magic Missile Lv. 2",
+            "description": "Cast Magic Missile at level 2. From Mephistopheles Tiefling. Reset on long rest",
+            "max": 1,
+            "used": 1,
+            "id": "ability_193c7e69-8c6e-43f0-a0d9-3ca5700841b3"
+        },
+        {
+            "name": "Cast Web",
+            "description": "Cast Web. From Mephistopheles Tiefling. Reset on LR.",
+            "max": 1,
+            "used": 0,
+            "id": "ability_b6ab8373-6c30-4296-8fa8-ee80628bea46"
+        }
+    ],
+    "savingThrows": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        "WIS",
+        "CHA"
+    ],
+    "proficiencyBonus": 3,
+    "proficiency": 0,
+    "abilityScoresOld": [
+        11,
+        16,
+        16,
+        12,
+        13,
+        18
+    ],
+    "ac": 18,
+    "armor": {
+        "name": "Scale Mail + Shield",
+        "ac": 16,
+        "addDexMod": true,
+        "attributes": "",
+        "category": "light"
     },
-    "bonus": {
-      "cleric": 6,
-      "wizard": 7
+    "skills": {
+        "Arcana": {
+            "proficiency": 2
+        },
+        "History": {
+            "proficiency": 2
+        },
+        "Investigation": {
+            "proficiency": 1
+        },
+        "Insight": {
+            "proficiency": 1
+        },
+        "Perception": {
+            "proficiency": 1
+        },
+        "Persuasion": {
+            "proficiency": 1
+        },
+        "Religion": {
+            "proficiency": 1
+        },
+        "Deception": {
+            "proficiency": 1
+        }
     },
-    "castingAbility": {
-      "cleric": "WIS",
-      "wizard": "INT"
-    },
-    "reset": "short",
-    "modifiers": {
-      "cleric": {
-        "dc": 15,
-        "bonus": 7,
-        "castingAbility": "WIS"
-      },
-      "wizard": {
-        "dc": 15,
-        "bonus": 7,
-        "castingAbility": "INT"
-      },
-      "dc": 15,
-      "bonus": 7,
-      "castingAbility": "CHA"
-    },
-    "toPrepare": {
-      "cleric": 4,
-      "wizard": 9
-    },
-    "alwaysPrepared": ["identify-ritual", "command", "magic-missile", "web"],
-    "alwaysPreparedIds": ["identify-ritual", "command", "magic-missile", "web"]
-  },
-  "armorId": 1,
-  "level": 6,
-  "skillIds": [16, 6, 14, 19, 10],
-  "notes": [
-    {
-      "id": "note_157af207-1ce1-46dc-92b8-b76823491ccc",
-      "title": "Familiar (Owl)",
-      "content": "# Owl\n**Tiny beast, unaligned**\n\n**Armor Class:** 11\n**Hit Points** 1 (1d4 - 1)\n**Speed** 5 ft., fly 60 ft.\n| **Stat** |** Score **| **Mod** |\n| --- | --- | --- |\n| STR | 3 | -4 |  \n| DEX | 13  |  +1  |  \n| CON | 8  |  -1  | \n| INT |  2 | -4   | \n| WIS | 12 | +1 |\n| CHA | 7 | -2 |\n\n\n**Skills:** Perception +3, Stealth +3\n\n**Senses:** Darkvision 120 ft., Passive Perception 13\n\n**Languages:**  --\n\n### Flyby \nThe owl doesn't provoke opportunity attacks when it flies out of an enemy's reach.\n\n### Keen Hearing and Sight\nThe owl has advantage on Wisdom (Perception) checks that rely on hearing or sight.\n\n## Actions\n**Talons:** \n\n*Melee Weapon Attack*: +3 to hit, reach 5 ft., one target. Hit: 1 slashing damage."
-    },
-    {
-      "id": "note_5aa23fd6-b154-42e0-8e72-dd865e55d224",
-      "title": "Familiar (Bat) ",
-      "content": "# Bat\n**Tiny beast, unaligned**\n\n**Armor Class:** 12\n**Hit Points** 1 (1d4 - 1)\n**Speed** 5 ft., fly 30 ft.\n| **Stat** |** Score **| **Mod** |\n| --- | --- | --- |\n| STR | 2 | -4 |  \n| DEX | 15  |  +2  |  \n| CON | 8  |  -1  | \n| INT |  2 | -4   | \n| WIS | 12 | +1 |\n| CHA | 4 | -3 |\n\n\n**Senses:** Blindsight 60 ft., Passive Perception 11\n\n**Languages:**  --\n\n### Echolocation \nThe bat can't use its blindsight while deafened.\n\n### Keen Hearing\n The bat has advantage on Wisdom (Perception) checks that rely on hearing.\n"
-    },
-    {
-      "id": "note_b831f7e1-2c2b-4121-b1d9-10aec1547c07",
-      "title": "Familiar (Octopus)",
-      "content": "# Octopus\n**Small beast, unaligned**\n\n**Armor Class:** 12\n**Hit Points** 3 (1d6)\n**Speed** 5 ft., swim 30 ft.\n| **Stat** | ** Score ** | **Mod** |\n| --- | --- | --- |\n| STR | 4 | -3 |  \n| DEX | 15  |  +2  |  \n| CON | 11  |  +0  | \n| INT |  3 | -4   | \n| WIS | 10 | +0 |\n| CHA | 4 | -3 |\n\n**Skills:** Perception +2, Stealth +4\n\n**Senses:** Darkvision 30 ft., Passive Perception 12\n\n**Languages:**  --\n\n### Hold Breath \nWhile out of water, the octopus can hold its breath for 30 minutes.\n\n### Ink Cloud (Recharges after a Short or Long Rest)\nA 5-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action.\n"
-    },
-    {
-      "id": "note_19b9e2d8-7b61-4a0c-8ec9-2cc6e12de0ad",
-      "title": "Familiar (Spider)",
-      "content": "# Spider\n**Tiny beast, unaligned**\n\n**Armor Class:** 12\n**Hit Points** 1 (1d4-1)\n**Speed** 20 ft., climb 20 ft.\n| **Stat** | ** Score ** | **Mod** |\n| --- | --- | --- |\n| STR | 2 | -4 |  \n| DEX | 154 |  +2  |  \n| CON | 8  |  -1  | \n| INT |  1 | -5   | \n| WIS | 10 | +0 |\n| CHA | 2 | -4 |\n\n**Skills:** Stealth +4\n\n**Senses:** Darkvision 30 ft., Passive Perception 12\n\n**Languages:**  --\n\n### Spider Climb\n The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.\n\n\n### Web Sense: \nWhile in contact with a web, the spider knows the exact location of any other creature in contact with the same web.\n\n### Web Walker: \nThe spider ignores Movement restrictions caused by webbing.\n"
-    },
-    {
-      "id": "note_a7b3ffa9-6d10-4765-bc73-ec6c2e1f9bdf",
-      "title": "Portent",
-      "content": "# Portent\n12\n"
-    },
-    {
-      "id": "note_a4c3c2a7-9517-4306-85cd-324476bb018c",
-      "title": "Physical Description",
-      "content": "# Physical Description\n\n**Height:**  5'11\n\n**Color** Purple\n\n**Eye Color** Silver"
+    "features": [
+        {
+            "name": "Observant (Feat)",
+            "description": "+5 to passive perception & passive investigation, +1 to INT or WIS",
+            "source": "Feat",
+            "id": "feature_1"
+        },
+        {
+            "name": "Arcane Recovery",
+            "description": "Recover ceil(5/2) = 3 levels of spell slots on short rest",
+            "source": "Wizard",
+            "id": "feature_2"
+        },
+        {
+            "name": "Portent",
+            "description": "Roll 2 d20's at end of long rest, can replace any check/saving throw/attack roll",
+            "source": "Divination wizard",
+            "id": "feature_3"
+        },
+        {
+            "name": "Darkvision",
+            "description": "See 60 ft in the dark",
+            "source": "Racial (Tiefling)",
+            "id": "feature_4"
+        },
+        {
+            "name": "Hellish Resistance",
+            "description": "Resistance to fire damage",
+            "source": "Racial (Tiefling)",
+            "id": "feature_5"
+        },
+        {
+            "name": "Legacy of Cania",
+            "description": "Know mage hand. Can cast magic missile lv. 2 and web 1/day",
+            "source": "Mephistopheles Tiefling",
+            "id": "feature_6"
+        }
+    ],
+    "speed": "30 / 15 (Swim)",
+    "abilites": [
+        {
+            "id": 1,
+            "name": "Fey Presence",
+            "description": "As an action, you can cause each creature in a 10-foot cube originating from you to make a Wisdom saving throw against your warlock spell save DC. The creatures that fail their saving throws are all charmed or frightened by you (your choice) until the end of your next turn.",
+            "max": 1,
+            "used": 0,
+            "source": "Warlock (Archfey)",
+            "reset": "long"
+        },
+        {
+            "id": 2,
+            "name": "Misty Escape",
+            "description": "Starting at 6th level, you can vanish in a puff of mist in response to harm. When you take damage, you can use your reaction to turn invisible and teleport up to 60 feet to an unoccupied space you can see. You remain invisible until the start of your next turn or until you attack or cast a spell.",
+            "max": 1,
+            "used": 1,
+            "source": "Warlock (Archfey)",
+            "reset": "short"
+        },
+        {
+            "name": "Test ability 2",
+            "description": "This is a test abliity",
+            "max": 2,
+            "used": 0,
+            "id": "ability_9473c98d-2ae7-4b74-a7d8-821621b330bb"
+        }
+    ],
+    "class": [
+        {
+            "id": "cleric",
+            "level": 1,
+            "subclass": "knowledge"
+        },
+        {
+            "id": "wizard",
+            "level": 5,
+            "subclass": "divination"
+        }
+    ],
+    "savedRolls": {
+        "q": {
+            "name": "Ray of Frost",
+            "roll": "d20, 2d8"
+        },
+        "w": {
+            "name": "Portent",
+            "roll": "d20, d20"
+        },
+        "e": {
+            "name": "TollDead",
+            "roll": "2d12"
+        }
     }
-  ],
-  "languages": [
-    "Common",
-    "Infernal",
-    "Dwarvish",
-    "Sylvan",
-    "Celestial",
-    "Primordial"
-  ],
-  "abilities": [
-    {
-      "name": "Cast Magic Missile Lv. 2",
-      "description": "Cast Magic Missile at level 2. From Mephistopheles Tiefling. Reset on long rest",
-      "max": 1,
-      "used": 1,
-      "id": "ability_193c7e69-8c6e-43f0-a0d9-3ca5700841b3"
-    },
-    {
-      "name": "Cast Web",
-      "description": "Cast Web. From Mephistopheles Tiefling. Reset on LR.",
-      "max": 1,
-      "used": 0,
-      "id": "ability_b6ab8373-6c30-4296-8fa8-ee80628bea46"
-    }
-  ],
-  "savingThrows": [false, false, false, false, true, true],
-  "proficiencyBonus": 3,
-  "proficiency": 0,
-  "abilityScoresOld": [11, 16, 16, 12, 13, 18],
-  "ac": 18,
-  "armor": {
-    "name": "Scale Mail + Shield",
-    "ac": 16,
-    "addDexMod": true,
-    "attributes": "",
-    "category": "light"
-  },
-  "skills": {
-    "History": {
-      "proficiency": 2
-    },
-    "Religion": {
-      "proficiency": 1
-    },
-    "Perception": {
-      "proficiency": 1
-    },
-    "Deception": {
-      "proficiency": 1
-    },
-    "Persuasion": {
-      "proficiency": 1
-    },
-    "Arcana": {
-      "proficiency": 2
-    },
-    "Investigation": {
-      "proficiency": 1
-    },
-    "Insight": {
-      "proficiency": 1
-    }
-  },
-  "features": [
-    {
-      "name": "Observant (Feat)",
-      "description": "+5 to passive perception & passive investigation, +1 to INT or WIS",
-      "source": "Feat",
-      "id": "feature_1"
-    },
-    {
-      "name": "Arcane Recovery",
-      "description": "Recover ceil(5/2) = 3 levels of spell slots on short rest",
-      "source": "Wizard",
-
-      "id": "feature_2"
-    },
-    {
-      "name": "Portent",
-      "description": "Roll 2 d20's at end of long rest, can replace any check/saving throw/attack roll",
-      "source": "Divination wizard",
-
-      "id": "feature_3"
-    },
-    {
-      "name": "Darkvision",
-      "description": "See 60 ft in the dark",
-      "source": "Racial (Tiefling)",
-
-      "id": "feature_4"
-    },
-    {
-      "name": "Hellish Resistance",
-      "description": "Resistance to fire damage",
-      "source": "Racial (Tiefling)",
-
-      "id": "feature_5"
-    },
-    {
-      "name": "Legacy of Cania",
-      "description": "Know mage hand. Can cast magic missile lv. 2 and web 1/day",
-      "source": "Mephistopheles Tiefling",
-
-      "id": "feature_6"
-    }
-  ],
-  "speed": "30 / 15 (Swim)",
-
-  "class": [
-    {
-      "id": "cleric",
-      "level": 1,
-      "subclass": "knowledge"
-    },
-    {
-      "id": "wizard",
-      "level": 5,
-      "subclass": "divination"
-    }
-  ],
-  "savedRolls": {
-    "q": {
-      "name": "Ray of Frost",
-      "roll": "d20, 2d8"
-    },
-    "w": {
-      "name": "Portent",
-      "roll": "d20, d20"
-    },
-    "e": {
-      "name": "TollDead",
-      "roll": "2d12"
-    }
-  }
 }

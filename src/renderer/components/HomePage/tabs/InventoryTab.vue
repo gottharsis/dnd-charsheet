@@ -40,17 +40,8 @@
     <b-modal :active.sync="isInventoryEditOpen">
       <edit-inventory-modal />
     </b-modal>
-    <h2 class="is-size-3 has-text-centered has-text-weight-bold">
-      Magic Items
-    </h2>
-    <!-- <div class="container"> -->
-    <div class="">
-      <magic-item
-        v-for="item in magicItems"
-        :key="item.name"
-        :magic-item="item"
-      />
-    </div>
+
+    <magic-items-section />
     <!-- </div> -->
   </div>
 </template>
@@ -59,7 +50,7 @@
 import { createNamespacedHelpers } from "vuex";
 const { mapState } = createNamespacedHelpers("Character");
 
-import MagicItem from "./InventoryTab/MagicItem";
+import MagicItemsSection from "./InventoryTab/MagicItemsSection";
 import EditInventoryModal from "./InventoryTab/EditInventoryModal";
 import Wealth from "./InventoryTab/Wealth";
 
@@ -77,7 +68,7 @@ export default {
     }
   },
   components: {
-    MagicItem,
+    MagicItemsSection,
     EditInventoryModal,
     Wealth
   },

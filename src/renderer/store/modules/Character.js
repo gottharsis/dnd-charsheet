@@ -185,6 +185,7 @@ const mutations = {
     Object.assign(item, newItem);
   },
   UPDATE_MAGIC_ITEM(state, { id, newItem }) {
+    console.log("in update magic item mutation");
     const item = state.character.inventory.magicItems.find(i => i.id === id);
     if (isNil(item)) return;
     Object.assign(item, newItem);
@@ -521,7 +522,8 @@ const getters = {
     let res = [];
     for (let i = 0; i < 6; i++) {
       let sc = abilityScores[i].mod;
-      if (savingThrows[i]) {
+      let stat = abilityScores[i].stat;
+      if (savingThrows.includes(stat)) {
         sc += proficiencyBonus;
       }
       res.push(sc);
