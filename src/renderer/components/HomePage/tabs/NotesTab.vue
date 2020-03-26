@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="column">
-        <note-renderer :note="activeNote" />
+        <note-renderer :note="activeNote" ref="renderer" />
       </div>
     </div>
   </div>
@@ -73,11 +73,14 @@ export default {
   methods: {
     ...mapActions(["setNotes", "updateNote", "deleteNote"]),
     setActiveNote(note) {
+      console.log("Setting active note: ");
+      console.log(note);
       this.activeNote = note;
       this.activeNoteId = note.id;
     },
-    addNote() {
+    async addNote() {
       const id = "note_" + uuidv4();
+      console.log("id: " + id);
       const note = {
         id,
         title: "Untitled Note",
@@ -86,6 +89,9 @@ export default {
       const newNotes = deepclone(this.notes);
       newNotes.push(note);
       this.setNotes({ notes: newNotes });
+
+      const n = this.notes[this.notes.length - 1];
+      this.setActiveNote(n);
     }
   }
 };
