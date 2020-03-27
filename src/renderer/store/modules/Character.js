@@ -173,6 +173,10 @@ const mutations = {
     state.character.abilities = abilityList;
   },
 
+  SET_FEATURES(state, { features }) {
+    state.character.features = features;
+  },
+
   SET_INVENTORY_ITEMS(state, { items }) {
     state.character.inventory.items = items;
   },
@@ -453,6 +457,9 @@ const actions = {
   },
   setAbilityList({ commit }, { abilityList }) {
     commit("SET_ABILITY_LIST", { abilityList });
+  },
+  setFeatures({ commit }, { features }) {
+    commit("SET_FEATURES", { features });
   },
 
   setInventoryItems({ commit }, { items }) {
