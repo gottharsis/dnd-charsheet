@@ -401,7 +401,7 @@
         },
         {
             "name": "Legacy of Cania",
-            "description": "Know mage hand. Can cast magic missile lv. 2 and web 1/day",
+            "description": "Know mage hand. Can cast magic missile lv. 2 1/day and web 1/day",
             "source": "Mephistopheles Tiefling",
             "id": "feature_6"
         }
