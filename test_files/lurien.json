@@ -193,7 +193,6 @@
             "guiding-bolt",
             "magic-missile",
             "web",
-            "silent-image",
             "tashas-hideous-laughter",
             "shield",
             "grease",
@@ -202,7 +201,8 @@
             "fireball",
             "bless",
             "phantasmal-force",
-            "locate-object"
+            "locate-object",
+            "catapult"
         ],
         "dc": {
             "cleric": 14,

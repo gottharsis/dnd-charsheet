@@ -1,6 +1,13 @@
 import path from "path";
 import fs from "fs";
-const baseDir = "/home/ayush/code/projects/dnd-charsheet/test_files";
+import { remote } from "electron";
+
+const userDataPath = path.join(remote.app.getPath("userData"), "characters");
+
+const baseDir =
+  process.env.NODE_ENV === "production"
+    ? userDataPath
+    : "/home/ayush/code/projects/dnd-charsheet/test_files";
 
 /**
  * reads a character file in json format and returns the object with the data
